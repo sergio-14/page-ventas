@@ -1,0 +1,1550 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Categories with Cart</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .hidden {
+            display: none !important;
+        }
+    </style>
+</head>
+<body>
+    <div class="container pb-5 pt-3">
+        <!-- Title -->
+        <div class="text-center mb-4">
+            <h1 class="fw-bold ">PRODUCTOS Y CATEGORIAS</h1>
+            
+        </div>
+        <button class="btn carrito position-fixed bottom-0 end-0 m-3 rounded-circle" data-bs-toggle="modal" data-bs-target="#cartModal">
+            <span id="cartCount" class="badge bg-danger position-absolute top-0 start-100  translate-middle">0</span>
+            🛒
+        </button>
+
+        <!-- Navigation Tabs -->
+        <ul class="nav nav-tabs mb-4 " id="productTabs" role="tablist">
+            <div class="btn-group" role="group" aria-label="Product categories">
+                <button class="btn btn-outline-warning active" style="font-family: oswald; font-size: 20px;" id="cellphones-tab" data-bs-toggle="tab" data-bs-target="#cellphones" type="button" role="tab" aria-controls="cellphones" aria-selected="true">Celulares</button>
+                <button class="btn btn-outline-warning" style="font-family: oswald; font-size: 20px;" id="appliances-tab" data-bs-toggle="tab" data-bs-target="#appliances" type="button" role="tab" aria-controls="appliances" aria-selected="false">Electrodomésticos</button>
+                <button class="btn btn-outline-warning" style="font-family: oswald; font-size: 20px;" id="motorcycles-tab" data-bs-toggle="tab" data-bs-target="#motorcycles" type="button" role="tab" aria-controls="motorcycles" aria-selected="false">Motocicletas</button>
+            </div>
+            <li class="nav-item ms-auto pt-2" role="presentation">
+                <form class="d-flex" onsubmit="filterProducts(event)">
+                    <input class="form-control me-2" id="searchInput" type="search" placeholder="Escribir Categoria" aria-label="Search">
+                    <button class="btn btn-outline-warning" type="submit">Buscar</button>
+                </form>
+            </li>
+
+        </ul>
+
+        <!-- Tab Content -->
+        <div class="tab-content" id="productTabsContent">
+            <!-- Cellphones -->
+            <div class="tab-pane fade show active" id="cellphones" role="tabpanel" aria-labelledby="cellphones-tab">
+                <div class="row justify-content-center">
+                    <!-- Product Card Example -->
+                    <div class="col-lg-3 col-md-4 col-sm-6 mb-4 product" data-name="Blade">
+                        <div class="card cards  text-center">
+                            <img src="/assets/productos/celulares/blace A 73 - copia.jpg" class="card-img-top  mt-1" style="height: 270px;" alt="Cellphone 1">
+                            <div class="card-body px-4">
+                                <h5 class="card-title">BLADE A 73</h5>
+                                <p class="card-text fw-bold" style="font-family: oswald; font-size:20px ;">Precio: <span class="bg-warning text-white rounded-1 px-2">1700 Bs.</span></p>
+                                <div class="row justify-content-center align-items-center">
+                                    <div class="col-6 text-end">
+                                        <button class="btn bt1   add-to-cart" data-name="BLADE A73" data-price="1700">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-cart-check" viewBox="0 0 16 16">
+                                                <path d="M11.354 6.354a.5.5 0 0 0-.708-.708L8 8.293 6.854 7.146a.5.5 0 1 0-.708.708l1.5 1.5a.5.5 0 0 0 .708 0z"/>
+                                                <path d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1zm3.915 10L3.102 4h10.796l-1.313 7zM6 14a1 1 0 1 1-2 0 1 1 0 0 1 2 0m7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0"/>
+                                            </svg>
+                                            
+                                        </button>
+                                    </div>
+                                    <div class="col-6 text-start">
+                                        <a href="#" class="btn bt2" data-bs-toggle="modal" data-bs-target="#detalleModal">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-chat-square-text-fill" viewBox="0 0 16 16">
+                                                <path d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2h-2.5a1 1 0 0 0-.8.4l-1.9 2.533a1 1 0 0 1-1.6 0L5.3 12.4a1 1 0 0 0-.8-.4H2a2 2 0 0 1-2-2zm3.5 1a.5.5 0 0 0 0 1h9a.5.5 0 0 0 0-1zm0 2.5a.5.5 0 0 0 0 1h9a.5.5 0 0 0 0-1zm0 2.5a.5.5 0 0 0 0 1h5a.5.5 0 0 0 0-1z"/>
+                                            </svg>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-sm-6 mb-4 product" data-name="blade">
+                        <div class="card cards  text-center">
+                            <img src="/assets/productos/celulares/blade v60 - copia.jpg" class="card-img-top  mt-1" style="height: 270px;" alt="Cellphone 1">
+                            <div class="card-body px-4">
+                                <h5 class="card-title">BLADE V60</h5>
+                                <p class="card-text fw-bold" style="font-family: oswald; font-size:20px ;">Precio: <span class="bg-warning text-white rounded-1 px-2">1500 Bs.</span></p>
+                                <div class="row justify-content-center align-items-center">
+                                    <div class="col-6 text-end">
+                                        <button class="btn bt1   add-to-cart" data-name="BLADE V60" data-price="1500">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-cart-check" viewBox="0 0 16 16">
+                                                <path d="M11.354 6.354a.5.5 0 0 0-.708-.708L8 8.293 6.854 7.146a.5.5 0 1 0-.708.708l1.5 1.5a.5.5 0 0 0 .708 0z"/>
+                                                <path d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1zm3.915 10L3.102 4h10.796l-1.313 7zM6 14a1 1 0 1 1-2 0 1 1 0 0 1 2 0m7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0"/>
+                                            </svg>
+                                            
+                                        </button>
+                                    </div>
+                                    <div class="col-6 text-start">
+                                        <a href="#" class="btn bt2" data-bs-toggle="modal" data-bs-target="#detalleModal1">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-chat-square-text-fill" viewBox="0 0 16 16">
+                                                <path d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2h-2.5a1 1 0 0 0-.8.4l-1.9 2.533a1 1 0 0 1-1.6 0L5.3 12.4a1 1 0 0 0-.8-.4H2a2 2 0 0 1-2-2zm3.5 1a.5.5 0 0 0 0 1h9a.5.5 0 0 0 0-1zm0 2.5a.5.5 0 0 0 0 1h9a.5.5 0 0 0 0-1zm0 2.5a.5.5 0 0 0 0 1h5a.5.5 0 0 0 0-1z"/>
+                                            </svg>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-sm-6 mb-4 product" data-name="realme">
+                        <div class="card cards  text-center">
+                            <img src="/assets/productos/celulares/note 50 realme - copia.jpg" class="card-img-top  mt-1" style="height: 270px;" alt="Cellphone 1">
+                            <div class="card-body px-4">
+                                <h5 class="card-title">NOTE 50 REALME</h5>
+                                <p class="card-text fw-bold" style="font-family: oswald; font-size:20px ;">Precio: <span class="bg-warning text-white rounded-1 px-2">1400 Bs.</span></p>
+                                <div class="row justify-content-center align-items-center">
+                                    <div class="col-6 text-end">
+                                        <button class="btn bt1   add-to-cart" data-name="NOTE 50 REALME" data-price="1400">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-cart-check" viewBox="0 0 16 16">
+                                                <path d="M11.354 6.354a.5.5 0 0 0-.708-.708L8 8.293 6.854 7.146a.5.5 0 1 0-.708.708l1.5 1.5a.5.5 0 0 0 .708 0z"/>
+                                                <path d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1zm3.915 10L3.102 4h10.796l-1.313 7zM6 14a1 1 0 1 1-2 0 1 1 0 0 1 2 0m7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0"/>
+                                            </svg>
+                                            
+                                        </button>
+                                    </div>
+                                    <div class="col-6 text-start">
+                                        <a href="#" class="btn bt2" data-bs-toggle="modal" data-bs-target="#detalleModal2">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-chat-square-text-fill" viewBox="0 0 16 16">
+                                                <path d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2h-2.5a1 1 0 0 0-.8.4l-1.9 2.533a1 1 0 0 1-1.6 0L5.3 12.4a1 1 0 0 0-.8-.4H2a2 2 0 0 1-2-2zm3.5 1a.5.5 0 0 0 0 1h9a.5.5 0 0 0 0-1zm0 2.5a.5.5 0 0 0 0 1h9a.5.5 0 0 0 0-1zm0 2.5a.5.5 0 0 0 0 1h5a.5.5 0 0 0 0-1z"/>
+                                            </svg>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-sm-6 mb-4 product" data-name="infinix">
+                        <div class="card cards  text-center">
+                            <img src="/assets/productos/celulares/infinix smart 9 - copia.jpg" class="card-img-top  mt-1" style="height: 270px;" alt="Cellphone 1">
+                            <div class="card-body px-4">
+                                <h5 class="card-title">INFINIX SMART9</h5>
+                                <p class="card-text fw-bold" style="font-family: oswald; font-size:20px ;">Precio: <span class="bg-warning text-white rounded-1 px-2">1900 Bs.</span></p>
+                                <div class="row justify-content-center align-items-center">
+                                    <div class="col-6 text-end">
+                                        <button class="btn bt1  add-to-cart" data-name="INFINIX SMART9" data-price="1900">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-cart-check" viewBox="0 0 16 16">
+                                                <path d="M11.354 6.354a.5.5 0 0 0-.708-.708L8 8.293 6.854 7.146a.5.5 0 1 0-.708.708l1.5 1.5a.5.5 0 0 0 .708 0z"/>
+                                                <path d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1zm3.915 10L3.102 4h10.796l-1.313 7zM6 14a1 1 0 1 1-2 0 1 1 0 0 1 2 0m7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0"/>
+                                            </svg>
+                                            
+                                        </button>
+                                    </div>
+                                    <div class="col-6 text-start">
+                                        <a href="#" class="btn bt2" data-bs-toggle="modal" data-bs-target="#detalleModal3">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-chat-square-text-fill" viewBox="0 0 16 16">
+                                                <path d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2h-2.5a1 1 0 0 0-.8.4l-1.9 2.533a1 1 0 0 1-1.6 0L5.3 12.4a1 1 0 0 0-.8-.4H2a2 2 0 0 1-2-2zm3.5 1a.5.5 0 0 0 0 1h9a.5.5 0 0 0 0-1zm0 2.5a.5.5 0 0 0 0 1h9a.5.5 0 0 0 0-1zm0 2.5a.5.5 0 0 0 0 1h5a.5.5 0 0 0 0-1z"/>
+                                            </svg>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-sm-6 mb-4 product" data-name="infinix">
+                        <div class="card cards  text-center">
+                            <img src="/assets/productos/celulares/infinix 50i  - copia.jpg" class="card-img-top  mt-1" style="height: 270px;" alt="Cellphone 1">
+
+                            <div class="card-body px-4">
+                                <h5 class="card-title">INFINIX 50i</h5>
+                                <p class="card-text fw-bold" style="font-family: oswald; font-size:20px ;">Precio: <span class="bg-warning text-white rounded-1 px-2">1900 Bs.</span></p>
+                                <div class="row justify-content-center align-items-center">
+                                    <div class="col-6 text-end">
+                                        <button class="btn bt1   add-to-cart" data-name="INFINIX 50i " data-price="1900">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-cart-check" viewBox="0 0 16 16">
+                                                <path d="M11.354 6.354a.5.5 0 0 0-.708-.708L8 8.293 6.854 7.146a.5.5 0 1 0-.708.708l1.5 1.5a.5.5 0 0 0 .708 0z"/>
+                                                <path d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1zm3.915 10L3.102 4h10.796l-1.313 7zM6 14a1 1 0 1 1-2 0 1 1 0 0 1 2 0m7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0"/>
+                                            </svg>
+                                            
+                                        </button>
+                                    </div>
+                                    <div class="col-6 text-start">
+                                        <a href="#" class="btn bt2" data-bs-toggle="modal" data-bs-target="#detalleModal4">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-chat-square-text-fill" viewBox="0 0 16 16">
+                                                <path d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2h-2.5a1 1 0 0 0-.8.4l-1.9 2.533a1 1 0 0 1-1.6 0L5.3 12.4a1 1 0 0 0-.8-.4H2a2 2 0 0 1-2-2zm3.5 1a.5.5 0 0 0 0 1h9a.5.5 0 0 0 0-1zm0 2.5a.5.5 0 0 0 0 1h9a.5.5 0 0 0 0-1zm0 2.5a.5.5 0 0 0 0 1h5a.5.5 0 0 0 0-1z"/>
+                                            </svg>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-sm-6 mb-4 product" data-name="infinix">
+                        <div class="card cards  text-center">
+                            <img src="/assets/productos/celulares/oht 50 pro plus infinix - copia.jpg" class="card-img-top  mt-1" style="height: 270px;" alt="Cellphone 1">
+
+                            <div class="card-body px-4">
+                                <h5 class="card-title">HOT 5O PRO PLUS</h5>
+                                <p class="card-text fw-bold" style="font-family: oswald; font-size:20px ;">Precio: <span class="bg-warning text-white rounded-1 px-2">1900 Bs.</span></p>
+                                <div class="row justify-content-center align-items-center">
+                                    <div class="col-6 text-end">
+                                        <button class="btn bt1   add-to-cart" data-name="HOT 50 PRO PLUS INFINIX" data-price="1900">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-cart-check" viewBox="0 0 16 16">
+                                                <path d="M11.354 6.354a.5.5 0 0 0-.708-.708L8 8.293 6.854 7.146a.5.5 0 1 0-.708.708l1.5 1.5a.5.5 0 0 0 .708 0z"/>
+                                                <path d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1zm3.915 10L3.102 4h10.796l-1.313 7zM6 14a1 1 0 1 1-2 0 1 1 0 0 1 2 0m7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0"/>
+                                            </svg>
+                                            
+                                        </button>
+                                    </div>
+                                    <div class="col-6 text-start">
+                                        <a href="#" class="btn bt2" data-bs-toggle="modal" data-bs-target="#detalleModal5">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-chat-square-text-fill" viewBox="0 0 16 16">
+                                                <path d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2h-2.5a1 1 0 0 0-.8.4l-1.9 2.533a1 1 0 0 1-1.6 0L5.3 12.4a1 1 0 0 0-.8-.4H2a2 2 0 0 1-2-2zm3.5 1a.5.5 0 0 0 0 1h9a.5.5 0 0 0 0-1zm0 2.5a.5.5 0 0 0 0 1h9a.5.5 0 0 0 0-1zm0 2.5a.5.5 0 0 0 0 1h5a.5.5 0 0 0 0-1z"/>
+                                            </svg>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-sm-6 mb-4 product" data-name="redmi">
+                        <div class="card cards  text-center">
+                            <img src="/assets/productos/celulares/redmi 14 c - copia.jpg" class="card-img-top  mt-1" style="height: 270px;" alt="Cellphone 1">
+
+                            <div class="card-body px-4">
+                                <h5 class="card-title">Redmi 14C</h5>
+                                <p class="card-text fw-bold" style="font-family: oswald; font-size:20px ;">Precio: <span class="bg-warning text-white rounded-1 px-2">1900 Bs.</span></p>
+                                <div class="row justify-content-center align-items-center">
+                                    <div class="col-6 text-end">
+                                        <button class="btn bt1   add-to-cart" data-name="Redmin 14C" data-price="1900">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-cart-check" viewBox="0 0 16 16">
+                                                <path d="M11.354 6.354a.5.5 0 0 0-.708-.708L8 8.293 6.854 7.146a.5.5 0 1 0-.708.708l1.5 1.5a.5.5 0 0 0 .708 0z"/>
+                                                <path d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1zm3.915 10L3.102 4h10.796l-1.313 7zM6 14a1 1 0 1 1-2 0 1 1 0 0 1 2 0m7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0"/>
+                                            </svg>
+                                            
+                                        </button>
+                                    </div>
+                                    <div class="col-6 text-start">
+                                        <a href="#" class="btn bt2" data-bs-toggle="modal" data-bs-target="#detalleModal6">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-chat-square-text-fill" viewBox="0 0 16 16">
+                                                <path d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2h-2.5a1 1 0 0 0-.8.4l-1.9 2.533a1 1 0 0 1-1.6 0L5.3 12.4a1 1 0 0 0-.8-.4H2a2 2 0 0 1-2-2zm3.5 1a.5.5 0 0 0 0 1h9a.5.5 0 0 0 0-1zm0 2.5a.5.5 0 0 0 0 1h9a.5.5 0 0 0 0-1zm0 2.5a.5.5 0 0 0 0 1h5a.5.5 0 0 0 0-1z"/>
+                                            </svg>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-sm-6 mb-4 product" data-name="redmi">
+                        <div class="card cards  text-center">
+                            <img src="/assets/productos/celulares/redmi A3X - copia.jpg" class="card-img-top  mt-1" style="height: 270px;" alt="Cellphone 1">
+
+                            <div class="card-body px-4">
+                                <h5 class="card-title">Redmi A3x</h5>
+                                <p class="card-text fw-bold" style="font-family: oswald; font-size:20px ;">Precio: <span class="bg-warning text-white rounded-1 px-2">1900 Bs.</span></p>
+                                <div class="row justify-content-center align-items-center">
+                                    <div class="col-6 text-end">
+                                        <button class="btn bt1   add-to-cart" data-name="Redmin A3x" data-price="1900">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-cart-check" viewBox="0 0 16 16">
+                                                <path d="M11.354 6.354a.5.5 0 0 0-.708-.708L8 8.293 6.854 7.146a.5.5 0 1 0-.708.708l1.5 1.5a.5.5 0 0 0 .708 0z"/>
+                                                <path d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1zm3.915 10L3.102 4h10.796l-1.313 7zM6 14a1 1 0 1 1-2 0 1 1 0 0 1 2 0m7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0"/>
+                                            </svg>
+                                            
+                                        </button>
+                                    </div>
+                                    <div class="col-6 text-start">
+                                        <a href="#" class="btn bt2" data-bs-toggle="modal" data-bs-target="#detalleModal7">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-chat-square-text-fill" viewBox="0 0 16 16">
+                                                <path d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2h-2.5a1 1 0 0 0-.8.4l-1.9 2.533a1 1 0 0 1-1.6 0L5.3 12.4a1 1 0 0 0-.8-.4H2a2 2 0 0 1-2-2zm3.5 1a.5.5 0 0 0 0 1h9a.5.5 0 0 0 0-1zm0 2.5a.5.5 0 0 0 0 1h9a.5.5 0 0 0 0-1zm0 2.5a.5.5 0 0 0 0 1h5a.5.5 0 0 0 0-1z"/>
+                                            </svg>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-sm-6 mb-4 product" data-name="spark">
+                        <div class="card cards  text-center">
+                            <img src="/assets/productos/celulares/spark 30 C  - copia.jpg" class="card-img-top  mt-1" style="height: 270px;" alt="Cellphone 1">
+
+                            <div class="card-body px-4">
+                                <h5 class="card-title">SPARK 30C</h5>
+                                <p class="card-text fw-bold" style="font-family: oswald; font-size:20px ;">Precio: <span class="bg-warning text-white rounded-1 px-2">1900 Bs.</span></p>
+                                <div class="row justify-content-center align-items-center">
+                                    <div class="col-6 text-end">
+                                        <button class="btn bt1   add-to-cart" data-name="SPARK 30C" data-price="1900">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-cart-check" viewBox="0 0 16 16">
+                                                <path d="M11.354 6.354a.5.5 0 0 0-.708-.708L8 8.293 6.854 7.146a.5.5 0 1 0-.708.708l1.5 1.5a.5.5 0 0 0 .708 0z"/>
+                                                <path d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1zm3.915 10L3.102 4h10.796l-1.313 7zM6 14a1 1 0 1 1-2 0 1 1 0 0 1 2 0m7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0"/>
+                                            </svg>
+                                            
+                                        </button>
+                                    </div>
+                                    <div class="col-6 text-start">
+                                        <a href="#" class="btn bt2" data-bs-toggle="modal" data-bs-target="#detalleModal8">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-chat-square-text-fill" viewBox="0 0 16 16">
+                                                <path d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2h-2.5a1 1 0 0 0-.8.4l-1.9 2.533a1 1 0 0 1-1.6 0L5.3 12.4a1 1 0 0 0-.8-.4H2a2 2 0 0 1-2-2zm3.5 1a.5.5 0 0 0 0 1h9a.5.5 0 0 0 0-1zm0 2.5a.5.5 0 0 0 0 1h9a.5.5 0 0 0 0-1zm0 2.5a.5.5 0 0 0 0 1h5a.5.5 0 0 0 0-1z"/>
+                                            </svg>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-sm-6 mb-4 product" data-name="spark">
+                        <div class="card cards  text-center">
+                            <img src="/assets/productos/celulares/spark 30 pro - copia.jpg" class="card-img-top  mt-1" style="height: 270px;" alt="Cellphone 1">
+
+                            <div class="card-body px-4">
+                                <h5 class="card-title">SPARK 30 PRO</h5>
+                                <p class="card-text fw-bold" style="font-family: oswald; font-size:20px ;">Precio: <span class="bg-warning text-white rounded-1 px-2">1900 Bs.</span></p>
+                                <div class="row justify-content-center align-items-center">
+                                    <div class="col-6 text-end">
+                                        <button class="btn bt1   add-to-cart" data-name="SPARK 30 PRO" data-price="1900">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-cart-check" viewBox="0 0 16 16">
+                                                <path d="M11.354 6.354a.5.5 0 0 0-.708-.708L8 8.293 6.854 7.146a.5.5 0 1 0-.708.708l1.5 1.5a.5.5 0 0 0 .708 0z"/>
+                                                <path d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1zm3.915 10L3.102 4h10.796l-1.313 7zM6 14a1 1 0 1 1-2 0 1 1 0 0 1 2 0m7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0"/>
+                                            </svg>
+                                            
+                                        </button>
+                                    </div>
+                                    <div class="col-6 text-start">
+                                        <a href="#" class="btn bt2" data-bs-toggle="modal" data-bs-target="#detalleModal9">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-chat-square-text-fill" viewBox="0 0 16 16">
+                                                <path d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2h-2.5a1 1 0 0 0-.8.4l-1.9 2.533a1 1 0 0 1-1.6 0L5.3 12.4a1 1 0 0 0-.8-.4H2a2 2 0 0 1-2-2zm3.5 1a.5.5 0 0 0 0 1h9a.5.5 0 0 0 0-1zm0 2.5a.5.5 0 0 0 0 1h9a.5.5 0 0 0 0-1zm0 2.5a.5.5 0 0 0 0 1h5a.5.5 0 0 0 0-1z"/>
+                                            </svg>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-sm-6 mb-4 product" data-name="tecno">
+                        <div class="card cards  text-center">
+                            <img src="/assets/productos/celulares/tecno 20 - copia.jpg" class="card-img-top  mt-1" style="height: 270px;" alt="Cellphone 1">
+
+                            <div class="card-body px-4">
+                                <h5 class="card-title">TECNO 20</h5>
+                                <p class="card-text fw-bold" style="font-family: oswald; font-size:20px ;">Precio: <span class="bg-warning text-white rounded-1 px-2">1900 Bs.</span></p>
+                                <div class="row justify-content-center align-items-center">
+                                    <div class="col-6 text-end">
+                                        <button class="btn bt1   add-to-cart" data-name="TECNO 20" data-price="1900">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-cart-check" viewBox="0 0 16 16">
+                                                <path d="M11.354 6.354a.5.5 0 0 0-.708-.708L8 8.293 6.854 7.146a.5.5 0 1 0-.708.708l1.5 1.5a.5.5 0 0 0 .708 0z"/>
+                                                <path d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1zm3.915 10L3.102 4h10.796l-1.313 7zM6 14a1 1 0 1 1-2 0 1 1 0 0 1 2 0m7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0"/>
+                                            </svg>
+                                            
+                                        </button>
+                                    </div>
+                                    <div class="col-6 text-start">
+                                        <a href="#" class="btn bt2" data-bs-toggle="modal" data-bs-target="#detalleModal10">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-chat-square-text-fill" viewBox="0 0 16 16">
+                                                <path d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2h-2.5a1 1 0 0 0-.8.4l-1.9 2.533a1 1 0 0 1-1.6 0L5.3 12.4a1 1 0 0 0-.8-.4H2a2 2 0 0 1-2-2zm3.5 1a.5.5 0 0 0 0 1h9a.5.5 0 0 0 0-1zm0 2.5a.5.5 0 0 0 0 1h9a.5.5 0 0 0 0-1zm0 2.5a.5.5 0 0 0 0 1h5a.5.5 0 0 0 0-1z"/>
+                                            </svg>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Appliances -->
+            <div class="tab-pane fade" id="appliances" role="tabpanel" aria-labelledby="appliances-tab">
+                <div class="row justify-content-center">
+                    <!-- Product Card Example -->
+                    <div class="col-lg-3 col-md-4 col-sm-6 mb-4 product" data-name="televisor">
+                        <div class="card cards  text-center">
+                            <img src="/assets/productos/electrodomesticos/tv 43 pulg skyworth - copia.jpg" class="card-img-top  mt-1" style="height: 270px;" alt="Cellphone 1">
+
+                            <div class="card-body px-4">
+                                <h5 class="card-title">TELEVISOR 43 PULG.</h5>
+                                <p class="card-text fw-bold" style="font-family: oswald; font-size:20px ;">Precio: <span class="bg-warning text-white rounded-1 px-2">1900 Bs.</span></p>
+                                <div class="row justify-content-center align-items-center">
+                                    <div class="col-6 text-end">
+                                        <button class="btn bt1   add-to-cart" data-name="TELEVISOR 43 PULGADAS SKYWORTH" data-price="1500">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-cart-check" viewBox="0 0 16 16">
+                                                <path d="M11.354 6.354a.5.5 0 0 0-.708-.708L8 8.293 6.854 7.146a.5.5 0 1 0-.708.708l1.5 1.5a.5.5 0 0 0 .708 0z"/>
+                                                <path d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1zm3.915 10L3.102 4h10.796l-1.313 7zM6 14a1 1 0 1 1-2 0 1 1 0 0 1 2 0m7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0"/>
+                                            </svg>
+                                            
+                                        </button>
+                                    </div>
+                                    <div class="col-6 text-start">
+                                        <a href="" class="btn bt2 ">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-chat-square-text-fill" viewBox="0 0 16 16">
+                                                <path d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2h-2.5a1 1 0 0 0-.8.4l-1.9 2.533a1 1 0 0 1-1.6 0L5.3 12.4a1 1 0 0 0-.8-.4H2a2 2 0 0 1-2-2zm3.5 1a.5.5 0 0 0 0 1h9a.5.5 0 0 0 0-1zm0 2.5a.5.5 0 0 0 0 1h9a.5.5 0 0 0 0-1zm0 2.5a.5.5 0 0 0 0 1h5a.5.5 0 0 0 0-1z"/>
+                                            </svg>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-sm-6 mb-4 product" data-name="frezzer">
+                        <div class="card cards  text-center">
+                            <img src="/assets/productos/electrodomesticos/285 frezzer general lux - copia.jpg" class="card-img-top  mt-1" style="height: 270px;" alt="Cellphone 1">
+
+                            <div class="card-body px-4">
+                                <h5 class="card-title">FREZZER 285 LTRS.</h5>
+                                <p class="card-text fw-bold" style="font-family: oswald; font-size:20px ;">Precio: <span class="bg-warning text-white rounded-1 px-2">1900 Bs.</span></p>
+                                <div class="row justify-content-center align-items-center">
+                                    <div class="col-6 text-end">
+                                        <button class="btn bt1   add-to-cart" data-name="FREZZER 285 LITROS GENERAL LUX" data-price="1900">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-cart-check" viewBox="0 0 16 16">
+                                                <path d="M11.354 6.354a.5.5 0 0 0-.708-.708L8 8.293 6.854 7.146a.5.5 0 1 0-.708.708l1.5 1.5a.5.5 0 0 0 .708 0z"/>
+                                                <path d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1zm3.915 10L3.102 4h10.796l-1.313 7zM6 14a1 1 0 1 1-2 0 1 1 0 0 1 2 0m7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0"/>
+                                            </svg>
+                                            
+                                        </button>
+                                    </div>
+                                    <div class="col-6 text-start">
+                                        <a href="" class="btn bt2 ">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-chat-square-text-fill" viewBox="0 0 16 16">
+                                                <path d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2h-2.5a1 1 0 0 0-.8.4l-1.9 2.533a1 1 0 0 1-1.6 0L5.3 12.4a1 1 0 0 0-.8-.4H2a2 2 0 0 1-2-2zm3.5 1a.5.5 0 0 0 0 1h9a.5.5 0 0 0 0-1zm0 2.5a.5.5 0 0 0 0 1h9a.5.5 0 0 0 0-1zm0 2.5a.5.5 0 0 0 0 1h5a.5.5 0 0 0 0-1z"/>
+                                            </svg>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-sm-6 mb-4 product" data-name="aire">
+                        <div class="card cards  text-center">
+                            <img src="/assets/productos/electrodomesticos/aire acondicionado 12000 btu dagor - copia.jpg" class="card-img-top  mt-1" style="height: 270px;" alt="Cellphone 1">
+
+                            <div class="card-body px-4">
+                                <h5 class="card-title">AIRE ACONDICIONADO</h5>
+                                <p class="card-text fw-bold" style="font-family: oswald; font-size:20px ;">Precio: <span class="bg-warning text-white rounded-1 px-2">1900 Bs.</span></p>
+                                <div class="row justify-content-center align-items-center">
+                                    <div class="col-6 text-end">
+                                        <button class="btn bt1   add-to-cart" data-name="AIRE ACONDICIONADO 12000 BTU" data-price="1500.00">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-cart-check" viewBox="0 0 16 16">
+                                                <path d="M11.354 6.354a.5.5 0 0 0-.708-.708L8 8.293 6.854 7.146a.5.5 0 1 0-.708.708l1.5 1.5a.5.5 0 0 0 .708 0z"/>
+                                                <path d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1zm3.915 10L3.102 4h10.796l-1.313 7zM6 14a1 1 0 1 1-2 0 1 1 0 0 1 2 0m7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0"/>
+                                            </svg>
+                                            
+                                        </button>
+                                    </div>
+                                    <div class="col-6 text-start">
+                                        <a href="" class="btn bt2 ">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-chat-square-text-fill" viewBox="0 0 16 16">
+                                                <path d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2h-2.5a1 1 0 0 0-.8.4l-1.9 2.533a1 1 0 0 1-1.6 0L5.3 12.4a1 1 0 0 0-.8-.4H2a2 2 0 0 1-2-2zm3.5 1a.5.5 0 0 0 0 1h9a.5.5 0 0 0 0-1zm0 2.5a.5.5 0 0 0 0 1h9a.5.5 0 0 0 0-1zm0 2.5a.5.5 0 0 0 0 1h5a.5.5 0 0 0 0-1z"/>
+                                            </svg>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-sm-6 mb-4 product" data-name="cocina">
+                        <div class="card cards  text-center">
+                            <img src="/assets/productos/electrodomesticos/cocina 4 hornallas velanoba - copia.jpg" class="card-img-top  mt-1" style="height: 270px;" alt="Cellphone 1">
+
+                            <div class="card-body px-4">
+                                <h5 class="card-title">COCINA 4 HORNALLAS</h5>
+                                <p class="card-text fw-bold" style="font-family: oswald; font-size:20px ;">Precio: <span class="bg-warning text-white rounded-1 px-2">1900 Bs.</span></p>
+                                <div class="row justify-content-center align-items-center">
+                                    <div class="col-6 text-end">
+                                        <button class="btn bt1   add-to-cart" data-name="COCINA 4 HORNALLAS VELANOBA" data-price="1500">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-cart-check" viewBox="0 0 16 16">
+                                                <path d="M11.354 6.354a.5.5 0 0 0-.708-.708L8 8.293 6.854 7.146a.5.5 0 1 0-.708.708l1.5 1.5a.5.5 0 0 0 .708 0z"/>
+                                                <path d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1zm3.915 10L3.102 4h10.796l-1.313 7zM6 14a1 1 0 1 1-2 0 1 1 0 0 1 2 0m7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0"/>
+                                            </svg>
+                                            
+                                        </button>
+                                    </div>
+                                    <div class="col-6 text-start">
+                                        <a href="" class="btn bt2 ">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-chat-square-text-fill" viewBox="0 0 16 16">
+                                                <path d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2h-2.5a1 1 0 0 0-.8.4l-1.9 2.533a1 1 0 0 1-1.6 0L5.3 12.4a1 1 0 0 0-.8-.4H2a2 2 0 0 1-2-2zm3.5 1a.5.5 0 0 0 0 1h9a.5.5 0 0 0 0-1zm0 2.5a.5.5 0 0 0 0 1h9a.5.5 0 0 0 0-1zm0 2.5a.5.5 0 0 0 0 1h5a.5.5 0 0 0 0-1z"/>
+                                            </svg>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-sm-6 mb-4 product" data-name="cocina">
+                        <div class="card cards  text-center">
+                            <img src="/assets/productos/electrodomesticos/cocina 5 hornallas winStar - copia.jpg" class="card-img-top  mt-1" style="height: 270px;" alt="Cellphone 1">
+
+                            <div class="card-body px-4">
+                                <h5 class="card-title">COCINA 5 HORNALLAS</h5>
+                                <p class="card-text fw-bold" style="font-family: oswald; font-size:20px ;">Precio: <span class="bg-warning text-white rounded-1 px-2">1900 Bs.</span></p>
+                                <div class="row justify-content-center align-items-center">
+                                    <div class="col-6 text-end">
+                                        <button class="btn bt1   add-to-cart" data-name="COCINA 5 HORNALLAS WINSTAR " data-price="1500">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-cart-check" viewBox="0 0 16 16">
+                                                <path d="M11.354 6.354a.5.5 0 0 0-.708-.708L8 8.293 6.854 7.146a.5.5 0 1 0-.708.708l1.5 1.5a.5.5 0 0 0 .708 0z"/>
+                                                <path d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1zm3.915 10L3.102 4h10.796l-1.313 7zM6 14a1 1 0 1 1-2 0 1 1 0 0 1 2 0m7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0"/>
+                                            </svg>
+                                            
+                                        </button>
+                                    </div>
+                                    <div class="col-6 text-start">
+                                        <a href="" class="btn bt2 ">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-chat-square-text-fill" viewBox="0 0 16 16">
+                                                <path d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2h-2.5a1 1 0 0 0-.8.4l-1.9 2.533a1 1 0 0 1-1.6 0L5.3 12.4a1 1 0 0 0-.8-.4H2a2 2 0 0 1-2-2zm3.5 1a.5.5 0 0 0 0 1h9a.5.5 0 0 0 0-1zm0 2.5a.5.5 0 0 0 0 1h9a.5.5 0 0 0 0-1zm0 2.5a.5.5 0 0 0 0 1h5a.5.5 0 0 0 0-1z"/>
+                                            </svg>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-sm-6 mb-4 product" data-name="cocina">
+                        <div class="card cards  text-center">
+                            <img src="/assets/productos/electrodomesticos/cocina de 4 hornallas winstar  - copia.jpg" class="card-img-top  mt-1" style="height: 270px;" alt="Cellphone 1">
+
+                            <div class="card-body px-4">
+                                <h5 class="card-title">COCINA 4 HORNALLAS</h5>
+                                <p class="card-text fw-bold" style="font-family: oswald; font-size:20px ;">Precio: <span class="bg-warning text-white rounded-1 px-2">1900 Bs.</span></p>
+                                <div class="row justify-content-center align-items-center">
+                                    <div class="col-6 text-end">
+                                        <button class="btn bt1   add-to-cart" data-name="COCINA 4 HORNALLAS WINSTAR" data-price="1500">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-cart-check" viewBox="0 0 16 16">
+                                                <path d="M11.354 6.354a.5.5 0 0 0-.708-.708L8 8.293 6.854 7.146a.5.5 0 1 0-.708.708l1.5 1.5a.5.5 0 0 0 .708 0z"/>
+                                                <path d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1zm3.915 10L3.102 4h10.796l-1.313 7zM6 14a1 1 0 1 1-2 0 1 1 0 0 1 2 0m7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0"/>
+                                            </svg>
+                                            
+                                        </button>
+                                    </div>
+                                    <div class="col-6 text-start">
+                                        <a href="" class="btn bt2 ">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-chat-square-text-fill" viewBox="0 0 16 16">
+                                                <path d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2h-2.5a1 1 0 0 0-.8.4l-1.9 2.533a1 1 0 0 1-1.6 0L5.3 12.4a1 1 0 0 0-.8-.4H2a2 2 0 0 1-2-2zm3.5 1a.5.5 0 0 0 0 1h9a.5.5 0 0 0 0-1zm0 2.5a.5.5 0 0 0 0 1h9a.5.5 0 0 0 0-1zm0 2.5a.5.5 0 0 0 0 1h5a.5.5 0 0 0 0-1z"/>
+                                            </svg>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-sm-6 mb-4 product" data-name="frezzer">
+                        <div class="card cards  text-center">
+                            <img src="/assets/productos/electrodomesticos/freezer 308 litros master g - copia.jpg" class="card-img-top  mt-1" style="height: 270px;" alt="Cellphone 1">
+
+                            <div class="card-body px-4">
+                                <h5 class="card-title">FREZZER 308 LTRS</h5>
+                                <p class="card-text fw-bold" style="font-family: oswald; font-size:20px ;">Precio: <span class="bg-warning text-white rounded-1 px-2">1900 Bs.</span></p>
+                                <div class="row justify-content-center align-items-center">
+                                    <div class="col-6 text-end">
+                                        <button class="btn bt1   add-to-cart" data-name="FREZZER 308 LITROS MASTER G" data-price="1500">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-cart-check" viewBox="0 0 16 16">
+                                                <path d="M11.354 6.354a.5.5 0 0 0-.708-.708L8 8.293 6.854 7.146a.5.5 0 1 0-.708.708l1.5 1.5a.5.5 0 0 0 .708 0z"/>
+                                                <path d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1zm3.915 10L3.102 4h10.796l-1.313 7zM6 14a1 1 0 1 1-2 0 1 1 0 0 1 2 0m7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0"/>
+                                            </svg>
+                                            
+                                        </button>
+                                    </div>
+                                    <div class="col-6 text-start">
+                                        <a href="" class="btn bt2 ">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-chat-square-text-fill" viewBox="0 0 16 16">
+                                                <path d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2h-2.5a1 1 0 0 0-.8.4l-1.9 2.533a1 1 0 0 1-1.6 0L5.3 12.4a1 1 0 0 0-.8-.4H2a2 2 0 0 1-2-2zm3.5 1a.5.5 0 0 0 0 1h9a.5.5 0 0 0 0-1zm0 2.5a.5.5 0 0 0 0 1h9a.5.5 0 0 0 0-1zm0 2.5a.5.5 0 0 0 0 1h5a.5.5 0 0 0 0-1z"/>
+                                            </svg>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-sm-6 mb-4 product" data-name="heladera">
+                        <div class="card cards  text-center">
+                            <img src="/assets/productos/electrodomesticos/heladera 286 litros general lux - copia.jpg" class="card-img-top  mt-1" style="height: 270px;" alt="Cellphone 1">
+
+                            <div class="card-body px-4">
+                                <h5 class="card-title">HELADERA 286 LTRS.</h5>
+                                <p class="card-text fw-bold" style="font-family: oswald; font-size:20px ;">Precio: <span class="bg-warning text-white rounded-1 px-2">1900 Bs.</span></p>
+                                <div class="row justify-content-center align-items-center">
+                                    <div class="col-6 text-end">
+                                        <button class="btn bt1   add-to-cart" data-name="HELADERA 286 LITROS GENERAL LUX" data-price="1500">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-cart-check" viewBox="0 0 16 16">
+                                                <path d="M11.354 6.354a.5.5 0 0 0-.708-.708L8 8.293 6.854 7.146a.5.5 0 1 0-.708.708l1.5 1.5a.5.5 0 0 0 .708 0z"/>
+                                                <path d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1zm3.915 10L3.102 4h10.796l-1.313 7zM6 14a1 1 0 1 1-2 0 1 1 0 0 1 2 0m7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0"/>
+                                            </svg>
+                                            
+                                        </button>
+                                    </div>
+                                    <div class="col-6 text-start">
+                                        <a href="" class="btn bt2 ">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-chat-square-text-fill" viewBox="0 0 16 16">
+                                                <path d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2h-2.5a1 1 0 0 0-.8.4l-1.9 2.533a1 1 0 0 1-1.6 0L5.3 12.4a1 1 0 0 0-.8-.4H2a2 2 0 0 1-2-2zm3.5 1a.5.5 0 0 0 0 1h9a.5.5 0 0 0 0-1zm0 2.5a.5.5 0 0 0 0 1h9a.5.5 0 0 0 0-1zm0 2.5a.5.5 0 0 0 0 1h5a.5.5 0 0 0 0-1z"/>
+                                            </svg>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-sm-6 mb-4 product" data-name="jarra">
+                        <div class="card cards  text-center">
+                            <img src="/assets/productos/electrodomesticos/jarra Electrica morley - copia.jpg" class="card-img-top  mt-1" style="height: 270px;" alt="Cellphone 1">
+
+                            <div class="card-body px-4">
+                                <h5 class="card-title">JARRA ELECTRICA</h5>
+                                <p class="card-text fw-bold" style="font-family: oswald; font-size:20px ;">Precio: <span class="bg-warning text-white rounded-1 px-2">1900 Bs.</span></p>
+                                <div class="row justify-content-center align-items-center">
+                                    <div class="col-6 text-end">
+                                        <button class="btn bt1   add-to-cart" data-name="JARRA ELECTRICA MORLEY" data-price="1500">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-cart-check" viewBox="0 0 16 16">
+                                                <path d="M11.354 6.354a.5.5 0 0 0-.708-.708L8 8.293 6.854 7.146a.5.5 0 1 0-.708.708l1.5 1.5a.5.5 0 0 0 .708 0z"/>
+                                                <path d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1zm3.915 10L3.102 4h10.796l-1.313 7zM6 14a1 1 0 1 1-2 0 1 1 0 0 1 2 0m7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0"/>
+                                            </svg>
+                                            
+                                        </button>
+                                    </div>
+                                    <div class="col-6 text-start">
+                                        <a href="" class="btn bt2 ">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-chat-square-text-fill" viewBox="0 0 16 16">
+                                                <path d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2h-2.5a1 1 0 0 0-.8.4l-1.9 2.533a1 1 0 0 1-1.6 0L5.3 12.4a1 1 0 0 0-.8-.4H2a2 2 0 0 1-2-2zm3.5 1a.5.5 0 0 0 0 1h9a.5.5 0 0 0 0-1zm0 2.5a.5.5 0 0 0 0 1h9a.5.5 0 0 0 0-1zm0 2.5a.5.5 0 0 0 0 1h5a.5.5 0 0 0 0-1z"/>
+                                            </svg>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-sm-6 mb-4 product" data-name="licuadora">
+                        <div class="card cards  text-center">
+                            <img src="/assets/productos/electrodomesticos/licuadora  general lux - copia.jpg" class="card-img-top  mt-1" style="height: 270px;" alt="Cellphone 1">
+
+                            <div class="card-body px-4">
+                                <h5 class="card-title">LICUADORA </h5>
+                                <p class="card-text fw-bold" style="font-family: oswald; font-size:20px ;">Precio: <span class="bg-warning text-white rounded-1 px-2">1900 Bs.</span></p>
+                                <div class="row justify-content-center align-items-center">
+                                    <div class="col-6 text-end">
+                                        <button class="btn bt1   add-to-cart" data-name="LICUADORA GENERAL LUX" data-price="1500">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-cart-check" viewBox="0 0 16 16">
+                                                <path d="M11.354 6.354a.5.5 0 0 0-.708-.708L8 8.293 6.854 7.146a.5.5 0 1 0-.708.708l1.5 1.5a.5.5 0 0 0 .708 0z"/>
+                                                <path d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1zm3.915 10L3.102 4h10.796l-1.313 7zM6 14a1 1 0 1 1-2 0 1 1 0 0 1 2 0m7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0"/>
+                                            </svg>
+                                            
+                                        </button>
+                                    </div>
+                                    <div class="col-6 text-start">
+                                        <a href="" class="btn bt2 ">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-chat-square-text-fill" viewBox="0 0 16 16">
+                                                <path d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2h-2.5a1 1 0 0 0-.8.4l-1.9 2.533a1 1 0 0 1-1.6 0L5.3 12.4a1 1 0 0 0-.8-.4H2a2 2 0 0 1-2-2zm3.5 1a.5.5 0 0 0 0 1h9a.5.5 0 0 0 0-1zm0 2.5a.5.5 0 0 0 0 1h9a.5.5 0 0 0 0-1zm0 2.5a.5.5 0 0 0 0 1h5a.5.5 0 0 0 0-1z"/>
+                                            </svg>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-sm-6 mb-4 product" data-name="licuadora">
+                        <div class="card cards  text-center">
+                            <img src="/assets/productos/electrodomesticos/licuadora ARNO - copia.jpg" class="card-img-top  mt-1" style="height: 270px;" alt="Cellphone 1">
+
+                            <div class="card-body px-4">
+                                <h5 class="card-title">LICUADORA</h5>
+                                    <p class="card-text fw-bold" style="font-family: oswald; font-size:20px ;">Precio: <span class="bg-warning text-white rounded-1 px-2">1900 Bs.</span></p>
+                                <div class="row justify-content-center align-items-center">
+                                    <div class="col-6 text-end">
+                                        <button class="btn bt1   add-to-cart" data-name="LICUADORA ARNO" data-price="1500">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-cart-check" viewBox="0 0 16 16">
+                                                <path d="M11.354 6.354a.5.5 0 0 0-.708-.708L8 8.293 6.854 7.146a.5.5 0 1 0-.708.708l1.5 1.5a.5.5 0 0 0 .708 0z"/>
+                                                <path d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1zm3.915 10L3.102 4h10.796l-1.313 7zM6 14a1 1 0 1 1-2 0 1 1 0 0 1 2 0m7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0"/>
+                                            </svg>
+                                            
+                                        </button>
+                                    </div>
+                                    <div class="col-6 text-start">
+                                        <a href="" class="btn bt2 ">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-chat-square-text-fill" viewBox="0 0 16 16">
+                                                <path d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2h-2.5a1 1 0 0 0-.8.4l-1.9 2.533a1 1 0 0 1-1.6 0L5.3 12.4a1 1 0 0 0-.8-.4H2a2 2 0 0 1-2-2zm3.5 1a.5.5 0 0 0 0 1h9a.5.5 0 0 0 0-1zm0 2.5a.5.5 0 0 0 0 1h9a.5.5 0 0 0 0-1zm0 2.5a.5.5 0 0 0 0 1h5a.5.5 0 0 0 0-1z"/>
+                                            </svg>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-sm-6 mb-4 product" data-name="plancha">
+                        <div class="card cards  text-center">
+                            <img src="/assets/productos/electrodomesticos/plancha RAF - copia.jpg" class="card-img-top  mt-1" style="height: 270px;" alt="Cellphone 1">
+
+                            <div class="card-body px-4">
+                                <h5 class="card-title">PLANCHA RAF</h5>
+                                <p class="card-text fw-bold" style="font-family: oswald; font-size:20px ;">Precio: <span class="bg-warning text-white rounded-1 px-2">1900 Bs.</span></p>
+                                <div class="row justify-content-center align-items-center">
+                                    <div class="col-6 text-end">
+                                        <button class="btn bt1   add-to-cart" data-name="PLANCHA RAF" data-price="1500">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-cart-check" viewBox="0 0 16 16">
+                                                <path d="M11.354 6.354a.5.5 0 0 0-.708-.708L8 8.293 6.854 7.146a.5.5 0 1 0-.708.708l1.5 1.5a.5.5 0 0 0 .708 0z"/>
+                                                <path d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1zm3.915 10L3.102 4h10.796l-1.313 7zM6 14a1 1 0 1 1-2 0 1 1 0 0 1 2 0m7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0"/>
+                                            </svg>
+                                            
+                                        </button>
+                                    </div>
+                                    <div class="col-6 text-start">
+                                        <a href="" class="btn bt2 ">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-chat-square-text-fill" viewBox="0 0 16 16">
+                                                <path d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2h-2.5a1 1 0 0 0-.8.4l-1.9 2.533a1 1 0 0 1-1.6 0L5.3 12.4a1 1 0 0 0-.8-.4H2a2 2 0 0 1-2-2zm3.5 1a.5.5 0 0 0 0 1h9a.5.5 0 0 0 0-1zm0 2.5a.5.5 0 0 0 0 1h9a.5.5 0 0 0 0-1zm0 2.5a.5.5 0 0 0 0 1h5a.5.5 0 0 0 0-1z"/>
+                                            </svg>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                   
+                </div>
+            </div>
+
+            <!-- Motorcycles -->
+            <div class="tab-pane fade" id="motorcycles" role="tabpanel" aria-labelledby="motorcycles-tab">
+                <div class="row justify-content-center">
+                    <!-- Product Card Example -->
+                    <div class="col-lg-3 col-md-4 col-sm-6 mb-4 product" data-name="balatas">
+                        <div class="card cards  text-center">
+                            <img src="/assets/productos/motos/balatas traseras - copia.jpg" class="card-img-top  mt-1" style="height: 270px;" alt="Cellphone 1">
+
+                            <div class="card-body px-4">
+                                <h5 class="card-title">BALATAS TRASERA</h5>
+                                <p class="card-text fw-bold" style="font-family: oswald; font-size:20px ;">Precio: <span class="bg-warning text-white rounded-1 px-2">25 Bs.</span></p>
+                                <div class="row justify-content-center align-items-center">
+                                    <div class="col-6 text-end">
+                                        <button class="btn bt1   add-to-cart" data-name="BALATA TRASERA" data-price="25">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-cart-check" viewBox="0 0 16 16">
+                                                <path d="M11.354 6.354a.5.5 0 0 0-.708-.708L8 8.293 6.854 7.146a.5.5 0 1 0-.708.708l1.5 1.5a.5.5 0 0 0 .708 0z"/>
+                                                <path d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1zm3.915 10L3.102 4h10.796l-1.313 7zM6 14a1 1 0 1 1-2 0 1 1 0 0 1 2 0m7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0"/>
+                                            </svg>
+                                            
+                                        </button>
+                                    </div>
+                                    <div class="col-6 text-start">
+                                        <a href="" class="btn bt2 ">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-chat-square-text-fill" viewBox="0 0 16 16">
+                                                <path d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2h-2.5a1 1 0 0 0-.8.4l-1.9 2.533a1 1 0 0 1-1.6 0L5.3 12.4a1 1 0 0 0-.8-.4H2a2 2 0 0 1-2-2zm3.5 1a.5.5 0 0 0 0 1h9a.5.5 0 0 0 0-1zm0 2.5a.5.5 0 0 0 0 1h9a.5.5 0 0 0 0-1zm0 2.5a.5.5 0 0 0 0 1h5a.5.5 0 0 0 0-1z"/>
+                                            </svg>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-sm-6 mb-4 product" data-name="cable de embriague">
+                        <div class="card cards  text-center">
+                            <img src="/assets/productos/motos/cable de enbriague mj - 150 - copia.jpg" class="card-img-top  mt-1" style="height: 270px;" alt="Cellphone 1">
+
+                            <div class="card-body px-4">
+                                <h5 class="card-title">CABLE DE EMBRIAGUE </h5>
+                                <p class="card-text fw-bold" style="font-family: oswald; font-size:20px ;">Precio: <span class="bg-warning text-white rounded-1 px-2">20 Bs.</span></p>
+                                <div class="row justify-content-center align-items-center">
+                                    <div class="col-6 text-end">
+                                        <button class="btn bt1   add-to-cart" data-name="CABLE DE EMBRIAGUE " data-price="24">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-cart-check" viewBox="0 0 16 16">
+                                                <path d="M11.354 6.354a.5.5 0 0 0-.708-.708L8 8.293 6.854 7.146a.5.5 0 1 0-.708.708l1.5 1.5a.5.5 0 0 0 .708 0z"/>
+                                                <path d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1zm3.915 10L3.102 4h10.796l-1.313 7zM6 14a1 1 0 1 1-2 0 1 1 0 0 1 2 0m7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0"/>
+                                            </svg>
+                                            
+                                        </button>
+                                    </div>
+                                    <div class="col-6 text-start">
+                                        <a href="" class="btn bt2 ">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-chat-square-text-fill" viewBox="0 0 16 16">
+                                                <path d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2h-2.5a1 1 0 0 0-.8.4l-1.9 2.533a1 1 0 0 1-1.6 0L5.3 12.4a1 1 0 0 0-.8-.4H2a2 2 0 0 1-2-2zm3.5 1a.5.5 0 0 0 0 1h9a.5.5 0 0 0 0-1zm0 2.5a.5.5 0 0 0 0 1h9a.5.5 0 0 0 0-1zm0 2.5a.5.5 0 0 0 0 1h5a.5.5 0 0 0 0-1z"/>
+                                            </svg>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-sm-6 mb-4 product" data-name="foco">
+                        <div class="card cards  text-center">
+                            <img src="/assets/productos/motos/foco Stop - copia.jpg" class="card-img-top  mt-1" style="height: 270px;" alt="Cellphone 1">
+
+                            <div class="card-body px-4">
+                                <h5 class="card-title">FOCO DE GUIÑADORES</h5>
+                                <p class="card-text fw-bold" style="font-family: oswald; font-size:20px ;">Precio: <span class="bg-warning text-white rounded-1 px-2">4 Bs.</span></p>
+                                <div class="row justify-content-center align-items-center">
+                                    <div class="col-6 text-end">
+                                        <button class="btn bt1   add-to-cart" data-name="FOCO DE GUIÑADORES" data-price="4">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-cart-check" viewBox="0 0 16 16">
+                                                <path d="M11.354 6.354a.5.5 0 0 0-.708-.708L8 8.293 6.854 7.146a.5.5 0 1 0-.708.708l1.5 1.5a.5.5 0 0 0 .708 0z"/>
+                                                <path d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1zm3.915 10L3.102 4h10.796l-1.313 7zM6 14a1 1 0 1 1-2 0 1 1 0 0 1 2 0m7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0"/>
+                                            </svg>
+                                            
+                                        </button>
+                                    </div>
+                                    <div class="col-6 text-start">
+                                        <a href="" class="btn bt2 ">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-chat-square-text-fill" viewBox="0 0 16 16">
+                                                <path d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2h-2.5a1 1 0 0 0-.8.4l-1.9 2.533a1 1 0 0 1-1.6 0L5.3 12.4a1 1 0 0 0-.8-.4H2a2 2 0 0 1-2-2zm3.5 1a.5.5 0 0 0 0 1h9a.5.5 0 0 0 0-1zm0 2.5a.5.5 0 0 0 0 1h9a.5.5 0 0 0 0-1zm0 2.5a.5.5 0 0 0 0 1h5a.5.5 0 0 0 0-1z"/>
+                                            </svg>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-sm-6 mb-4 product" data-name="llanta">
+                        <div class="card cards  text-center">
+                            <img src="/assets/productos/motos/llantas abad 275 x 18 - copia.jpg" class="card-img-top  mt-1" style="height: 270px;" alt="Cellphone 1">
+
+                            <div class="card-body px-4">
+                                <h5 class="card-title">LLANTA 275 X 18</h5>
+                                <p class="card-text fw-bold" style="font-family: oswald; font-size:20px ;">Precio: <span class="bg-warning text-white rounded-1 px-2">200 Bs.</span></p>
+                                <div class="row justify-content-center align-items-center">
+                                    <div class="col-6 text-end">
+                                        <button class="btn bt1   add-to-cart" data-name="LLANTA 275 X 18 ABAD" data-price="200">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-cart-check" viewBox="0 0 16 16">
+                                                <path d="M11.354 6.354a.5.5 0 0 0-.708-.708L8 8.293 6.854 7.146a.5.5 0 1 0-.708.708l1.5 1.5a.5.5 0 0 0 .708 0z"/>
+                                                <path d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1zm3.915 10L3.102 4h10.796l-1.313 7zM6 14a1 1 0 1 1-2 0 1 1 0 0 1 2 0m7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0"/>
+                                            </svg>
+                                            
+                                        </button>
+                                    </div>
+                                    <div class="col-6 text-start">
+                                        <a href="" class="btn bt2 ">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-chat-square-text-fill" viewBox="0 0 16 16">
+                                                <path d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2h-2.5a1 1 0 0 0-.8.4l-1.9 2.533a1 1 0 0 1-1.6 0L5.3 12.4a1 1 0 0 0-.8-.4H2a2 2 0 0 1-2-2zm3.5 1a.5.5 0 0 0 0 1h9a.5.5 0 0 0 0-1zm0 2.5a.5.5 0 0 0 0 1h9a.5.5 0 0 0 0-1zm0 2.5a.5.5 0 0 0 0 1h5a.5.5 0 0 0 0-1z"/>
+                                            </svg>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-sm-6 mb-4 product" data-name="llanta">
+                        <div class="card cards  text-center">
+                            <img src="/assets/productos/motos/llantas adad 300 x 18 - copia.jpg" class="card-img-top  mt-1" style="height: 270px;" alt="Cellphone 1">
+
+                            <div class="card-body px-4">
+                                <h5 class="card-title">LLANTA 300 X 18</h5>
+                                <p class="card-text fw-bold" style="font-family: oswald; font-size:20px ;">Precio: <span class="bg-warning text-white rounded-1 px-2">240 Bs.</span></p>
+                                <div class="row justify-content-center align-items-center">
+                                    <div class="col-6 text-end">
+                                        <button class="btn bt1   add-to-cart" data-name="LLANTA ABAD 300 X 18" data-price="240">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-cart-check" viewBox="0 0 16 16">
+                                                <path d="M11.354 6.354a.5.5 0 0 0-.708-.708L8 8.293 6.854 7.146a.5.5 0 1 0-.708.708l1.5 1.5a.5.5 0 0 0 .708 0z"/>
+                                                <path d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1zm3.915 10L3.102 4h10.796l-1.313 7zM6 14a1 1 0 1 1-2 0 1 1 0 0 1 2 0m7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0"/>
+                                            </svg>
+                                            
+                                        </button>
+                                    </div>
+                                    <div class="col-6 text-start">
+                                        <a href="" class="btn bt2 ">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-chat-square-text-fill" viewBox="0 0 16 16">
+                                                <path d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2h-2.5a1 1 0 0 0-.8.4l-1.9 2.533a1 1 0 0 1-1.6 0L5.3 12.4a1 1 0 0 0-.8-.4H2a2 2 0 0 1-2-2zm3.5 1a.5.5 0 0 0 0 1h9a.5.5 0 0 0 0-1zm0 2.5a.5.5 0 0 0 0 1h9a.5.5 0 0 0 0-1zm0 2.5a.5.5 0 0 0 0 1h5a.5.5 0 0 0 0-1z"/>
+                                            </svg>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-sm-6 mb-4 product" data-name="palanca de embriague y freno">
+                        <div class="card cards  text-center">
+                            <img src="/assets/productos/motos/palanca de embriague y freno - copia.jpg" class="card-img-top  mt-1" style="height: 270px;" alt="Cellphone 1">
+
+                            <div class="card-body px-4">
+                                <h5 class="card-title">PALANCA DE EMBRIAGUE Y FRENO</h5>
+                                <p class="card-text fw-bold" style="font-family: oswald; font-size:20px ;">Precio: <span class="bg-warning text-white rounded-1 px-2">60 Bs.</span></p>
+                                <div class="row justify-content-center align-items-center">
+                                    <div class="col-6 text-end">
+                                        <button class="btn bt1   add-to-cart" data-name="PALANCA DE EMBRIAGUE Y FRENO" data-price="60">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-cart-check" viewBox="0 0 16 16">
+                                                <path d="M11.354 6.354a.5.5 0 0 0-.708-.708L8 8.293 6.854 7.146a.5.5 0 1 0-.708.708l1.5 1.5a.5.5 0 0 0 .708 0z"/>
+                                                <path d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1zm3.915 10L3.102 4h10.796l-1.313 7zM6 14a1 1 0 1 1-2 0 1 1 0 0 1 2 0m7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0"/>
+                                            </svg>
+                                            
+                                        </button>
+                                    </div>
+                                    <div class="col-6 text-start">
+                                        <a href="" class="btn bt2 ">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-chat-square-text-fill" viewBox="0 0 16 16">
+                                                <path d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2h-2.5a1 1 0 0 0-.8.4l-1.9 2.533a1 1 0 0 1-1.6 0L5.3 12.4a1 1 0 0 0-.8-.4H2a2 2 0 0 1-2-2zm3.5 1a.5.5 0 0 0 0 1h9a.5.5 0 0 0 0-1zm0 2.5a.5.5 0 0 0 0 1h9a.5.5 0 0 0 0-1zm0 2.5a.5.5 0 0 0 0 1h5a.5.5 0 0 0 0-1z"/>
+                                            </svg>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-sm-6 mb-4 product" data-name="pasadores trasero">
+                        <div class="card cards  text-center">
+                            <img src="/assets/productos/motos/pasadores trasero - copia.jpg" class="card-img-top  mt-1" style="height: 270px;" alt="Cellphone 1">
+
+                            <div class="card-body px-4">
+                                <h5 class="card-title">PASADORES TRASEROS</h5>
+                                <p class="card-text fw-bold" style="font-family: oswald; font-size:20px ;">Precio: <span class="bg-warning text-white rounded-1 px-2">40 Bs.</span></p>
+                                <div class="row justify-content-center align-items-center">
+                                    <div class="col-6 text-end">
+                                        <button class="btn bt1   add-to-cart" data-name="PASADORES TRASERO" data-price="40">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-cart-check" viewBox="0 0 16 16">
+                                                <path d="M11.354 6.354a.5.5 0 0 0-.708-.708L8 8.293 6.854 7.146a.5.5 0 1 0-.708.708l1.5 1.5a.5.5 0 0 0 .708 0z"/>
+                                                <path d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1zm3.915 10L3.102 4h10.796l-1.313 7zM6 14a1 1 0 1 1-2 0 1 1 0 0 1 2 0m7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0"/>
+                                            </svg>
+                                            
+                                        </button>
+                                    </div>
+                                    <div class="col-6 text-start">
+                                        <a href="" class="btn bt2 ">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-chat-square-text-fill" viewBox="0 0 16 16">
+                                                <path d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2h-2.5a1 1 0 0 0-.8.4l-1.9 2.533a1 1 0 0 1-1.6 0L5.3 12.4a1 1 0 0 0-.8-.4H2a2 2 0 0 1-2-2zm3.5 1a.5.5 0 0 0 0 1h9a.5.5 0 0 0 0-1zm0 2.5a.5.5 0 0 0 0 1h9a.5.5 0 0 0 0-1zm0 2.5a.5.5 0 0 0 0 1h5a.5.5 0 0 0 0-1z"/>
+                                            </svg>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-sm-6 mb-4 product" data-name="patada de arranque">
+                        <div class="card cards  text-center">
+                            <img src="/assets/productos/motos/patada  de arranque - copia.jpg" class="card-img-top  mt-1" style="height: 270px;" alt="Cellphone 1">
+
+                            <div class="card-body px-4">
+                                <h5 class="card-title">PATADA DE ARRANQUE</h5>
+                                <p class="card-text fw-bold" style="font-family: oswald; font-size:20px ;">Precio: <span class="bg-warning text-white rounded-1 px-2">35 Bs.</span></p>
+                                <div class="row justify-content-center align-items-center">
+                                    <div class="col-6 text-end">
+                                        <button class="btn bt1   add-to-cart" data-name="PATADA DE ARRANQUE" data-price="35">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-cart-check" viewBox="0 0 16 16">
+                                                <path d="M11.354 6.354a.5.5 0 0 0-.708-.708L8 8.293 6.854 7.146a.5.5 0 1 0-.708.708l1.5 1.5a.5.5 0 0 0 .708 0z"/>
+                                                <path d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1zm3.915 10L3.102 4h10.796l-1.313 7zM6 14a1 1 0 1 1-2 0 1 1 0 0 1 2 0m7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0"/>
+                                            </svg>
+                                            
+                                        </button>
+                                    </div>
+                                    <div class="col-6 text-start">
+                                        <a href="" class="btn bt2 ">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-chat-square-text-fill" viewBox="0 0 16 16">
+                                                <path d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2h-2.5a1 1 0 0 0-.8.4l-1.9 2.533a1 1 0 0 1-1.6 0L5.3 12.4a1 1 0 0 0-.8-.4H2a2 2 0 0 1-2-2zm3.5 1a.5.5 0 0 0 0 1h9a.5.5 0 0 0 0-1zm0 2.5a.5.5 0 0 0 0 1h9a.5.5 0 0 0 0-1zm0 2.5a.5.5 0 0 0 0 1h5a.5.5 0 0 0 0-1z"/>
+                                            </svg>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-sm-6 mb-4 product" data-name="pedal cambio caja">
+                        <div class="card cards  text-center">
+                            <img src="/assets/productos/motos/pedal cambio caja - copia.jpg" class="card-img-top  mt-1" style="height: 270px;" alt="Cellphone 1">
+
+                            <div class="card-body px-4">
+                                <h5 class="card-title">PEDAL CAMBIO CAJA</h5>
+                                <p class="card-text fw-bold" style="font-family: oswald; font-size:20px ;">Precio: <span class="bg-warning text-white rounded-1 px-2">25 Bs.</span></p>
+                                <div class="row justify-content-center align-items-center">
+                                    <div class="col-6 text-end">
+                                        <button class="btn bt1   add-to-cart" data-name="PEDAL CAMBIO DE CAJA" data-price="25">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-cart-check" viewBox="0 0 16 16">
+                                                <path d="M11.354 6.354a.5.5 0 0 0-.708-.708L8 8.293 6.854 7.146a.5.5 0 1 0-.708.708l1.5 1.5a.5.5 0 0 0 .708 0z"/>
+                                                <path d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1zm3.915 10L3.102 4h10.796l-1.313 7zM6 14a1 1 0 1 1-2 0 1 1 0 0 1 2 0m7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0"/>
+                                            </svg>
+                                            
+                                        </button>
+                                    </div>
+                                    <div class="col-6 text-start">
+                                        <a href="" class="btn bt2 ">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-chat-square-text-fill" viewBox="0 0 16 16">
+                                                <path d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2h-2.5a1 1 0 0 0-.8.4l-1.9 2.533a1 1 0 0 1-1.6 0L5.3 12.4a1 1 0 0 0-.8-.4H2a2 2 0 0 1-2-2zm3.5 1a.5.5 0 0 0 0 1h9a.5.5 0 0 0 0-1zm0 2.5a.5.5 0 0 0 0 1h9a.5.5 0 0 0 0-1zm0 2.5a.5.5 0 0 0 0 1h5a.5.5 0 0 0 0-1z"/>
+                                            </svg>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-sm-6 mb-4 product" data-name="puños ">
+                        <div class="card cards  text-center">
+                            <img src="/assets/productos/motos/puños negro - copia.jpg" class="card-img-top  mt-1" style="height: 270px;" alt="Cellphone 1">
+
+                            <div class="card-body px-4">
+                                <h5 class="card-title">PUÑOS NEGROS</h5>
+                                <p class="card-text fw-bold" style="font-family: oswald; font-size:20px ;">Precio: <span class="bg-warning text-white rounded-1 px-2">25 Bs.</span></p>
+                                <div class="row justify-content-center align-items-center">
+                                    <div class="col-6 text-end">
+                                        <button class="btn bt1   add-to-cart" data-name="PUÑOS NEGROS" data-price="25">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-cart-check" viewBox="0 0 16 16">
+                                                <path d="M11.354 6.354a.5.5 0 0 0-.708-.708L8 8.293 6.854 7.146a.5.5 0 1 0-.708.708l1.5 1.5a.5.5 0 0 0 .708 0z"/>
+                                                <path d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1zm3.915 10L3.102 4h10.796l-1.313 7zM6 14a1 1 0 1 1-2 0 1 1 0 0 1 2 0m7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0"/>
+                                            </svg>
+                                            
+                                        </button>
+                                    </div>
+                                    <div class="col-6 text-start">
+                                        <a href="" class="btn bt2 ">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-chat-square-text-fill" viewBox="0 0 16 16">
+                                                <path d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2h-2.5a1 1 0 0 0-.8.4l-1.9 2.533a1 1 0 0 1-1.6 0L5.3 12.4a1 1 0 0 0-.8-.4H2a2 2 0 0 1-2-2zm3.5 1a.5.5 0 0 0 0 1h9a.5.5 0 0 0 0-1zm0 2.5a.5.5 0 0 0 0 1h9a.5.5 0 0 0 0-1zm0 2.5a.5.5 0 0 0 0 1h5a.5.5 0 0 0 0-1z"/>
+                                            </svg>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-sm-6 mb-4 product" data-name="resorte de freno">
+                        <div class="card cards  text-center">
+                            <img src="/assets/productos/motos/resorte de freno - copia.jpg" class="card-img-top  mt-1" style="height: 270px;" alt="Cellphone 1">
+
+                            <div class="card-body px-4">
+                                <h5 class="card-title">RESORTE DE FRENO</h5>
+                                <p class="card-text fw-bold" style="font-family: oswald; font-size:20px ;">Precio: <span class="bg-warning text-white rounded-1 px-2">6 Bs.</span></p>
+                                <div class="row justify-content-center align-items-center">
+                                    <div class="col-6 text-end">
+                                        <button class="btn bt1   add-to-cart" data-name="RESORDE DE FRENO" data-price="6">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-cart-check" viewBox="0 0 16 16">
+                                                <path d="M11.354 6.354a.5.5 0 0 0-.708-.708L8 8.293 6.854 7.146a.5.5 0 1 0-.708.708l1.5 1.5a.5.5 0 0 0 .708 0z"/>
+                                                <path d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1zm3.915 10L3.102 4h10.796l-1.313 7zM6 14a1 1 0 1 1-2 0 1 1 0 0 1 2 0m7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0"/>
+                                            </svg>
+                                            
+                                        </button>
+                                    </div>
+                                    <div class="col-6 text-start">
+                                        <a href="" class="btn bt2 ">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-chat-square-text-fill" viewBox="0 0 16 16">
+                                                <path d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2h-2.5a1 1 0 0 0-.8.4l-1.9 2.533a1 1 0 0 1-1.6 0L5.3 12.4a1 1 0 0 0-.8-.4H2a2 2 0 0 1-2-2zm3.5 1a.5.5 0 0 0 0 1h9a.5.5 0 0 0 0-1zm0 2.5a.5.5 0 0 0 0 1h9a.5.5 0 0 0 0-1zm0 2.5a.5.5 0 0 0 0 1h5a.5.5 0 0 0 0-1z"/>
+                                            </svg>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-sm-6 mb-4 product" data-name="swith freno">
+                        <div class="card cards  text-center">
+                            <img src="/assets/productos/motos/swith freno  - copia.jpg" class="card-img-top  mt-1" style="height: 270px;" alt="Cellphone 1">
+
+                            <div class="card-body px-4">
+                                <h5 class="card-title">SWITH FRENO</h5>
+                                <p class="card-text fw-bold" style="font-family: oswald; font-size:20px ;">Precio: <span class="bg-warning text-white rounded-1 px-2">10 Bs.</span></p>
+                                <div class="row justify-content-center align-items-center">
+                                    <div class="col-6 text-end">
+                                        <button class="btn bt1   add-to-cart" data-name="SWITH FRENO" data-price="10">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-cart-check" viewBox="0 0 16 16">
+                                                <path d="M11.354 6.354a.5.5 0 0 0-.708-.708L8 8.293 6.854 7.146a.5.5 0 1 0-.708.708l1.5 1.5a.5.5 0 0 0 .708 0z"/>
+                                                <path d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1zm3.915 10L3.102 4h10.796l-1.313 7zM6 14a1 1 0 1 1-2 0 1 1 0 0 1 2 0m7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0"/>
+                                            </svg>
+                                            
+                                        </button>
+                                    </div>
+                                    <div class="col-6 text-start">
+                                        <a href="" class="btn bt2 ">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-chat-square-text-fill" viewBox="0 0 16 16">
+                                                <path d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2h-2.5a1 1 0 0 0-.8.4l-1.9 2.533a1 1 0 0 1-1.6 0L5.3 12.4a1 1 0 0 0-.8-.4H2a2 2 0 0 1-2-2zm3.5 1a.5.5 0 0 0 0 1h9a.5.5 0 0 0 0-1zm0 2.5a.5.5 0 0 0 0 1h9a.5.5 0 0 0 0-1zm0 2.5a.5.5 0 0 0 0 1h5a.5.5 0 0 0 0-1z"/>
+                                            </svg>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-sm-6 mb-4 product" data-name="tesador de cadena">
+                        <div class="card cards  text-center">
+                            <img src="/assets/productos/motos/tesador de cadena - copia.jpg" class="card-img-top  mt-1" style="height: 270px;" alt="Cellphone 1">
+
+                            <div class="card-body px-4">
+                                <h5 class="card-title">TESADOR DE CADENA</h5>
+                                <p class="card-text fw-bold" style="font-family: oswald; font-size:20px ;">Precio: <span class="bg-warning text-white rounded-1 px-2">27 Bs.</span></p>
+                                <div class="row justify-content-center align-items-center">
+                                    <div class="col-6 text-end">
+                                        <button class="btn bt1   add-to-cart" data-name="TESADOR DE CADENA" data-price="27">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-cart-check" viewBox="0 0 16 16">
+                                                <path d="M11.354 6.354a.5.5 0 0 0-.708-.708L8 8.293 6.854 7.146a.5.5 0 1 0-.708.708l1.5 1.5a.5.5 0 0 0 .708 0z"/>
+                                                <path d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1zm3.915 10L3.102 4h10.796l-1.313 7zM6 14a1 1 0 1 1-2 0 1 1 0 0 1 2 0m7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0"/>
+                                            </svg>
+                                            
+                                        </button>
+                                    </div>
+                                    <div class="col-6 text-start">
+                                        <a href="" class="btn bt2 ">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-chat-square-text-fill" viewBox="0 0 16 16">
+                                                <path d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2h-2.5a1 1 0 0 0-.8.4l-1.9 2.533a1 1 0 0 1-1.6 0L5.3 12.4a1 1 0 0 0-.8-.4H2a2 2 0 0 1-2-2zm3.5 1a.5.5 0 0 0 0 1h9a.5.5 0 0 0 0-1zm0 2.5a.5.5 0 0 0 0 1h9a.5.5 0 0 0 0-1zm0 2.5a.5.5 0 0 0 0 1h5a.5.5 0 0 0 0-1z"/>
+                                            </svg>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-sm-6 mb-4 product" data-name="trasmision">
+                        <div class="card cards  text-center">
+                            <img src="/assets/productos/motos/trasmision - copia.jpg" class="card-img-top  mt-1" style="height: 270px;" alt="Cellphone 1">
+
+                            <div class="card-body px-4">
+                                <h5 class="card-title">TRASMISION TRASERA</h5>
+                                <p class="card-text fw-bold" style="font-family: oswald; font-size:20px ;">Precio: <span class="bg-warning text-white rounded-1 px-2">110 Bs.</span></p>
+                                <div class="row justify-content-center align-items-center">
+                                    <div class="col-6 text-end">
+                                        <button class="btn bt1   add-to-cart" data-name="TRASMISION TRASERAC" data-price="110">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-cart-check" viewBox="0 0 16 16">
+                                                <path d="M11.354 6.354a.5.5 0 0 0-.708-.708L8 8.293 6.854 7.146a.5.5 0 1 0-.708.708l1.5 1.5a.5.5 0 0 0 .708 0z"/>
+                                                <path d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1zm3.915 10L3.102 4h10.796l-1.313 7zM6 14a1 1 0 1 1-2 0 1 1 0 0 1 2 0m7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0"/>
+                                            </svg>
+                                            
+                                        </button>
+                                    </div>
+                                    <div class="col-6 text-start">
+                                        <a href="" class="btn bt2 ">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-chat-square-text-fill" viewBox="0 0 16 16">
+                                                <path d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2h-2.5a1 1 0 0 0-.8.4l-1.9 2.533a1 1 0 0 1-1.6 0L5.3 12.4a1 1 0 0 0-.8-.4H2a2 2 0 0 1-2-2zm3.5 1a.5.5 0 0 0 0 1h9a.5.5 0 0 0 0-1zm0 2.5a.5.5 0 0 0 0 1h9a.5.5 0 0 0 0-1zm0 2.5a.5.5 0 0 0 0 1h5a.5.5 0 0 0 0-1z"/>
+                                            </svg>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Cart Modal -->
+    <div class="modal fade" id="cartModal" tabindex="-1" aria-labelledby="cartModalLabel" aria-hidden="true">
+        <div class="modal-dialog ">
+            <div class="modal-content" >
+                <div class="modal-header">
+                    <h5 class="modal-title" id="cartModalLabel" style="font-family: oswald;">Your Cart</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <ul id="cartItems" class="list-group"></ul>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" onclick="clearCart()">Clear Cart</button>
+                    <button type="button" class="btn btn-primary">Checkout</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="detalleModal" tabindex="-1" aria-labelledby="detalleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content " style="font-family: oswald;">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="detalleModalLabel" style="font-family: oswald;" >Detalle del Celular</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                </div>
+                <div class="modal-body">
+                    <h6 class="text-center" style="font-family: oswald; font-size: 25px;">Blade A73 </h6>
+                    <p style="font-family: oswald; font-size: 20px;">Características:</p>
+                    <ul class="px-3">
+                        
+                        <li>Android 13</li>
+                        <li>Pantalla: 6.6 pulgadas</li>
+                        <li>Camara: 50MP</li>
+                        <li>RAM: 4GB</li>
+                        <li>Almacenamiento: 128GB</li>
+                        <li>Batería: 5000mAh</li>
+                        <li>¡Es la combinación perfecta de rendimiento, 
+                            almacenamiento y durabilidad! Con su potente procesador, 
+                            amplia batería, tendrás 
+                            la mejor experiencia en la palma de tu mano. 
+                            ¡Garantizamos calidad y satisfacción en cada detalle!</li>
+                    </ul>
+                    <div class="d-flex align-items-end justify-content-end">
+                        <img src="/assets/productos/celulares/blace A 73.jpg" class="img-fluid" style="height: 180px;" alt="Redmi 14 C">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="detalleModal1" tabindex="-1" aria-labelledby="detalleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content " style="font-family: oswald;">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="detalleModalLabel" style="font-family: oswald;" >Detalle del Celular</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                </div>
+                <div class="modal-body">
+                    <h6 class="text-center" style="font-family: oswald; font-size: 25px;">Blade v60</h6>
+                    <p style="font-family: oswald; font-size: 20px;">Características:</p>
+                    <ul class="px-3">
+                        
+                        <li>Android 13</li>
+                        <li>Pantalla: 6.6 pulgadas</li>
+                        <li>Camara: 50MP</li>
+                        <li>RAM: 4/6GB</li>
+                        <li>Almacenamiento: 256GB</li>
+                        <li>Batería: 5000mAh</li>
+                        <li>¡Es la combinación perfecta de rendimiento, 
+                            almacenamiento y durabilidad! Con su potente procesador, 
+                            amplia batería, tendrás 
+                            la mejor experiencia en la palma de tu mano. 
+                            ¡Garantizamos calidad y satisfacción en cada detalle!</li>
+                    </ul>
+                    <div class="d-flex align-items-end justify-content-end">
+                        <img src="/assets/productos/celulares/blade v60.jpg" class="img-fluid" style="height: 180px;" alt="Redmi 14 C">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="detalleModal2" tabindex="-1" aria-labelledby="detalleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content " style="font-family: oswald;">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="detalleModalLabel" style="font-family: oswald;" >Detalle del Celular</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                </div>
+                <div class="modal-body">
+                    <h6 class="text-center" style="font-family: oswald; font-size: 25px;">Note 50 Realme</h6>
+                    <p style="font-family: oswald; font-size: 20px;">Características:</p>
+                    <ul class="px-3">
+                        
+                        <li>Android 13</li>
+                        <li>Pantalla: 6.74 pulgadas</li>
+                        <li>Camara: 13MP con IA</li>
+                        <li>RAM: 4GB + 128GB</li>
+                        <li>Almacenamiento: 128GB</li>
+                        <li>Batería: 5000mAh</li>
+                        <li>"¡No esperes más! El Realme Note 50 te ofrece potencia, 
+                            diseño y tecnología al mejor precio. 
+                            ¡Cómpralo ya y lleva tu experiencia al siguiente nivel!" 🚀
+                        </li>
+                    </ul>
+                    <div class="d-flex align-items-end justify-content-end">
+                        <img src="/assets/productos/celulares/note 50 realme.jpg" class="img-fluid" style="height: 180px;" alt="Redmi 14 C">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="detalleModal3" tabindex="-1" aria-labelledby="detalleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content " style="font-family: oswald;">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="detalleModalLabel" style="font-family: oswald;" >Detalle del Celular</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                </div>
+                <div class="modal-body">
+                    <h6 class="text-center" style="font-family: oswald; font-size: 25px;">Infinix Smart9</h6>
+                    <p style="font-family: oswald; font-size: 20px;">Características:</p>
+                    <ul class="px-3">
+                        
+                        <li>Android 14</li>
+                        <li>Pantalla: 6.7 pulgadas</li>
+                        <li>Camara: 13MP</li>
+                        <li>RAM: 3GB + 4GB</li>
+                        <li>Almacenamiento: 64/128GB</li>
+                        <li>Batería: 5000mAh</li>
+                        <li>""¡Hazlo tuyo ahora! El Infinix Smart 9 combina estilo,
+                             rendimiento y una batería que dura todo el día. 
+                            ¡Cómpralo ya y disfruta más por menos!" ✨
+                        </li>
+                    </ul>
+                    <div class="d-flex align-items-end justify-content-end">
+                        <img src="/assets/productos/celulares/infinix smart 9.jpg" class="img-fluid" style="height: 180px;" alt="Redmi 14 C">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="detalleModal4" tabindex="-1" aria-labelledby="detalleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content " style="font-family: oswald;">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="detalleModalLabel" style="font-family: oswald;" >Detalle del Celular</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                </div>
+                <div class="modal-body">
+                    <h6 class="text-center" style="font-family: oswald; font-size: 25px;">Infinix 50i</h6>
+                    <p style="font-family: oswald; font-size: 20px;">Características:</p>
+                    <ul class="px-3">
+                        
+                        <li>Android 14</li>
+                        <li>Pantalla: 6.7 pulgadas</li>
+                        <li>Camara: 48MP</li>
+                        <li>RAM: 4GB + 6GB</li>
+                        <li>Almacenamiento: 128/256GB</li>
+                        <li>Batería: 5000mAh</li>
+                        <li>"¡El poder está en tus manos! Con el Infinix 50i, 
+                            disfruta de rendimiento confiable, gran batería y diseño moderno. 
+                            ¡Cómpralo ya y lleva tu experiencia al siguiente nivel!" 🔋✨
+                        </li>
+                    </ul>
+                    <div class="d-flex align-items-end justify-content-end">
+                        <img src="/assets/productos/celulares/infinix 50i .jpg" class="img-fluid" style="height: 180px;" alt="Redmi 14 C">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="detalleModal5" tabindex="-1" aria-labelledby="detalleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content " style="font-family: oswald;">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="detalleModalLabel" style="font-family: oswald;" >Detalle del Celular</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                </div>
+                <div class="modal-body">
+                    <h6 class="text-center" style="font-family: oswald; font-size: 25px;">Hot 50 Pro Plus</h6>
+                    <p style="font-family: oswald; font-size: 20px;">Características:</p>
+                    <ul class="px-3">
+                        
+                        <li>Android 14</li>
+                        <li>Pantalla: 6.8 pulgadas</li>
+                        <li>Camara: 48MP</li>
+                        <li>RAM: 8GB</li>
+                        <li>Almacenamiento: 128/256GB</li>
+                        <li>Batería: 5000mAh</li>
+                        <li>"¡Lleva la potencia al máximo! El Infinix Hot 50 Pro Plus te 
+                            ofrece un rendimiento increíble, gran batería y estilo premium. 
+                            ¡Cómpralo ya y vive la tecnología sin límites!" 🔥🚀
+                        </li>
+                    </ul>
+                    <div class="d-flex align-items-end justify-content-end">
+                        <img src="/assets/productos/celulares/infinix 50i .jpg" class="img-fluid" style="height: 180px;" alt="Redmi 14 C">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="detalleModal6" tabindex="-1" aria-labelledby="detalleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content " style="font-family: oswald;">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="detalleModalLabel" style="font-family: oswald;" >Detalle del Celular</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                </div>
+                <div class="modal-body">
+                    <h6 class="text-center" style="font-family: oswald; font-size: 25px;">Redmi 14C</h6>
+                    <p style="font-family: oswald; font-size: 20px;">Características:</p>
+                    <ul class="px-3">
+                        
+                        <li>Android 13</li>
+                        <li>Pantalla: 6.88 pulgadas</li>
+                        <li>Camara: 50MP</li>
+                        <li>RAM: 4/8GB</li>
+                        <li>Almacenamiento: 128GB</li>
+                        <li>Batería: 5000mAh</li>
+                        <li>"¡El Redmi 14C está aquí para impresionarte! Potencia, 
+                            diseño y rendimiento en un solo dispositivo. 
+                            ¡Cómpralo ya y descubre la diferencia!" 📱⚡
+                        </li>
+                    </ul>
+                    <div class="d-flex align-items-end justify-content-end">
+                        <img src="/assets/productos/celulares/redmi 14 c.jpg" class="img-fluid" style="height: 180px;" alt="Redmi 14 C">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="detalleModal7" tabindex="-1" aria-labelledby="detalleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content " style="font-family: oswald;">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="detalleModalLabel" style="font-family: oswald;" >Detalle del Celular</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                </div>
+                <div class="modal-body">
+                    <h6 class="text-center" style="font-family: oswald; font-size: 25px;">Redmi A3x</h6>
+                    <p style="font-family: oswald; font-size: 20px;">Características:</p>
+                    <ul class="px-3">
+                        
+                        <li>Procesador Unisoc T603 1.8GHz</li>
+                        <li>Pantalla: 6.79 pulgadas</li>
+                        <li>Camara: 50MP</li>
+                        <li>RAM: 3/4GB</li>
+                        <li>Almacenamiento: 64/128GB</li>
+                        <li>Batería: 5000mAh</li>
+                        <li>"¡La tecnología que necesitas al alcance de tu mano!
+                             El Redmi A3x combina potencia, estilo y gran batería. 
+                            ¡Cómpralo ya y disfruta más por menos!" 🔋✨
+                        </li>
+                    </ul>
+                    <div class="d-flex align-items-end justify-content-end">
+                        <img src="/assets/productos/celulares/redmi A3X.jpg" class="img-fluid" style="height: 180px;" alt="Redmi 14 C">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="detalleModal8" tabindex="-1" aria-labelledby="detalleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content " style="font-family: oswald;">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="detalleModalLabel" style="font-family: oswald;" >Detalle del Celular</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                </div>
+                <div class="modal-body">
+                    <h6 class="text-center" style="font-family: oswald; font-size: 25px;">Spark 30C</h6>
+                    <p style="font-family: oswald; font-size: 20px;">Características:</p>
+                    <ul class="px-3">
+                        
+                        <li>Android: 14</li>
+                        <li>Pantalla: 6.67 pulgadas</li>
+                        <li>Camara: 50MP</li>
+                        <li>RAM: 4/8GB</li>
+                        <li>Almacenamiento: 128/256GB</li>
+                        <li>Batería: 5000mAh</li>
+                        <li>"¡Da el salto al siguiente nivel! Con el Spark 30C, 
+                            obtén rendimiento, estilo y una batería que te acompaña todo 
+                            el día. ¡Cómpralo ya y
+                             destaca con tecnología de punta!" ⚡🔥
+                        </li>
+                    </ul>
+                    <div class="d-flex align-items-end justify-content-end">
+                        <img src="/assets/productos/celulares/spark 30 C .jpg" class="img-fluid" style="height: 180px;" alt="Redmi 14 C">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="detalleModal9" tabindex="-1" aria-labelledby="detalleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content " style="font-family: oswald;">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="detalleModalLabel" style="font-family: oswald;" >Detalle del Celular</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                </div>
+                <div class="modal-body">
+                    <h6 class="text-center" style="font-family: oswald; font-size: 25px;">Spark 30 Pro</h6>
+                    <p style="font-family: oswald; font-size: 20px;">Características:</p>
+                    <ul class="px-3">
+                        
+                        <li>Android: 14</li>
+                        <li>Pantalla: 6.78 pulgadas</li>
+                        <li>Camara: 108MP</li>
+                        <li>RAM: 8GB</li>
+                        <li>Almacenamiento: 128/256GB</li>
+                        <li>Batería: 5000mAh</li>
+                        <li>"¡Da el salto al siguiente nivel! Con el Spark 30C, 
+                            obtén rendimiento, estilo y una batería que te acompaña todo 
+                            el día. ¡Cómpralo ya y
+                             destaca con tecnología de punta!" ⚡🔥
+                        </li>
+                    </ul>
+                    <div class="d-flex align-items-end justify-content-end">
+                        <img src="/assets/productos/celulares/spark 30 pro.jpg" class="img-fluid" style="height: 180px;" alt="Redmi 14 C">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="detalleModal10" tabindex="-1" aria-labelledby="detalleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content " style="font-family: oswald;">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="detalleModalLabel" style="font-family: oswald;" >Detalle del Celular</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                </div>
+                <div class="modal-body">
+                    <h6 class="text-center" style="font-family: oswald; font-size: 25px;">Tecno 20</h6>
+                    <p style="font-family: oswald; font-size: 20px;">Características:</p>
+                    <ul class="px-3">
+                        
+                        <li>Android: 14</li>
+                        <li>Pantalla: 6.56 pulgadas</li>
+                        <li>Camara: 50MP</li>
+                        <li>RAM: 8GB</li>
+                        <li>Almacenamiento: 128/256GB</li>
+                        <li>Batería: 5000mAh</li>
+                        <li>
+                            "¡Descubre el poder del Tecno 20! Rendimiento superior, 
+                            diseño elegante y batería de larga duración. 
+                            ¡Cómpralo ya y experimenta la tecnología al máximo!" 🚀📱
+                        </li>
+                    </ul>
+                    <div class="d-flex align-items-end justify-content-end">
+                        <img src="/assets/productos/celulares/tecno 20.jpg" class="img-fluid" style="height: 180px;" alt="Redmi 14 C">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+
+
+    <!-- JavaScript -->
+    <script>
+        function filterProducts(event) {
+            event.preventDefault();
+            const query = document.getElementById('searchInput').value.toLowerCase();
+            const products = document.querySelectorAll('.product');
+
+            products.forEach(product => {
+                const name = product.getAttribute('data-name').toLowerCase();
+                if (name.includes(query)) {
+                    product.classList.remove('hidden');
+                } else {
+                    product.classList.add('hidden');
+                }
+            });
+        }
+    </script>
+    <script>
+        const cart = [];
+        const cartItems = document.getElementById('cartItems');
+        const cartCount = document.getElementById('cartCount');
+
+        document.querySelectorAll('.add-to-cart').forEach(button => {
+            button.addEventListener('click', () => {
+                const name = button.getAttribute('data-name');
+                const price = button.getAttribute('data-price');
+
+                cart.push({ name, price });
+                updateCart();
+            });
+        });
+
+        function updateCart() {
+            cartItems.innerHTML = '';
+            cart.forEach((item, index) => {
+                const li = document.createElement('li');
+                li.className = 'list-group-item d-flex justify-content-between align-items-center';
+                li.innerHTML = `${item.name} - ${item.price}Bs.
+                    <button class="btn btn-danger btn-sm" onclick="removeFromCart(${index})">🗑️</button>`;
+                cartItems.appendChild(li);
+            });
+            cartCount.textContent = cart.length;
+        }
+
+        function removeFromCart(index) {
+            cart.splice(index, 1);
+            updateCart();
+        }
+
+        function clearCart() {
+            cart.length = 0;
+            updateCart();
+        }
+    </script>
+
+    <!-- Bootstrap JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+
