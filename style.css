@@ -35,25 +35,59 @@ body {
     border-top-right-radius: 10px;
 }
 
+.promo-label {
+    position: absolute;
+    bottom: 10px;
+    left: 15px;
+    background-color: #ee0303;
+    color: white;
+    padding: 10px 20px;
+    font-size: 15px;
+    font-weight: bold;
+    border-radius: 40px;
+    transform: rotate(-20deg);
+    transform-origin: left top;
+    z-index: 10;
+}
+
 .carrito{
     background-color: rgb(24, 0, 46);
     padding: 10px;
-    border: 1px solid rgb(255, 255, 255);
+    border: 1px solid rgb(1, 0, 43);
     font-size: 25px;
     border-radius: 50%;
     z-index: 1000;
 }
+.info{
+    
+    bottom: 10%;
+    background-color: rgb(255, 230, 0);
+    padding: 7px;
+    border: 1px solid rgb(216, 148, 0);
+    
+    border-radius: 50%;
+    z-index: 1000;
+}
+.letraq{
+    font-family: oswald;
+    
+}
+
 
 
 .carrito:hover {
     background-color: rgb(0, 15, 66);
     color: #ffffff;
 }
+.info:hover {
+    background-color: rgb(230, 195, 0);
+    color: #ffffff;
+}
 
 .featured-img1 {
     position: relative;
     width: 90%; 
-    height: 100%; 
+    height: 400px; 
     overflow: hidden;
 }
 
@@ -67,6 +101,13 @@ body {
     opacity: 0;
     transition: opacity 1s ease-in-out;
     animation: fadeInOut 9s infinite;
+}
+
+@media (max-width: 767px) {
+    .featured-img1 {
+        height: 230px; 
+       
+    }
 }
 
 .featured-img1 img:nth-child(1) {
@@ -205,7 +246,7 @@ ul {
     position: relative;
     justify-content: center;
     align-items: center;
-    color: #0d0d25;
+    color: #8a8a8a;
     text-transform: capitalize;
     font-weight: 500;
     padding: 5px 18px;
@@ -213,7 +254,7 @@ ul {
 }
 
 .main-navigation .menu li a:hover, .main-navigation .menu li .active-menu, .main-navigation .menu .sub-menu li .active-sub-menu {
-    color: #ff8243;
+    color: #000000;
     background: #f3f3f5;
     box-shadow: inset 8px 8px 12px #e2e2e2, inset -8px -8px 12px #ffffff;
 }
@@ -297,7 +338,7 @@ ul {
     outline: none !important;
     padding: 10px 15px;
     color: #0d0d25;
-    -webkit-appearance: none;
+    
     border-radius: 10px;
     border: none;
     background: #f8f8f8;
@@ -498,15 +539,54 @@ ul {
 .modal-content{
     background: rgb(243, 243, 243);
 }
+
+.mobible {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 95%;
+    height: 85%;
+}
+.img-pro{
+    
+    height: 490px;
+    width: 100%;
+   
+}
 @media (max-width: 575px) {
     .container, .container-fluid {
         padding: 0 30px;
     }
+    .textoclaro{
+        display: none;
+    }
+    .mobible{
+        height: 50%;
+    }
+    .imagencel{
+        display: none;
+    }
+    .img-pro{
+        height: 240px;
+    }
+    
 }
 
 @media (max-width: 400px) {
     .container, .container-fluid {
         padding: 0 15px;
+    }
+    .mobible{
+        height: 50%;
+    }
+    .img-pro{
+        height: 240px;
+    }
+    .imagencel{
+        display: none;
+    }
+    .textoclaro{
+        display: none;
     }
     .header-btn {
         margin-right: 56px;
@@ -517,6 +597,10 @@ ul {
     .site-header .container .row .col-lg-2 {
         left: 15px;
     }
+    .featured-imgr{
+        display: relative;
+    }
+   
 }
 
 /* ************************** */
@@ -649,19 +733,21 @@ ul {
 
 
 h1, h2, h3, h4, h5, h6 {
-    color: #0d0d25;
+    color: #292222;
     font-family: "Protest Strike", serif;
     font-weight: 400;
     font-style: normal;
-
     font-weight: 900;
 }
 
 p {
     font-size: 16px;
     line-height: 30px;
+    color: #383636;
 }
-
+.textoclaro{
+    color: #f1000000;
+}
 .sec-btn {
     min-width: 120px;
     min-height: 58px;
@@ -925,7 +1011,7 @@ p {
     transition: 0.3s;
     min-height: 76px;
     display: -webkit-box;
-    -webkit-line-clamp: 2;
+    
     -webkit-box-orient: vertical;
     overflow: hidden;
     font-weight: 900;
@@ -1232,22 +1318,9 @@ p {
     background: #ff8243;
 }
 
-.mobible {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 95%;
-    height: 85%;
-}
 
-.mobible1 {
-    position: absolute;
-    top: 10%;
-    right: 0;
-    width: 35%;
-    height: 90%;
-    z-index: -1000;
-}
+
+
 
 .social-icon ul li a:hover i {
     color: #ffffff !important;
@@ -1260,12 +1333,7 @@ p {
     background-attachment: fixed;
 }
 
-.img-pro{
-    
-    height: 530px;
-    width: 100%;
-   
-}
+
 
 .section-product1 {
     background: url('/assets/images/brands/sec-4.jpg') no-repeat center center;
@@ -1332,7 +1400,7 @@ p {
 .testimonials-box-text p {
     margin: 0;
     display: -webkit-box;
-    -webkit-line-clamp: 3;
+  
     -webkit-box-orient: vertical;
     overflow: hidden;
 }
@@ -1414,7 +1482,7 @@ p {
     text-transform: capitalize;
     margin-bottom: 15px;
     display: -webkit-box;
-    -webkit-line-clamp: 2;
+  
     -webkit-box-orient: vertical;
     overflow: hidden;
     font-weight: 900;
@@ -1597,11 +1665,11 @@ p {
     align-items: center;
     border-radius: 50%;
     background: #f3f3f5;
-    box-shadow: 9px 9px 12px #b2b2b3, -9px -9px 12px #ffffff;
+
     color: #ff8243;
     font-size: 26px;
     transition: 0.8s cubic-bezier(0.22, 0.78, 0.45, 1.02);
-    border: none;
+    border: 1px solid rgb(196, 196, 196);
 }
 
 .scrolltop:hover {
@@ -1899,6 +1967,15 @@ p {
     }
 }
 
+.mobible1 {
+    position: absolute;
+    top: 10%;
+    right: 0;
+    width: 35%;
+    height: 90%;
+    z-index: -1000;
+}
+
 @media (max-width: 575px) {
     .container, .container-fluid {
         padding: 0 30px;
@@ -1979,6 +2056,14 @@ p {
 }
 
 @media (max-width: 400px) {
+    .mobible1 {
+        position: absolute;
+        top: 40%;
+        right: 0;
+        width: 50%;
+        height: 40%;
+        z-index: -1000;
+    }
     .container, .container-fluid {
         padding: 0 15px;
     }

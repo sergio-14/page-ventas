@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Product Categories with Cart</title>
+    <title> 🛒🏷️Productos y categorias </title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <style>
@@ -16,9 +16,41 @@
     <div class="container pb-5 pt-3">
         <!-- Title -->
         <div class="text-center mb-4">
-            <h1 class="fw-bold ">PRODUCTOS Y CATEGORIAS</h1>
+            <h1 class="fw-bold letraq ">PRODUCTOS Y CATEGORIAS</h1>
             
         </div>
+        <button class="btn info position-fixed end-0 m-4 rounded-circle text-white" data-bs-toggle="modal" data-bs-target="#infoModal" title="Información importante">
+            <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-info-circle-fill" viewBox="0 0 16 16">
+                <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16m.93-9.412-1 4.705c-.07.34.029.533.304.533.194 0 .487-.07.686-.246l-.088.416c-.287.346-.92.598-1.465.598-.703 0-1.002-.422-.808-1.319l.738-3.468c.064-.293.006-.399-.287-.47l-.451-.081.082-.381 2.29-.287zM8 5.5a1 1 0 1 1 0-2 1 1 0 0 1 0 2"/>
+            </svg>
+        </button>
+        
+        <!-- Modal de información -->
+        <div class="modal fade" id="infoModal" tabindex="-1" aria-labelledby="infoModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content letraq">
+                    <div class="modal-header">
+                        <h5 class="modal-title letraq" id="infoModalLabel">Requerimientos para cualquier producto a credito</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                    </div>
+                    <div class="modal-body">
+                        <ul>
+                            <li>1. Fotocopia de carnet de identidad Titular</li>
+                            <li>2. Factura de luz Titular</li>
+                            <li>3. Fotocopia de Carnet Garante</li>
+                            <li>4. Fotocopia de Luz de Garante</li>
+                            <li>5. Uno de los Dos tiene que tener Casa Propia </li>
+                            <li>¡ No esperes mas adquiere tus productos al mejor precio en comercial cano tenemos todo para 
+                                ti y tu familia!</li>
+                        </ul>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
         <button class="btn carrito position-fixed bottom-0 end-0 m-3 rounded-circle" data-bs-toggle="modal" data-bs-target="#cartModal">
             <span id="cartCount" class="badge bg-danger position-absolute top-0 start-100  translate-middle">0</span>
             🛒
@@ -34,7 +66,14 @@
             <li class="nav-item ms-auto pt-2" role="presentation">
                 <form class="d-flex" onsubmit="filterProducts(event)">
                     <input class="form-control me-2" id="searchInput" type="search" placeholder="Escribir Categoria" aria-label="Search">
-                    <button class="btn btn-outline-warning" type="submit">Buscar</button>
+                    <button class="btn btn-outline-warning me-1" type="submit">Buscar</button>
+                    <a class="btn btn-outline-warning" href="index.html">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-house-check-fill" viewBox="0 0 16 16">
+                            <path d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L8 2.207l6.646 6.647a.5.5 0 0 0 .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293z"/>
+                            <path d="m8 3.293 4.712 4.712A4.5 4.5 0 0 0 8.758 15H3.5A1.5 1.5 0 0 1 2 13.5V9.293z"/>
+                            <path d="M12.5 16a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7m1.679-4.493-1.335 2.226a.75.75 0 0 1-1.174.144l-.774-.773a.5.5 0 0 1 .708-.707l.547.547 1.17-1.951a.5.5 0 1 1 .858.514"/>
+                        </svg>
+                    </a>
                 </form>
             </li>
 
@@ -51,10 +90,10 @@
                             <img src="/assets/productos/celulares/blace A 73 - copia.jpg" class="card-img-top  mt-1" style="height: 270px;" alt="Cellphone 1">
                             <div class="card-body px-4">
                                 <h5 class="card-title">BLADE A 73</h5>
-                                <p class="card-text fw-bold" style="font-family: oswald; font-size:20px ;">Precio: <span class="bg-warning text-white rounded-1 px-2">1700 Bs.</span></p>
+                                <p class="card-text fw-bold" style="font-family: oswald; font-size:20px ;">Precio: <span class="bg-warning text-white rounded-1 px-2">1404 Bs.</span></p>
                                 <div class="row justify-content-center align-items-center">
                                     <div class="col-6 text-end">
-                                        <button class="btn bt1   add-to-cart" data-name="BLADE A73" data-price="1700">
+                                        <button class="btn bt1   add-to-cart" data-name="BLADE A73" data-price="1404">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-cart-check" viewBox="0 0 16 16">
                                                 <path d="M11.354 6.354a.5.5 0 0 0-.708-.708L8 8.293 6.854 7.146a.5.5 0 1 0-.708.708l1.5 1.5a.5.5 0 0 0 .708 0z"/>
                                                 <path d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1zm3.915 10L3.102 4h10.796l-1.313 7zM6 14a1 1 0 1 1-2 0 1 1 0 0 1 2 0m7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0"/>
@@ -78,10 +117,10 @@
                             <img src="/assets/productos/celulares/blade v60 - copia.jpg" class="card-img-top  mt-1" style="height: 270px;" alt="Cellphone 1">
                             <div class="card-body px-4">
                                 <h5 class="card-title">BLADE V60</h5>
-                                <p class="card-text fw-bold" style="font-family: oswald; font-size:20px ;">Precio: <span class="bg-warning text-white rounded-1 px-2">1500 Bs.</span></p>
+                                <p class="card-text fw-bold" style="font-family: oswald; font-size:20px ;">Precio: <span class="bg-warning text-white rounded-1 px-2">1922 Bs.</span></p>
                                 <div class="row justify-content-center align-items-center">
                                     <div class="col-6 text-end">
-                                        <button class="btn bt1   add-to-cart" data-name="BLADE V60" data-price="1500">
+                                        <button class="btn bt1   add-to-cart" data-name="BLADE V60" data-price="1922">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-cart-check" viewBox="0 0 16 16">
                                                 <path d="M11.354 6.354a.5.5 0 0 0-.708-.708L8 8.293 6.854 7.146a.5.5 0 1 0-.708.708l1.5 1.5a.5.5 0 0 0 .708 0z"/>
                                                 <path d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1zm3.915 10L3.102 4h10.796l-1.313 7zM6 14a1 1 0 1 1-2 0 1 1 0 0 1 2 0m7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0"/>
@@ -105,10 +144,10 @@
                             <img src="/assets/productos/celulares/note 50 realme - copia.jpg" class="card-img-top  mt-1" style="height: 270px;" alt="Cellphone 1">
                             <div class="card-body px-4">
                                 <h5 class="card-title">NOTE 50 REALME</h5>
-                                <p class="card-text fw-bold" style="font-family: oswald; font-size:20px ;">Precio: <span class="bg-warning text-white rounded-1 px-2">1400 Bs.</span></p>
+                                <p class="card-text fw-bold" style="font-family: oswald; font-size:20px ;">Precio: <span class="bg-warning text-white rounded-1 px-2">1410 Bs.</span></p>
                                 <div class="row justify-content-center align-items-center">
                                     <div class="col-6 text-end">
-                                        <button class="btn bt1   add-to-cart" data-name="NOTE 50 REALME" data-price="1400">
+                                        <button class="btn bt1   add-to-cart" data-name="NOTE 50 REALME" data-price="1410">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-cart-check" viewBox="0 0 16 16">
                                                 <path d="M11.354 6.354a.5.5 0 0 0-.708-.708L8 8.293 6.854 7.146a.5.5 0 1 0-.708.708l1.5 1.5a.5.5 0 0 0 .708 0z"/>
                                                 <path d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1zm3.915 10L3.102 4h10.796l-1.313 7zM6 14a1 1 0 1 1-2 0 1 1 0 0 1 2 0m7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0"/>
@@ -132,10 +171,10 @@
                             <img src="/assets/productos/celulares/infinix smart 9 - copia.jpg" class="card-img-top  mt-1" style="height: 270px;" alt="Cellphone 1">
                             <div class="card-body px-4">
                                 <h5 class="card-title">INFINIX SMART9</h5>
-                                <p class="card-text fw-bold" style="font-family: oswald; font-size:20px ;">Precio: <span class="bg-warning text-white rounded-1 px-2">1900 Bs.</span></p>
+                                <p class="card-text fw-bold" style="font-family: oswald; font-size:20px ;">Precio: <span class="bg-warning text-white rounded-1 px-2">1416 Bs.</span></p>
                                 <div class="row justify-content-center align-items-center">
                                     <div class="col-6 text-end">
-                                        <button class="btn bt1  add-to-cart" data-name="INFINIX SMART9" data-price="1900">
+                                        <button class="btn bt1  add-to-cart" data-name="INFINIX SMART9" data-price="1416">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-cart-check" viewBox="0 0 16 16">
                                                 <path d="M11.354 6.354a.5.5 0 0 0-.708-.708L8 8.293 6.854 7.146a.5.5 0 1 0-.708.708l1.5 1.5a.5.5 0 0 0 .708 0z"/>
                                                 <path d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1zm3.915 10L3.102 4h10.796l-1.313 7zM6 14a1 1 0 1 1-2 0 1 1 0 0 1 2 0m7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0"/>
@@ -160,10 +199,10 @@
 
                             <div class="card-body px-4">
                                 <h5 class="card-title">INFINIX 50i</h5>
-                                <p class="card-text fw-bold" style="font-family: oswald; font-size:20px ;">Precio: <span class="bg-warning text-white rounded-1 px-2">1900 Bs.</span></p>
+                                <p class="card-text fw-bold" style="font-family: oswald; font-size:20px ;">Precio: <span class="bg-warning text-white rounded-1 px-2">1610 Bs.</span></p>
                                 <div class="row justify-content-center align-items-center">
                                     <div class="col-6 text-end">
-                                        <button class="btn bt1   add-to-cart" data-name="INFINIX 50i " data-price="1900">
+                                        <button class="btn bt1   add-to-cart" data-name="INFINIX 50i " data-price="1610">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-cart-check" viewBox="0 0 16 16">
                                                 <path d="M11.354 6.354a.5.5 0 0 0-.708-.708L8 8.293 6.854 7.146a.5.5 0 1 0-.708.708l1.5 1.5a.5.5 0 0 0 .708 0z"/>
                                                 <path d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1zm3.915 10L3.102 4h10.796l-1.313 7zM6 14a1 1 0 1 1-2 0 1 1 0 0 1 2 0m7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0"/>
@@ -188,10 +227,10 @@
 
                             <div class="card-body px-4">
                                 <h5 class="card-title">HOT 5O PRO PLUS</h5>
-                                <p class="card-text fw-bold" style="font-family: oswald; font-size:20px ;">Precio: <span class="bg-warning text-white rounded-1 px-2">1900 Bs.</span></p>
+                                <p class="card-text fw-bold" style="font-family: oswald; font-size:20px ;">Precio: <span class="bg-warning text-white rounded-1 px-2">2690 Bs.</span></p>
                                 <div class="row justify-content-center align-items-center">
                                     <div class="col-6 text-end">
-                                        <button class="btn bt1   add-to-cart" data-name="HOT 50 PRO PLUS INFINIX" data-price="1900">
+                                        <button class="btn bt1   add-to-cart" data-name="HOT 50 PRO PLUS INFINIX" data-price="2690">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-cart-check" viewBox="0 0 16 16">
                                                 <path d="M11.354 6.354a.5.5 0 0 0-.708-.708L8 8.293 6.854 7.146a.5.5 0 1 0-.708.708l1.5 1.5a.5.5 0 0 0 .708 0z"/>
                                                 <path d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1zm3.915 10L3.102 4h10.796l-1.313 7zM6 14a1 1 0 1 1-2 0 1 1 0 0 1 2 0m7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0"/>
@@ -216,10 +255,10 @@
 
                             <div class="card-body px-4">
                                 <h5 class="card-title">Redmi 14C</h5>
-                                <p class="card-text fw-bold" style="font-family: oswald; font-size:20px ;">Precio: <span class="bg-warning text-white rounded-1 px-2">1900 Bs.</span></p>
+                                <p class="card-text fw-bold" style="font-family: oswald; font-size:20px ;">Precio: <span class="bg-warning text-white rounded-1 px-2">2070 Bs.</span></p>
                                 <div class="row justify-content-center align-items-center">
                                     <div class="col-6 text-end">
-                                        <button class="btn bt1   add-to-cart" data-name="Redmin 14C" data-price="1900">
+                                        <button class="btn bt1   add-to-cart" data-name="Redmin 14C" data-price="2070">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-cart-check" viewBox="0 0 16 16">
                                                 <path d="M11.354 6.354a.5.5 0 0 0-.708-.708L8 8.293 6.854 7.146a.5.5 0 1 0-.708.708l1.5 1.5a.5.5 0 0 0 .708 0z"/>
                                                 <path d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1zm3.915 10L3.102 4h10.796l-1.313 7zM6 14a1 1 0 1 1-2 0 1 1 0 0 1 2 0m7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0"/>
@@ -244,10 +283,10 @@
 
                             <div class="card-body px-4">
                                 <h5 class="card-title">Redmi A3x</h5>
-                                <p class="card-text fw-bold" style="font-family: oswald; font-size:20px ;">Precio: <span class="bg-warning text-white rounded-1 px-2">1900 Bs.</span></p>
+                                <p class="card-text fw-bold" style="font-family: oswald; font-size:20px ;">Precio: <span class="bg-warning text-white rounded-1 px-2">1410 Bs.</span></p>
                                 <div class="row justify-content-center align-items-center">
                                     <div class="col-6 text-end">
-                                        <button class="btn bt1   add-to-cart" data-name="Redmin A3x" data-price="1900">
+                                        <button class="btn bt1   add-to-cart" data-name="Redmin A3x" data-price="1410">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-cart-check" viewBox="0 0 16 16">
                                                 <path d="M11.354 6.354a.5.5 0 0 0-.708-.708L8 8.293 6.854 7.146a.5.5 0 1 0-.708.708l1.5 1.5a.5.5 0 0 0 .708 0z"/>
                                                 <path d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1zm3.915 10L3.102 4h10.796l-1.313 7zM6 14a1 1 0 1 1-2 0 1 1 0 0 1 2 0m7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0"/>
@@ -272,10 +311,10 @@
 
                             <div class="card-body px-4">
                                 <h5 class="card-title">SPARK 30C</h5>
-                                <p class="card-text fw-bold" style="font-family: oswald; font-size:20px ;">Precio: <span class="bg-warning text-white rounded-1 px-2">1900 Bs.</span></p>
+                                <p class="card-text fw-bold" style="font-family: oswald; font-size:20px ;">Precio: <span class="bg-warning text-white rounded-1 px-2">1570 Bs.</span></p>
                                 <div class="row justify-content-center align-items-center">
                                     <div class="col-6 text-end">
-                                        <button class="btn bt1   add-to-cart" data-name="SPARK 30C" data-price="1900">
+                                        <button class="btn bt1   add-to-cart" data-name="SPARK 30C" data-price="1570">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-cart-check" viewBox="0 0 16 16">
                                                 <path d="M11.354 6.354a.5.5 0 0 0-.708-.708L8 8.293 6.854 7.146a.5.5 0 1 0-.708.708l1.5 1.5a.5.5 0 0 0 .708 0z"/>
                                                 <path d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1zm3.915 10L3.102 4h10.796l-1.313 7zM6 14a1 1 0 1 1-2 0 1 1 0 0 1 2 0m7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0"/>
@@ -300,10 +339,10 @@
 
                             <div class="card-body px-4">
                                 <h5 class="card-title">SPARK 30 PRO</h5>
-                                <p class="card-text fw-bold" style="font-family: oswald; font-size:20px ;">Precio: <span class="bg-warning text-white rounded-1 px-2">1900 Bs.</span></p>
+                                <p class="card-text fw-bold" style="font-family: oswald; font-size:20px ;">Precio: <span class="bg-warning text-white rounded-1 px-2">2548 Bs.</span></p>
                                 <div class="row justify-content-center align-items-center">
                                     <div class="col-6 text-end">
-                                        <button class="btn bt1   add-to-cart" data-name="SPARK 30 PRO" data-price="1900">
+                                        <button class="btn bt1   add-to-cart" data-name="SPARK 30 PRO" data-price="2548">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-cart-check" viewBox="0 0 16 16">
                                                 <path d="M11.354 6.354a.5.5 0 0 0-.708-.708L8 8.293 6.854 7.146a.5.5 0 1 0-.708.708l1.5 1.5a.5.5 0 0 0 .708 0z"/>
                                                 <path d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1zm3.915 10L3.102 4h10.796l-1.313 7zM6 14a1 1 0 1 1-2 0 1 1 0 0 1 2 0m7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0"/>
@@ -328,10 +367,10 @@
 
                             <div class="card-body px-4">
                                 <h5 class="card-title">TECNO 20</h5>
-                                <p class="card-text fw-bold" style="font-family: oswald; font-size:20px ;">Precio: <span class="bg-warning text-white rounded-1 px-2">1900 Bs.</span></p>
+                                <p class="card-text fw-bold" style="font-family: oswald; font-size:20px ;">Precio: <span class="bg-warning text-white rounded-1 px-2">1550 Bs.</span></p>
                                 <div class="row justify-content-center align-items-center">
                                     <div class="col-6 text-end">
-                                        <button class="btn bt1   add-to-cart" data-name="TECNO 20" data-price="1900">
+                                        <button class="btn bt1   add-to-cart" data-name="TECNO 20" data-price="1550">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-cart-check" viewBox="0 0 16 16">
                                                 <path d="M11.354 6.354a.5.5 0 0 0-.708-.708L8 8.293 6.854 7.146a.5.5 0 1 0-.708.708l1.5 1.5a.5.5 0 0 0 .708 0z"/>
                                                 <path d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1zm3.915 10L3.102 4h10.796l-1.313 7zM6 14a1 1 0 1 1-2 0 1 1 0 0 1 2 0m7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0"/>
@@ -363,10 +402,10 @@
 
                             <div class="card-body px-4">
                                 <h5 class="card-title">TELEVISOR 43 PULG.</h5>
-                                <p class="card-text fw-bold" style="font-family: oswald; font-size:20px ;">Precio: <span class="bg-warning text-white rounded-1 px-2">1900 Bs.</span></p>
+                                <p class="card-text fw-bold" style="font-family: oswald; font-size:20px ;">Precio: <span class="bg-warning text-white rounded-1 px-2">3520 Bs.</span></p>
                                 <div class="row justify-content-center align-items-center">
                                     <div class="col-6 text-end">
-                                        <button class="btn bt1   add-to-cart" data-name="TELEVISOR 43 PULGADAS SKYWORTH" data-price="1500">
+                                        <button class="btn bt1   add-to-cart" data-name="TELEVISOR 43 PULGADAS SKYWORTH" data-price="3520">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-cart-check" viewBox="0 0 16 16">
                                                 <path d="M11.354 6.354a.5.5 0 0 0-.708-.708L8 8.293 6.854 7.146a.5.5 0 1 0-.708.708l1.5 1.5a.5.5 0 0 0 .708 0z"/>
                                                 <path d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1zm3.915 10L3.102 4h10.796l-1.313 7zM6 14a1 1 0 1 1-2 0 1 1 0 0 1 2 0m7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0"/>
@@ -375,7 +414,7 @@
                                         </button>
                                     </div>
                                     <div class="col-6 text-start">
-                                        <a href="" class="btn bt2 ">
+                                        <a href="#" class="btn bt2" data-bs-toggle="modal" data-bs-target="#detalleModal11">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-chat-square-text-fill" viewBox="0 0 16 16">
                                                 <path d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2h-2.5a1 1 0 0 0-.8.4l-1.9 2.533a1 1 0 0 1-1.6 0L5.3 12.4a1 1 0 0 0-.8-.4H2a2 2 0 0 1-2-2zm3.5 1a.5.5 0 0 0 0 1h9a.5.5 0 0 0 0-1zm0 2.5a.5.5 0 0 0 0 1h9a.5.5 0 0 0 0-1zm0 2.5a.5.5 0 0 0 0 1h5a.5.5 0 0 0 0-1z"/>
                                             </svg>
@@ -391,10 +430,10 @@
 
                             <div class="card-body px-4">
                                 <h5 class="card-title">FREZZER 285 LTRS.</h5>
-                                <p class="card-text fw-bold" style="font-family: oswald; font-size:20px ;">Precio: <span class="bg-warning text-white rounded-1 px-2">1900 Bs.</span></p>
+                                <p class="card-text fw-bold" style="font-family: oswald; font-size:20px ;">Precio: <span class="bg-warning text-white rounded-1 px-2">4650 Bs.</span></p>
                                 <div class="row justify-content-center align-items-center">
                                     <div class="col-6 text-end">
-                                        <button class="btn bt1   add-to-cart" data-name="FREZZER 285 LITROS GENERAL LUX" data-price="1900">
+                                        <button class="btn bt1   add-to-cart" data-name="FREZZER 285 LITROS GENERAL LUX" data-price="4650">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-cart-check" viewBox="0 0 16 16">
                                                 <path d="M11.354 6.354a.5.5 0 0 0-.708-.708L8 8.293 6.854 7.146a.5.5 0 1 0-.708.708l1.5 1.5a.5.5 0 0 0 .708 0z"/>
                                                 <path d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1zm3.915 10L3.102 4h10.796l-1.313 7zM6 14a1 1 0 1 1-2 0 1 1 0 0 1 2 0m7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0"/>
@@ -403,7 +442,7 @@
                                         </button>
                                     </div>
                                     <div class="col-6 text-start">
-                                        <a href="" class="btn bt2 ">
+                                        <a href="#" class="btn bt2" data-bs-toggle="modal" data-bs-target="#detalleModal12">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-chat-square-text-fill" viewBox="0 0 16 16">
                                                 <path d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2h-2.5a1 1 0 0 0-.8.4l-1.9 2.533a1 1 0 0 1-1.6 0L5.3 12.4a1 1 0 0 0-.8-.4H2a2 2 0 0 1-2-2zm3.5 1a.5.5 0 0 0 0 1h9a.5.5 0 0 0 0-1zm0 2.5a.5.5 0 0 0 0 1h9a.5.5 0 0 0 0-1zm0 2.5a.5.5 0 0 0 0 1h5a.5.5 0 0 0 0-1z"/>
                                             </svg>
@@ -419,10 +458,10 @@
 
                             <div class="card-body px-4">
                                 <h5 class="card-title">AIRE ACONDICIONADO</h5>
-                                <p class="card-text fw-bold" style="font-family: oswald; font-size:20px ;">Precio: <span class="bg-warning text-white rounded-1 px-2">1900 Bs.</span></p>
+                                <p class="card-text fw-bold" style="font-family: oswald; font-size:20px ;">Precio: <span class="bg-warning text-white rounded-1 px-2">4300 Bs.</span></p>
                                 <div class="row justify-content-center align-items-center">
                                     <div class="col-6 text-end">
-                                        <button class="btn bt1   add-to-cart" data-name="AIRE ACONDICIONADO 12000 BTU" data-price="1500.00">
+                                        <button class="btn bt1   add-to-cart" data-name="AIRE ACONDICIONADO 12000 BTU" data-price="4300">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-cart-check" viewBox="0 0 16 16">
                                                 <path d="M11.354 6.354a.5.5 0 0 0-.708-.708L8 8.293 6.854 7.146a.5.5 0 1 0-.708.708l1.5 1.5a.5.5 0 0 0 .708 0z"/>
                                                 <path d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1zm3.915 10L3.102 4h10.796l-1.313 7zM6 14a1 1 0 1 1-2 0 1 1 0 0 1 2 0m7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0"/>
@@ -431,7 +470,7 @@
                                         </button>
                                     </div>
                                     <div class="col-6 text-start">
-                                        <a href="" class="btn bt2 ">
+                                        <a href="#" class="btn bt2" data-bs-toggle="modal" data-bs-target="#detalleModal13">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-chat-square-text-fill" viewBox="0 0 16 16">
                                                 <path d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2h-2.5a1 1 0 0 0-.8.4l-1.9 2.533a1 1 0 0 1-1.6 0L5.3 12.4a1 1 0 0 0-.8-.4H2a2 2 0 0 1-2-2zm3.5 1a.5.5 0 0 0 0 1h9a.5.5 0 0 0 0-1zm0 2.5a.5.5 0 0 0 0 1h9a.5.5 0 0 0 0-1zm0 2.5a.5.5 0 0 0 0 1h5a.5.5 0 0 0 0-1z"/>
                                             </svg>
@@ -447,10 +486,10 @@
 
                             <div class="card-body px-4">
                                 <h5 class="card-title">COCINA 4 HORNALLAS</h5>
-                                <p class="card-text fw-bold" style="font-family: oswald; font-size:20px ;">Precio: <span class="bg-warning text-white rounded-1 px-2">1900 Bs.</span></p>
+                                <p class="card-text fw-bold" style="font-family: oswald; font-size:20px ;">Precio: <span class="bg-warning text-white rounded-1 px-2">2400 Bs.</span></p>
                                 <div class="row justify-content-center align-items-center">
                                     <div class="col-6 text-end">
-                                        <button class="btn bt1   add-to-cart" data-name="COCINA 4 HORNALLAS VELANOBA" data-price="1500">
+                                        <button class="btn bt1   add-to-cart" data-name="COCINA 4 HORNALLAS VELANOBA" data-price="2400">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-cart-check" viewBox="0 0 16 16">
                                                 <path d="M11.354 6.354a.5.5 0 0 0-.708-.708L8 8.293 6.854 7.146a.5.5 0 1 0-.708.708l1.5 1.5a.5.5 0 0 0 .708 0z"/>
                                                 <path d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1zm3.915 10L3.102 4h10.796l-1.313 7zM6 14a1 1 0 1 1-2 0 1 1 0 0 1 2 0m7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0"/>
@@ -459,7 +498,7 @@
                                         </button>
                                     </div>
                                     <div class="col-6 text-start">
-                                        <a href="" class="btn bt2 ">
+                                        <a href="#" class="btn bt2" data-bs-toggle="modal" data-bs-target="#detalleModal14">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-chat-square-text-fill" viewBox="0 0 16 16">
                                                 <path d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2h-2.5a1 1 0 0 0-.8.4l-1.9 2.533a1 1 0 0 1-1.6 0L5.3 12.4a1 1 0 0 0-.8-.4H2a2 2 0 0 1-2-2zm3.5 1a.5.5 0 0 0 0 1h9a.5.5 0 0 0 0-1zm0 2.5a.5.5 0 0 0 0 1h9a.5.5 0 0 0 0-1zm0 2.5a.5.5 0 0 0 0 1h5a.5.5 0 0 0 0-1z"/>
                                             </svg>
@@ -475,10 +514,10 @@
 
                             <div class="card-body px-4">
                                 <h5 class="card-title">COCINA 5 HORNALLAS</h5>
-                                <p class="card-text fw-bold" style="font-family: oswald; font-size:20px ;">Precio: <span class="bg-warning text-white rounded-1 px-2">1900 Bs.</span></p>
+                                <p class="card-text fw-bold" style="font-family: oswald; font-size:20px ;">Precio: <span class="bg-warning text-white rounded-1 px-2">3350 Bs.</span></p>
                                 <div class="row justify-content-center align-items-center">
                                     <div class="col-6 text-end">
-                                        <button class="btn bt1   add-to-cart" data-name="COCINA 5 HORNALLAS WINSTAR " data-price="1500">
+                                        <button class="btn bt1   add-to-cart" data-name="COCINA 5 HORNALLAS WINSTAR " data-price="3350">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-cart-check" viewBox="0 0 16 16">
                                                 <path d="M11.354 6.354a.5.5 0 0 0-.708-.708L8 8.293 6.854 7.146a.5.5 0 1 0-.708.708l1.5 1.5a.5.5 0 0 0 .708 0z"/>
                                                 <path d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1zm3.915 10L3.102 4h10.796l-1.313 7zM6 14a1 1 0 1 1-2 0 1 1 0 0 1 2 0m7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0"/>
@@ -487,7 +526,7 @@
                                         </button>
                                     </div>
                                     <div class="col-6 text-start">
-                                        <a href="" class="btn bt2 ">
+                                        <a href="#" class="btn bt2" data-bs-toggle="modal" data-bs-target="#detalleModal15">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-chat-square-text-fill" viewBox="0 0 16 16">
                                                 <path d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2h-2.5a1 1 0 0 0-.8.4l-1.9 2.533a1 1 0 0 1-1.6 0L5.3 12.4a1 1 0 0 0-.8-.4H2a2 2 0 0 1-2-2zm3.5 1a.5.5 0 0 0 0 1h9a.5.5 0 0 0 0-1zm0 2.5a.5.5 0 0 0 0 1h9a.5.5 0 0 0 0-1zm0 2.5a.5.5 0 0 0 0 1h5a.5.5 0 0 0 0-1z"/>
                                             </svg>
@@ -503,10 +542,10 @@
 
                             <div class="card-body px-4">
                                 <h5 class="card-title">COCINA 4 HORNALLAS</h5>
-                                <p class="card-text fw-bold" style="font-family: oswald; font-size:20px ;">Precio: <span class="bg-warning text-white rounded-1 px-2">1900 Bs.</span></p>
+                                <p class="card-text fw-bold" style="font-family: oswald; font-size:20px ;">Precio: <span class="bg-warning text-white rounded-1 px-2">2058 Bs.</span></p>
                                 <div class="row justify-content-center align-items-center">
                                     <div class="col-6 text-end">
-                                        <button class="btn bt1   add-to-cart" data-name="COCINA 4 HORNALLAS WINSTAR" data-price="1500">
+                                        <button class="btn bt1   add-to-cart" data-name="COCINA 4 HORNALLAS WINSTAR" data-price="2058">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-cart-check" viewBox="0 0 16 16">
                                                 <path d="M11.354 6.354a.5.5 0 0 0-.708-.708L8 8.293 6.854 7.146a.5.5 0 1 0-.708.708l1.5 1.5a.5.5 0 0 0 .708 0z"/>
                                                 <path d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1zm3.915 10L3.102 4h10.796l-1.313 7zM6 14a1 1 0 1 1-2 0 1 1 0 0 1 2 0m7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0"/>
@@ -515,7 +554,7 @@
                                         </button>
                                     </div>
                                     <div class="col-6 text-start">
-                                        <a href="" class="btn bt2 ">
+                                        <a href="#" class="btn bt2" data-bs-toggle="modal" data-bs-target="#detalleModal16">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-chat-square-text-fill" viewBox="0 0 16 16">
                                                 <path d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2h-2.5a1 1 0 0 0-.8.4l-1.9 2.533a1 1 0 0 1-1.6 0L5.3 12.4a1 1 0 0 0-.8-.4H2a2 2 0 0 1-2-2zm3.5 1a.5.5 0 0 0 0 1h9a.5.5 0 0 0 0-1zm0 2.5a.5.5 0 0 0 0 1h9a.5.5 0 0 0 0-1zm0 2.5a.5.5 0 0 0 0 1h5a.5.5 0 0 0 0-1z"/>
                                             </svg>
@@ -531,10 +570,10 @@
 
                             <div class="card-body px-4">
                                 <h5 class="card-title">FREZZER 308 LTRS</h5>
-                                <p class="card-text fw-bold" style="font-family: oswald; font-size:20px ;">Precio: <span class="bg-warning text-white rounded-1 px-2">1900 Bs.</span></p>
+                                <p class="card-text fw-bold" style="font-family: oswald; font-size:20px ;">Precio: <span class="bg-warning text-white rounded-1 px-2">4750 Bs.</span></p>
                                 <div class="row justify-content-center align-items-center">
                                     <div class="col-6 text-end">
-                                        <button class="btn bt1   add-to-cart" data-name="FREZZER 308 LITROS MASTER G" data-price="1500">
+                                        <button class="btn bt1   add-to-cart" data-name="FREZZER 308 LITROS MASTER G" data-price="4750">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-cart-check" viewBox="0 0 16 16">
                                                 <path d="M11.354 6.354a.5.5 0 0 0-.708-.708L8 8.293 6.854 7.146a.5.5 0 1 0-.708.708l1.5 1.5a.5.5 0 0 0 .708 0z"/>
                                                 <path d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1zm3.915 10L3.102 4h10.796l-1.313 7zM6 14a1 1 0 1 1-2 0 1 1 0 0 1 2 0m7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0"/>
@@ -543,7 +582,7 @@
                                         </button>
                                     </div>
                                     <div class="col-6 text-start">
-                                        <a href="" class="btn bt2 ">
+                                        <a href="#" class="btn bt2" data-bs-toggle="modal" data-bs-target="#detalleModal17">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-chat-square-text-fill" viewBox="0 0 16 16">
                                                 <path d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2h-2.5a1 1 0 0 0-.8.4l-1.9 2.533a1 1 0 0 1-1.6 0L5.3 12.4a1 1 0 0 0-.8-.4H2a2 2 0 0 1-2-2zm3.5 1a.5.5 0 0 0 0 1h9a.5.5 0 0 0 0-1zm0 2.5a.5.5 0 0 0 0 1h9a.5.5 0 0 0 0-1zm0 2.5a.5.5 0 0 0 0 1h5a.5.5 0 0 0 0-1z"/>
                                             </svg>
@@ -558,11 +597,11 @@
                             <img src="/assets/productos/electrodomesticos/heladera 286 litros general lux - copia.jpg" class="card-img-top  mt-1" style="height: 270px;" alt="Cellphone 1">
 
                             <div class="card-body px-4">
-                                <h5 class="card-title">HELADERA 286 LTRS.</h5>
-                                <p class="card-text fw-bold" style="font-family: oswald; font-size:20px ;">Precio: <span class="bg-warning text-white rounded-1 px-2">1900 Bs.</span></p>
+                                <h5 class="card-title">HELADERA 285 LTRS.</h5>
+                                <p class="card-text fw-bold" style="font-family: oswald; font-size:20px ;">Precio: <span class="bg-warning text-white rounded-1 px-2">4700 Bs.</span></p>
                                 <div class="row justify-content-center align-items-center">
                                     <div class="col-6 text-end">
-                                        <button class="btn bt1   add-to-cart" data-name="HELADERA 286 LITROS GENERAL LUX" data-price="1500">
+                                        <button class="btn bt1   add-to-cart" data-name="HELADERA 285 LITROS GENERAL LUX" data-price="4700">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-cart-check" viewBox="0 0 16 16">
                                                 <path d="M11.354 6.354a.5.5 0 0 0-.708-.708L8 8.293 6.854 7.146a.5.5 0 1 0-.708.708l1.5 1.5a.5.5 0 0 0 .708 0z"/>
                                                 <path d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1zm3.915 10L3.102 4h10.796l-1.313 7zM6 14a1 1 0 1 1-2 0 1 1 0 0 1 2 0m7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0"/>
@@ -571,7 +610,7 @@
                                         </button>
                                     </div>
                                     <div class="col-6 text-start">
-                                        <a href="" class="btn bt2 ">
+                                        <a href="#" class="btn bt2" data-bs-toggle="modal" data-bs-target="#detalleModal18">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-chat-square-text-fill" viewBox="0 0 16 16">
                                                 <path d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2h-2.5a1 1 0 0 0-.8.4l-1.9 2.533a1 1 0 0 1-1.6 0L5.3 12.4a1 1 0 0 0-.8-.4H2a2 2 0 0 1-2-2zm3.5 1a.5.5 0 0 0 0 1h9a.5.5 0 0 0 0-1zm0 2.5a.5.5 0 0 0 0 1h9a.5.5 0 0 0 0-1zm0 2.5a.5.5 0 0 0 0 1h5a.5.5 0 0 0 0-1z"/>
                                             </svg>
@@ -587,10 +626,10 @@
 
                             <div class="card-body px-4">
                                 <h5 class="card-title">JARRA ELECTRICA</h5>
-                                <p class="card-text fw-bold" style="font-family: oswald; font-size:20px ;">Precio: <span class="bg-warning text-white rounded-1 px-2">1900 Bs.</span></p>
+                                <p class="card-text fw-bold" style="font-family: oswald; font-size:20px ;">Precio: <span class="bg-warning text-white rounded-1 px-2">120 Bs.</span></p>
                                 <div class="row justify-content-center align-items-center">
                                     <div class="col-6 text-end">
-                                        <button class="btn bt1   add-to-cart" data-name="JARRA ELECTRICA MORLEY" data-price="1500">
+                                        <button class="btn bt1   add-to-cart" data-name="JARRA ELECTRICA MORLEY" data-price="120">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-cart-check" viewBox="0 0 16 16">
                                                 <path d="M11.354 6.354a.5.5 0 0 0-.708-.708L8 8.293 6.854 7.146a.5.5 0 1 0-.708.708l1.5 1.5a.5.5 0 0 0 .708 0z"/>
                                                 <path d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1zm3.915 10L3.102 4h10.796l-1.313 7zM6 14a1 1 0 1 1-2 0 1 1 0 0 1 2 0m7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0"/>
@@ -599,7 +638,7 @@
                                         </button>
                                     </div>
                                     <div class="col-6 text-start">
-                                        <a href="" class="btn bt2 ">
+                                        <a href="#" class="btn bt2" data-bs-toggle="modal" data-bs-target="#detalleModal19">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-chat-square-text-fill" viewBox="0 0 16 16">
                                                 <path d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2h-2.5a1 1 0 0 0-.8.4l-1.9 2.533a1 1 0 0 1-1.6 0L5.3 12.4a1 1 0 0 0-.8-.4H2a2 2 0 0 1-2-2zm3.5 1a.5.5 0 0 0 0 1h9a.5.5 0 0 0 0-1zm0 2.5a.5.5 0 0 0 0 1h9a.5.5 0 0 0 0-1zm0 2.5a.5.5 0 0 0 0 1h5a.5.5 0 0 0 0-1z"/>
                                             </svg>
@@ -615,10 +654,10 @@
 
                             <div class="card-body px-4">
                                 <h5 class="card-title">LICUADORA </h5>
-                                <p class="card-text fw-bold" style="font-family: oswald; font-size:20px ;">Precio: <span class="bg-warning text-white rounded-1 px-2">1900 Bs.</span></p>
+                                <p class="card-text fw-bold" style="font-family: oswald; font-size:20px ;">Precio: <span class="bg-warning text-white rounded-1 px-2">350 Bs.</span></p>
                                 <div class="row justify-content-center align-items-center">
                                     <div class="col-6 text-end">
-                                        <button class="btn bt1   add-to-cart" data-name="LICUADORA GENERAL LUX" data-price="1500">
+                                        <button class="btn bt1   add-to-cart" data-name="LICUADORA GENERAL LUX" data-price="350">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-cart-check" viewBox="0 0 16 16">
                                                 <path d="M11.354 6.354a.5.5 0 0 0-.708-.708L8 8.293 6.854 7.146a.5.5 0 1 0-.708.708l1.5 1.5a.5.5 0 0 0 .708 0z"/>
                                                 <path d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1zm3.915 10L3.102 4h10.796l-1.313 7zM6 14a1 1 0 1 1-2 0 1 1 0 0 1 2 0m7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0"/>
@@ -627,7 +666,7 @@
                                         </button>
                                     </div>
                                     <div class="col-6 text-start">
-                                        <a href="" class="btn bt2 ">
+                                        <a href="#" class="btn bt2" data-bs-toggle="modal" data-bs-target="#detalleModal20">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-chat-square-text-fill" viewBox="0 0 16 16">
                                                 <path d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2h-2.5a1 1 0 0 0-.8.4l-1.9 2.533a1 1 0 0 1-1.6 0L5.3 12.4a1 1 0 0 0-.8-.4H2a2 2 0 0 1-2-2zm3.5 1a.5.5 0 0 0 0 1h9a.5.5 0 0 0 0-1zm0 2.5a.5.5 0 0 0 0 1h9a.5.5 0 0 0 0-1zm0 2.5a.5.5 0 0 0 0 1h5a.5.5 0 0 0 0-1z"/>
                                             </svg>
@@ -643,10 +682,10 @@
 
                             <div class="card-body px-4">
                                 <h5 class="card-title">LICUADORA</h5>
-                                    <p class="card-text fw-bold" style="font-family: oswald; font-size:20px ;">Precio: <span class="bg-warning text-white rounded-1 px-2">1900 Bs.</span></p>
+                                    <p class="card-text fw-bold" style="font-family: oswald; font-size:20px ;">Precio: <span class="bg-warning text-white rounded-1 px-2">350 Bs.</span></p>
                                 <div class="row justify-content-center align-items-center">
                                     <div class="col-6 text-end">
-                                        <button class="btn bt1   add-to-cart" data-name="LICUADORA ARNO" data-price="1500">
+                                        <button class="btn bt1   add-to-cart" data-name="LICUADORA ARNO" data-price="350">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-cart-check" viewBox="0 0 16 16">
                                                 <path d="M11.354 6.354a.5.5 0 0 0-.708-.708L8 8.293 6.854 7.146a.5.5 0 1 0-.708.708l1.5 1.5a.5.5 0 0 0 .708 0z"/>
                                                 <path d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1zm3.915 10L3.102 4h10.796l-1.313 7zM6 14a1 1 0 1 1-2 0 1 1 0 0 1 2 0m7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0"/>
@@ -655,7 +694,7 @@
                                         </button>
                                     </div>
                                     <div class="col-6 text-start">
-                                        <a href="" class="btn bt2 ">
+                                        <a href="#" class="btn bt2" data-bs-toggle="modal" data-bs-target="#detalleModal21">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-chat-square-text-fill" viewBox="0 0 16 16">
                                                 <path d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2h-2.5a1 1 0 0 0-.8.4l-1.9 2.533a1 1 0 0 1-1.6 0L5.3 12.4a1 1 0 0 0-.8-.4H2a2 2 0 0 1-2-2zm3.5 1a.5.5 0 0 0 0 1h9a.5.5 0 0 0 0-1zm0 2.5a.5.5 0 0 0 0 1h9a.5.5 0 0 0 0-1zm0 2.5a.5.5 0 0 0 0 1h5a.5.5 0 0 0 0-1z"/>
                                             </svg>
@@ -671,10 +710,10 @@
 
                             <div class="card-body px-4">
                                 <h5 class="card-title">PLANCHA RAF</h5>
-                                <p class="card-text fw-bold" style="font-family: oswald; font-size:20px ;">Precio: <span class="bg-warning text-white rounded-1 px-2">1900 Bs.</span></p>
+                                <p class="card-text fw-bold" style="font-family: oswald; font-size:20px ;">Precio: <span class="bg-warning text-white rounded-1 px-2">190 Bs.</span></p>
                                 <div class="row justify-content-center align-items-center">
                                     <div class="col-6 text-end">
-                                        <button class="btn bt1   add-to-cart" data-name="PLANCHA RAF" data-price="1500">
+                                        <button class="btn bt1   add-to-cart" data-name="PLANCHA RAF" data-price="150">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-cart-check" viewBox="0 0 16 16">
                                                 <path d="M11.354 6.354a.5.5 0 0 0-.708-.708L8 8.293 6.854 7.146a.5.5 0 1 0-.708.708l1.5 1.5a.5.5 0 0 0 .708 0z"/>
                                                 <path d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1zm3.915 10L3.102 4h10.796l-1.313 7zM6 14a1 1 0 1 1-2 0 1 1 0 0 1 2 0m7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0"/>
@@ -683,7 +722,7 @@
                                         </button>
                                     </div>
                                     <div class="col-6 text-start">
-                                        <a href="" class="btn bt2 ">
+                                        <a href="#" class="btn bt2" data-bs-toggle="modal" data-bs-target="#detalleModal22">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-chat-square-text-fill" viewBox="0 0 16 16">
                                                 <path d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2h-2.5a1 1 0 0 0-.8.4l-1.9 2.533a1 1 0 0 1-1.6 0L5.3 12.4a1 1 0 0 0-.8-.4H2a2 2 0 0 1-2-2zm3.5 1a.5.5 0 0 0 0 1h9a.5.5 0 0 0 0-1zm0 2.5a.5.5 0 0 0 0 1h9a.5.5 0 0 0 0-1zm0 2.5a.5.5 0 0 0 0 1h5a.5.5 0 0 0 0-1z"/>
                                             </svg>
@@ -701,6 +740,62 @@
             <div class="tab-pane fade" id="motorcycles" role="tabpanel" aria-labelledby="motorcycles-tab">
                 <div class="row justify-content-center">
                     <!-- Product Card Example -->
+                    <div class="col-lg-3 col-md-4 col-sm-6 mb-4 product" data-name="motocicleta">
+                        <div class="card cards  text-center">
+                            <img src="/assets/productos/motos/motohombre.jpg" class="card-img-top  mt-1" style="height: 270px;" alt="Cellphone 1">
+
+                            <div class="card-body px-4">
+                                <h5 class="card-title">MOTOCICLETA HAOJIN</h5>
+                                <p class="card-text fw-bold" style="font-family: oswald; font-size:20px ;">Precio: <span class="bg-warning text-white rounded-1 px-2">12000 Bs.</span></p>
+                                <div class="row justify-content-center align-items-center">
+                                    <div class="col-6 text-end">
+                                        <button class="btn bt1   add-to-cart" data-name="MOTOCICLETA HAOJIN TRABAJO" data-price="12000">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-cart-check" viewBox="0 0 16 16">
+                                                <path d="M11.354 6.354a.5.5 0 0 0-.708-.708L8 8.293 6.854 7.146a.5.5 0 1 0-.708.708l1.5 1.5a.5.5 0 0 0 .708 0z"/>
+                                                <path d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1zm3.915 10L3.102 4h10.796l-1.313 7zM6 14a1 1 0 1 1-2 0 1 1 0 0 1 2 0m7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0"/>
+                                            </svg>
+                                            
+                                        </button>
+                                    </div>
+                                    <div class="col-6 text-start">
+                                        <a href="#" class="btn bt2" data-bs-toggle="modal" data-bs-target="#detalleModal37">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-chat-square-text-fill" viewBox="0 0 16 16">
+                                                <path d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2h-2.5a1 1 0 0 0-.8.4l-1.9 2.533a1 1 0 0 1-1.6 0L5.3 12.4a1 1 0 0 0-.8-.4H2a2 2 0 0 1-2-2zm3.5 1a.5.5 0 0 0 0 1h9a.5.5 0 0 0 0-1zm0 2.5a.5.5 0 0 0 0 1h9a.5.5 0 0 0 0-1zm0 2.5a.5.5 0 0 0 0 1h5a.5.5 0 0 0 0-1z"/>
+                                            </svg>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-sm-6 mb-4 product" data-name="motocicleta">
+                        <div class="card cards  text-center">
+                            <img src="/assets/productos/motos/MotoMujer - copia.jpg" class="card-img-top  mt-1" style="height: 270px;" alt="Cellphone 1">
+
+                            <div class="card-body px-4">
+                                <h5 class="card-title">MOTOCICLETA HAOJIN</h5>
+                                <p class="card-text fw-bold" style="font-family: oswald; font-size:20px ;">Precio: <span class="bg-warning text-white rounded-1 px-2">12000 Bs.</span></p>
+                                <div class="row justify-content-center align-items-center">
+                                    <div class="col-6 text-end">
+                                        <button class="btn bt1   add-to-cart" data-name="MOTOCICLETA HAOJIN PASEO" data-price="12000">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-cart-check" viewBox="0 0 16 16">
+                                                <path d="M11.354 6.354a.5.5 0 0 0-.708-.708L8 8.293 6.854 7.146a.5.5 0 1 0-.708.708l1.5 1.5a.5.5 0 0 0 .708 0z"/>
+                                                <path d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1zm3.915 10L3.102 4h10.796l-1.313 7zM6 14a1 1 0 1 1-2 0 1 1 0 0 1 2 0m7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0"/>
+                                            </svg>
+                                            
+                                        </button>
+                                    </div>
+                                    <div class="col-6 text-start">
+                                        <a href="#" class="btn bt2" data-bs-toggle="modal" data-bs-target="#detalleModal38">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-chat-square-text-fill" viewBox="0 0 16 16">
+                                                <path d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2h-2.5a1 1 0 0 0-.8.4l-1.9 2.533a1 1 0 0 1-1.6 0L5.3 12.4a1 1 0 0 0-.8-.4H2a2 2 0 0 1-2-2zm3.5 1a.5.5 0 0 0 0 1h9a.5.5 0 0 0 0-1zm0 2.5a.5.5 0 0 0 0 1h9a.5.5 0 0 0 0-1zm0 2.5a.5.5 0 0 0 0 1h5a.5.5 0 0 0 0-1z"/>
+                                            </svg>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                     <div class="col-lg-3 col-md-4 col-sm-6 mb-4 product" data-name="balatas">
                         <div class="card cards  text-center">
                             <img src="/assets/productos/motos/balatas traseras - copia.jpg" class="card-img-top  mt-1" style="height: 270px;" alt="Cellphone 1">
@@ -719,7 +814,7 @@
                                         </button>
                                     </div>
                                     <div class="col-6 text-start">
-                                        <a href="" class="btn bt2 ">
+                                        <a href="#" class="btn bt2" data-bs-toggle="modal" data-bs-target="#detalleModal23">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-chat-square-text-fill" viewBox="0 0 16 16">
                                                 <path d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2h-2.5a1 1 0 0 0-.8.4l-1.9 2.533a1 1 0 0 1-1.6 0L5.3 12.4a1 1 0 0 0-.8-.4H2a2 2 0 0 1-2-2zm3.5 1a.5.5 0 0 0 0 1h9a.5.5 0 0 0 0-1zm0 2.5a.5.5 0 0 0 0 1h9a.5.5 0 0 0 0-1zm0 2.5a.5.5 0 0 0 0 1h5a.5.5 0 0 0 0-1z"/>
                                             </svg>
@@ -747,7 +842,7 @@
                                         </button>
                                     </div>
                                     <div class="col-6 text-start">
-                                        <a href="" class="btn bt2 ">
+                                        <a href="#" class="btn bt2" data-bs-toggle="modal" data-bs-target="#detalleModal24">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-chat-square-text-fill" viewBox="0 0 16 16">
                                                 <path d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2h-2.5a1 1 0 0 0-.8.4l-1.9 2.533a1 1 0 0 1-1.6 0L5.3 12.4a1 1 0 0 0-.8-.4H2a2 2 0 0 1-2-2zm3.5 1a.5.5 0 0 0 0 1h9a.5.5 0 0 0 0-1zm0 2.5a.5.5 0 0 0 0 1h9a.5.5 0 0 0 0-1zm0 2.5a.5.5 0 0 0 0 1h5a.5.5 0 0 0 0-1z"/>
                                             </svg>
@@ -775,7 +870,7 @@
                                         </button>
                                     </div>
                                     <div class="col-6 text-start">
-                                        <a href="" class="btn bt2 ">
+                                        <a href="#" class="btn bt2" data-bs-toggle="modal" data-bs-target="#detalleModal25">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-chat-square-text-fill" viewBox="0 0 16 16">
                                                 <path d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2h-2.5a1 1 0 0 0-.8.4l-1.9 2.533a1 1 0 0 1-1.6 0L5.3 12.4a1 1 0 0 0-.8-.4H2a2 2 0 0 1-2-2zm3.5 1a.5.5 0 0 0 0 1h9a.5.5 0 0 0 0-1zm0 2.5a.5.5 0 0 0 0 1h9a.5.5 0 0 0 0-1zm0 2.5a.5.5 0 0 0 0 1h5a.5.5 0 0 0 0-1z"/>
                                             </svg>
@@ -803,7 +898,7 @@
                                         </button>
                                     </div>
                                     <div class="col-6 text-start">
-                                        <a href="" class="btn bt2 ">
+                                        <a href="#" class="btn bt2" data-bs-toggle="modal" data-bs-target="#detalleModal26">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-chat-square-text-fill" viewBox="0 0 16 16">
                                                 <path d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2h-2.5a1 1 0 0 0-.8.4l-1.9 2.533a1 1 0 0 1-1.6 0L5.3 12.4a1 1 0 0 0-.8-.4H2a2 2 0 0 1-2-2zm3.5 1a.5.5 0 0 0 0 1h9a.5.5 0 0 0 0-1zm0 2.5a.5.5 0 0 0 0 1h9a.5.5 0 0 0 0-1zm0 2.5a.5.5 0 0 0 0 1h5a.5.5 0 0 0 0-1z"/>
                                             </svg>
@@ -831,7 +926,7 @@
                                         </button>
                                     </div>
                                     <div class="col-6 text-start">
-                                        <a href="" class="btn bt2 ">
+                                        <a href="#" class="btn bt2" data-bs-toggle="modal" data-bs-target="#detalleModal27">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-chat-square-text-fill" viewBox="0 0 16 16">
                                                 <path d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2h-2.5a1 1 0 0 0-.8.4l-1.9 2.533a1 1 0 0 1-1.6 0L5.3 12.4a1 1 0 0 0-.8-.4H2a2 2 0 0 1-2-2zm3.5 1a.5.5 0 0 0 0 1h9a.5.5 0 0 0 0-1zm0 2.5a.5.5 0 0 0 0 1h9a.5.5 0 0 0 0-1zm0 2.5a.5.5 0 0 0 0 1h5a.5.5 0 0 0 0-1z"/>
                                             </svg>
@@ -859,7 +954,7 @@
                                         </button>
                                     </div>
                                     <div class="col-6 text-start">
-                                        <a href="" class="btn bt2 ">
+                                        <a href="#" class="btn bt2" data-bs-toggle="modal" data-bs-target="#detalleModal28">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-chat-square-text-fill" viewBox="0 0 16 16">
                                                 <path d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2h-2.5a1 1 0 0 0-.8.4l-1.9 2.533a1 1 0 0 1-1.6 0L5.3 12.4a1 1 0 0 0-.8-.4H2a2 2 0 0 1-2-2zm3.5 1a.5.5 0 0 0 0 1h9a.5.5 0 0 0 0-1zm0 2.5a.5.5 0 0 0 0 1h9a.5.5 0 0 0 0-1zm0 2.5a.5.5 0 0 0 0 1h5a.5.5 0 0 0 0-1z"/>
                                             </svg>
@@ -887,7 +982,7 @@
                                         </button>
                                     </div>
                                     <div class="col-6 text-start">
-                                        <a href="" class="btn bt2 ">
+                                        <a href="#" class="btn bt2" data-bs-toggle="modal" data-bs-target="#detalleModal29">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-chat-square-text-fill" viewBox="0 0 16 16">
                                                 <path d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2h-2.5a1 1 0 0 0-.8.4l-1.9 2.533a1 1 0 0 1-1.6 0L5.3 12.4a1 1 0 0 0-.8-.4H2a2 2 0 0 1-2-2zm3.5 1a.5.5 0 0 0 0 1h9a.5.5 0 0 0 0-1zm0 2.5a.5.5 0 0 0 0 1h9a.5.5 0 0 0 0-1zm0 2.5a.5.5 0 0 0 0 1h5a.5.5 0 0 0 0-1z"/>
                                             </svg>
@@ -915,7 +1010,7 @@
                                         </button>
                                     </div>
                                     <div class="col-6 text-start">
-                                        <a href="" class="btn bt2 ">
+                                        <a href="#" class="btn bt2" data-bs-toggle="modal" data-bs-target="#detalleModal30">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-chat-square-text-fill" viewBox="0 0 16 16">
                                                 <path d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2h-2.5a1 1 0 0 0-.8.4l-1.9 2.533a1 1 0 0 1-1.6 0L5.3 12.4a1 1 0 0 0-.8-.4H2a2 2 0 0 1-2-2zm3.5 1a.5.5 0 0 0 0 1h9a.5.5 0 0 0 0-1zm0 2.5a.5.5 0 0 0 0 1h9a.5.5 0 0 0 0-1zm0 2.5a.5.5 0 0 0 0 1h5a.5.5 0 0 0 0-1z"/>
                                             </svg>
@@ -943,7 +1038,7 @@
                                         </button>
                                     </div>
                                     <div class="col-6 text-start">
-                                        <a href="" class="btn bt2 ">
+                                        <a href="#" class="btn bt2" data-bs-toggle="modal" data-bs-target="#detalleModal31">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-chat-square-text-fill" viewBox="0 0 16 16">
                                                 <path d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2h-2.5a1 1 0 0 0-.8.4l-1.9 2.533a1 1 0 0 1-1.6 0L5.3 12.4a1 1 0 0 0-.8-.4H2a2 2 0 0 1-2-2zm3.5 1a.5.5 0 0 0 0 1h9a.5.5 0 0 0 0-1zm0 2.5a.5.5 0 0 0 0 1h9a.5.5 0 0 0 0-1zm0 2.5a.5.5 0 0 0 0 1h5a.5.5 0 0 0 0-1z"/>
                                             </svg>
@@ -971,7 +1066,7 @@
                                         </button>
                                     </div>
                                     <div class="col-6 text-start">
-                                        <a href="" class="btn bt2 ">
+                                        <a href="#" class="btn bt2" data-bs-toggle="modal" data-bs-target="#detalleModal32">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-chat-square-text-fill" viewBox="0 0 16 16">
                                                 <path d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2h-2.5a1 1 0 0 0-.8.4l-1.9 2.533a1 1 0 0 1-1.6 0L5.3 12.4a1 1 0 0 0-.8-.4H2a2 2 0 0 1-2-2zm3.5 1a.5.5 0 0 0 0 1h9a.5.5 0 0 0 0-1zm0 2.5a.5.5 0 0 0 0 1h9a.5.5 0 0 0 0-1zm0 2.5a.5.5 0 0 0 0 1h5a.5.5 0 0 0 0-1z"/>
                                             </svg>
@@ -999,7 +1094,7 @@
                                         </button>
                                     </div>
                                     <div class="col-6 text-start">
-                                        <a href="" class="btn bt2 ">
+                                        <a href="#" class="btn bt2" data-bs-toggle="modal" data-bs-target="#detalleModal33">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-chat-square-text-fill" viewBox="0 0 16 16">
                                                 <path d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2h-2.5a1 1 0 0 0-.8.4l-1.9 2.533a1 1 0 0 1-1.6 0L5.3 12.4a1 1 0 0 0-.8-.4H2a2 2 0 0 1-2-2zm3.5 1a.5.5 0 0 0 0 1h9a.5.5 0 0 0 0-1zm0 2.5a.5.5 0 0 0 0 1h9a.5.5 0 0 0 0-1zm0 2.5a.5.5 0 0 0 0 1h5a.5.5 0 0 0 0-1z"/>
                                             </svg>
@@ -1027,7 +1122,7 @@
                                         </button>
                                     </div>
                                     <div class="col-6 text-start">
-                                        <a href="" class="btn bt2 ">
+                                        <a href="#" class="btn bt2" data-bs-toggle="modal" data-bs-target="#detalleModal34">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-chat-square-text-fill" viewBox="0 0 16 16">
                                                 <path d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2h-2.5a1 1 0 0 0-.8.4l-1.9 2.533a1 1 0 0 1-1.6 0L5.3 12.4a1 1 0 0 0-.8-.4H2a2 2 0 0 1-2-2zm3.5 1a.5.5 0 0 0 0 1h9a.5.5 0 0 0 0-1zm0 2.5a.5.5 0 0 0 0 1h9a.5.5 0 0 0 0-1zm0 2.5a.5.5 0 0 0 0 1h5a.5.5 0 0 0 0-1z"/>
                                             </svg>
@@ -1055,7 +1150,7 @@
                                         </button>
                                     </div>
                                     <div class="col-6 text-start">
-                                        <a href="" class="btn bt2 ">
+                                        <a href="#" class="btn bt2" data-bs-toggle="modal" data-bs-target="#detalleModal35">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-chat-square-text-fill" viewBox="0 0 16 16">
                                                 <path d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2h-2.5a1 1 0 0 0-.8.4l-1.9 2.533a1 1 0 0 1-1.6 0L5.3 12.4a1 1 0 0 0-.8-.4H2a2 2 0 0 1-2-2zm3.5 1a.5.5 0 0 0 0 1h9a.5.5 0 0 0 0-1zm0 2.5a.5.5 0 0 0 0 1h9a.5.5 0 0 0 0-1zm0 2.5a.5.5 0 0 0 0 1h5a.5.5 0 0 0 0-1z"/>
                                             </svg>
@@ -1083,7 +1178,7 @@
                                         </button>
                                     </div>
                                     <div class="col-6 text-start">
-                                        <a href="" class="btn bt2 ">
+                                        <a href="#" class="btn bt2" data-bs-toggle="modal" data-bs-target="#detalleModal36">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-chat-square-text-fill" viewBox="0 0 16 16">
                                                 <path d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2h-2.5a1 1 0 0 0-.8.4l-1.9 2.533a1 1 0 0 1-1.6 0L5.3 12.4a1 1 0 0 0-.8-.4H2a2 2 0 0 1-2-2zm3.5 1a.5.5 0 0 0 0 1h9a.5.5 0 0 0 0-1zm0 2.5a.5.5 0 0 0 0 1h9a.5.5 0 0 0 0-1zm0 2.5a.5.5 0 0 0 0 1h5a.5.5 0 0 0 0-1z"/>
                                             </svg>
@@ -1100,18 +1195,21 @@
 
     <!-- Cart Modal -->
     <div class="modal fade" id="cartModal" tabindex="-1" aria-labelledby="cartModalLabel" aria-hidden="true">
-        <div class="modal-dialog ">
-            <div class="modal-content" >
+        <div class="modal-dialog">
+            <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="cartModalLabel" style="font-family: oswald;">Your Cart</h5>
+                    <h5 class="modal-title letraq" id="cartModalLabel">Detalle Total de Carrito Compras</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
                     <ul id="cartItems" class="list-group"></ul>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-danger" onclick="clearCart()">Clear Cart</button>
-                    <button type="button" class="btn btn-primary">Checkout</button>
+                    <button type="button" class="btn btn-outline-success" id="whatsappButton">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-whatsapp" viewBox="0 0 16 16">
+                            <path d="M13.601 2.326A7.85 7.85 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.9 7.9 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.9 7.9 0 0 0 13.6 2.326zM7.994 14.521a6.6 6.6 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.56 6.56 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592m3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.73.73 0 0 0-.529.247c-.182.198-.691.677-.691 1.654s.71 1.916.81 2.049c.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232"/>
+                        </svg>
+                        Enviar al WhatsApp</button>
                 </div>
             </div>
         </div>
@@ -1144,6 +1242,12 @@
                     <div class="d-flex align-items-end justify-content-end">
                         <img src="/assets/productos/celulares/blace A 73.jpg" class="img-fluid" style="height: 180px;" alt="Redmi 14 C">
                     </div>
+                    <div class="promo-label">
+                        <span>¡Oferta Credito!</span><br>
+                        <span>Inicial 200bs</span><br>
+                        <span>190bs c/sem. X 12 sem.</span>
+                    </div>
+                   
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
@@ -1178,6 +1282,11 @@
                     <div class="d-flex align-items-end justify-content-end">
                         <img src="/assets/productos/celulares/blade v60.jpg" class="img-fluid" style="height: 180px;" alt="Redmi 14 C">
                     </div>
+                    <div class="promo-label">
+                        <span>¡Oferta Credito!</span><br>
+                        <span>Inicial 200bs</span><br>
+                        <span>180bs c/sem. X 12 sem.</span>
+                    </div>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
@@ -1210,6 +1319,11 @@
                     </ul>
                     <div class="d-flex align-items-end justify-content-end">
                         <img src="/assets/productos/celulares/note 50 realme.jpg" class="img-fluid" style="height: 180px;" alt="Redmi 14 C">
+                    </div>
+                    <div class="promo-label">
+                        <span>¡Oferta Credito!</span><br>
+                        <span>Inicial 200bs</span><br>
+                        <span>160bs c/sem. X 12 sem.</span>
                     </div>
                 </div>
                 <div class="modal-footer">
@@ -1244,6 +1358,11 @@
                     <div class="d-flex align-items-end justify-content-end">
                         <img src="/assets/productos/celulares/infinix smart 9.jpg" class="img-fluid" style="height: 180px;" alt="Redmi 14 C">
                     </div>
+                    <div class="promo-label">
+                        <span>¡Oferta Credito!</span><br>
+                        <span>Inicial 200bs</span><br>
+                        <span>160bs c/sem. X 12 sem.</span>
+                    </div>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
@@ -1276,6 +1395,11 @@
                     </ul>
                     <div class="d-flex align-items-end justify-content-end">
                         <img src="/assets/productos/celulares/infinix 50i .jpg" class="img-fluid" style="height: 180px;" alt="Redmi 14 C">
+                    </div>
+                    <div class="promo-label">
+                        <span>¡Oferta Credito!</span><br>
+                        <span>Inicial 200bs</span><br>
+                        <span>180bs c/sem. X 12 sem.</span>
                     </div>
                 </div>
                 <div class="modal-footer">
@@ -1310,6 +1434,11 @@
                     <div class="d-flex align-items-end justify-content-end">
                         <img src="/assets/productos/celulares/infinix 50i .jpg" class="img-fluid" style="height: 180px;" alt="Redmi 14 C">
                     </div>
+                    <div class="promo-label">
+                        <span>¡Oferta Credito!</span><br>
+                        <span>Inicial 200bs</span><br>
+                        <span>230bs c/sem. X 16 sem.</span>
+                    </div>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
@@ -1343,6 +1472,11 @@
                     <div class="d-flex align-items-end justify-content-end">
                         <img src="/assets/productos/celulares/redmi 14 c.jpg" class="img-fluid" style="height: 180px;" alt="Redmi 14 C">
                     </div>
+                    <div class="promo-label">
+                        <span>¡Oferta Credito!</span><br>
+                        <span>Inicial 200bs</span><br>
+                        <span>200bs c/sem. X 14 sem.</span>
+                    </div>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
@@ -1375,6 +1509,11 @@
                     </ul>
                     <div class="d-flex align-items-end justify-content-end">
                         <img src="/assets/productos/celulares/redmi A3X.jpg" class="img-fluid" style="height: 180px;" alt="Redmi 14 C">
+                    </div>
+                    <div class="promo-label">
+                        <span>¡Oferta Credito!</span><br>
+                        <span>Inicial 200bs</span><br>
+                        <span>160bs c/sem. X 12 sem.</span>
                     </div>
                 </div>
                 <div class="modal-footer">
@@ -1410,6 +1549,11 @@
                     <div class="d-flex align-items-end justify-content-end">
                         <img src="/assets/productos/celulares/spark 30 C .jpg" class="img-fluid" style="height: 180px;" alt="Redmi 14 C">
                     </div>
+                    <div class="promo-label">
+                        <span>¡Oferta Credito!</span><br>
+                        <span>Inicial 200bs</span><br>
+                        <span>180bs c/sem. X 12 sem.</span>
+                    </div>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
@@ -1443,6 +1587,11 @@
                     </ul>
                     <div class="d-flex align-items-end justify-content-end">
                         <img src="/assets/productos/celulares/spark 30 pro.jpg" class="img-fluid" style="height: 180px;" alt="Redmi 14 C">
+                    </div>
+                    <div class="promo-label">
+                        <span>¡Oferta Credito!</span><br>
+                        <span>Inicial 200bs</span><br>
+                        <span>250bs c/sem. X 14 sem.</span>
                     </div>
                 </div>
                 <div class="modal-footer">
@@ -1478,6 +1627,11 @@
                     <div class="d-flex align-items-end justify-content-end">
                         <img src="/assets/productos/celulares/tecno 20.jpg" class="img-fluid" style="height: 180px;" alt="Redmi 14 C">
                     </div>
+                    <div class="promo-label">
+                        <span>¡Oferta Credito!</span><br>
+                        <span>Inicial 200bs</span><br>
+                        <span>180bs c/sem. X 12 sem.</span>
+                    </div>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
@@ -1485,7 +1639,1099 @@
             </div>
         </div>
     </div>
+
+
+    <!--ELECTRODOMESTICOS -->
+    <div class="modal fade" id="detalleModal11" tabindex="-1" aria-labelledby="detalleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content " style="font-family: oswald;">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="detalleModalLabel" style="font-family: oswald;" >Detalle del Electrodomestico</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                </div>
+                <div class="modal-body">
+                    <h6 class="text-center" style="font-family: oswald; font-size: 25px;">Televisor SkyWorth 43 pulg.</h6>
+                    <p style="font-family: oswald; font-size: 20px;">Características:</p>
+                    <ul class="px-3">
+                        
+                        <li>Marca: SkyWorth</li>
+                        <li>Pantalla: 43 pulgadas</li>
+                        <li>Resolución: 1920 x 1080 px</li>
+                        <li>Tecnología de Audio: Dolby 6W+6W</li>
+                        <li>Conectividad: WIFI / Bloetooth / HDMI / USB</li>
+                        <li>Sistema Operativo: Android</li>
+                        <li>
+                            "¡Lleva el cine a tu hogar! El televisor Skyworth de 43 pulgadas
+                             te ofrece imágenes impresionantes, sonido envolvente y diseño elegante. 
+                            ¡Cómpralo ya y transforma tus momentos de entretenimiento!" 🎥✨
+                        </li>
+                    </ul>
+                    <div class="d-flex align-items-end justify-content-end">
+                        <img src="/assets/productos/electrodomesticos/tv 43 pulg skyworth.jpg" class="img-fluid" style="height: 180px;" alt="Redmi 14 C">
+                    </div>
+                    <div class="promo-label">
+                        <span>¡Oferta Credito!</span><br>
+                        <span>Inicial 300bs</span><br>
+                        <span>240bs c/sem. X 20 sem.</span>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="detalleModal12" tabindex="-1" aria-labelledby="detalleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content " style="font-family: oswald;">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="detalleModalLabel" style="font-family: oswald;" >Detalle del Electrodomestico</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                </div>
+                <div class="modal-body">
+                    <h6 class="text-center" style="font-family: oswald; font-size: 25px;">Frezzer 285 litros </h6>
+                    <p style="font-family: oswald; font-size: 20px;">Características:</p>
+                    <ul class="px-3">
+                        
+                        <li>Marca: General Lux</li>
+                        <li>Capacidad: 285 litros</li>
+                        <li>Super Cooler y Bajo Ruido</li>
+                        <li>Dispositivo de Eliminación de Agua</li>
+                        <li>Ruedas Giratorias con Freno</li>
+                        <li>Lock y Key </li>
+                        <li>
+                            "¡Conserva más y mejor! El freezer General Lux de 285 litros 
+                            ofrece gran capacidad, eficiencia y durabilidad. 
+                            ¡Cómpralo ya y mantén tus alimentos siempre frescos!" ❄️🛒
+                        </li>
+                    </ul>
+                    <div class="d-flex align-items-end justify-content-end">
+                        <img src="/assets/productos/electrodomesticos/285 frezzer general lux.jpg" class="img-fluid" style="height: 180px;" alt="Redmi 14 C">
+                    </div>
+                    <div class="promo-label">
+                        <span>¡Oferta Credito!</span><br>
+                        <span>Inicial 400bs</span><br>
+                        <span>290bs c/sem. X 24 sem.</span>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="detalleModal13" tabindex="-1" aria-labelledby="detalleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content " style="font-family: oswald;">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="detalleModalLabel" style="font-family: oswald;" >Detalle del Electrodomestico</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                </div>
+                <div class="modal-body">
+                    <h6 class="text-center" style="font-family: oswald; font-size: 25px;">Aire Acondicionado </h6>
+                    <p style="font-family: oswald; font-size: 20px;">Características:</p>
+                    <ul class="px-3">
+                        
+                        <li>Marca: Dagor</li>
+                        <li>Capacidad: 12.000 BTU</li>
+                        <li>Tipo: Calor/Frio</li>
+                        <li>Pantalla: LCD con Visor de Tempreratura</li>
+                        <li>Gas: Ecológico</li>
+                        <li>Cuenta con: Filtro Antibacteria</li>
+                        <li>
+                            "¡Refresca tu espacio al instante! El aire acondicionado Dagor 
+                            de 12,000 BTU combina potencia, eficiencia y comodidad. 
+                            ¡Cómpralo ya y disfruta del clima perfecto todo el año!" ❄️🌬️
+                        </li>
+                    </ul>
+                    <div class="d-flex align-items-end justify-content-end">
+                        <img src="/assets/productos/electrodomesticos/aire acondicionado 12000 btu dagor.jpg" class="img-fluid" style="height: 180px;" alt="Redmi 14 C">
+                    </div>
+                    <div class="promo-label">
+                        <span>¡Oferta Credito!</span><br>
+                        <span>Inicial 300bs</span><br>
+                        <span>290bs c/sem. X 24 sem.</span>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="detalleModal14" tabindex="-1" aria-labelledby="detalleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content " style="font-family: oswald;">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="detalleModalLabel" style="font-family: oswald;" >Detalle del Electrodomestico</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                </div>
+                <div class="modal-body">
+                    <h6 class="text-center" style="font-family: oswald; font-size: 25px;">Cocina 4 Hornallas </h6>
+                    <p style="font-family: oswald; font-size: 20px;">Características:</p>
+                    <ul class="px-3">
+                        
+                        <li>Marca: Velanoba</li>
+                        <li>Capacidad: 4 Hornallas</li>
+                        <li>Material: Superficie de Acero Inoxidable o Esmaltado para Mayor durabilidad</li>
+                        <li>Seguridad: Sistema Antiescapes de Gas</li>
+                        <li>Diseño: Compacto y Moderno, Perfecto.</li>
+                        
+                        <li>
+                            "¡Prepara tus mejores recetas con comodidad y estilo! Con la 
+                            cocina de 4 hornallas, tendrás potencia, diseño y versatilidad
+                             en un solo equipo. 
+                            ¡Cómprala ya y lleva tus platillos al siguiente nivel!" 🍳✨
+                        </li>
+                    </ul>
+                    <div class="d-flex align-items-end justify-content-end">
+                        <img src="/assets/productos/electrodomesticos/cocina 4 hornallas velanoba.jpg" class="img-fluid" style="height: 180px;" alt="Redmi 14 C">
+                    </div>
+                    <div class="promo-label">
+                        <span>¡Oferta Credito!</span><br>
+                        <span>Inicial 200bs</span><br>
+                        <span>210bs c/sem. X 16 sem.</span>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="detalleModal15" tabindex="-1" aria-labelledby="detalleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content " style="font-family: oswald;">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="detalleModalLabel" style="font-family: oswald;" >Detalle del Electrodomestico</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                </div>
+                <div class="modal-body">
+                    <h6 class="text-center" style="font-family: oswald; font-size: 25px;">Cocina 5 Hornallas </h6>
+                    <p style="font-family: oswald; font-size: 20px;">Características:</p>
+                    <ul class="px-3">
+                        
+                        <li>Marca: winStar</li>
+                        <li>Capacidad: 5 Hornallas</li>
+                        <li>Material: Superficie de Acero Inoxidable o Esmaltado para Mayor durabilidad</li>
+                        <li>Seguridad: Sistema Antiescapes de Gas</li>
+                        <li>Diseño: Compacto y Moderno, Perfecto.</li>
+                        
+                        <li>
+                            "¡Prepara tus mejores recetas con comodidad y estilo! Con la 
+                            cocina de 5 hornallas, tendrás potencia, diseño y versatilidad
+                             en un solo equipo. 
+                            ¡Cómprala ya y lleva tus platillos al siguiente nivel!" 🍳✨
+                        </li>
+                    </ul>
+                    <div class="d-flex align-items-end justify-content-end">
+                        <img src="/assets/productos/electrodomesticos/cocina 5 hornallas winStar.jpg" class="img-fluid" style="height: 180px;" alt="Redmi 14 C">
+                    </div>
+                    <div class="promo-label">
+                        <span>¡Oferta Credito!</span><br>
+                        <span>Inicial 300bs</span><br>
+                        <span>260bs c/sem. X 24 sem.</span>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="detalleModal16" tabindex="-1" aria-labelledby="detalleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content " style="font-family: oswald;">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="detalleModalLabel" style="font-family: oswald;" >Detalle del Electrodomestico</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                </div>
+                <div class="modal-body">
+                    <h6 class="text-center" style="font-family: oswald; font-size: 25px;">Cocina 4 Hornallas </h6>
+                    <p style="font-family: oswald; font-size: 20px;">Características:</p>
+                    <ul class="px-3">
+                        
+                        <li>Marca: winStar</li>
+                        <li>Capacidad: 4 Hornallas</li>
+                        <li>Material: Superficie de Acero Inoxidable o Esmaltado para Mayor durabilidad</li>
+                        <li>Seguridad: Sistema Antiescapes de Gas</li>
+                        <li>Diseño: Compacto y Moderno, Perfecto.</li>
+                        
+                        <li>
+                            "¡Prepara tus mejores recetas con comodidad y estilo! Con la 
+                            cocina de 4 hornallas, tendrás potencia, diseño y versatilidad
+                             en un solo equipo. 
+                            ¡Cómprala ya y lleva tus platillos al siguiente nivel!" 🍳✨
+                        </li>
+                    </ul>
+                    <div class="d-flex align-items-end justify-content-end">
+                        <img src="/assets/productos/electrodomesticos/cocina de 4 hornallas winstar .jpg" class="img-fluid" style="height: 180px;" alt="Redmi 14 C">
+                    </div>
+                    <div class="promo-label">
+                        <span>¡Oferta Credito!</span><br>
+                        <span>Inicial 200bs</span><br>
+                        <span>180bs c/sem. X 16 sem.</span>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="detalleModal17" tabindex="-1" aria-labelledby="detalleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content " style="font-family: oswald;">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="detalleModalLabel" style="font-family: oswald;" >Detalle del Electrodomestico</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                </div>
+                <div class="modal-body">
+                    <h6 class="text-center" style="font-family: oswald; font-size: 25px;">Frezzer 308 litros </h6>
+                    <p style="font-family: oswald; font-size: 20px;">Características:</p>
+                    <ul class="px-3">
+                        
+                        <li>Marca: Master G</li>
+                        <li>Capacidad: 308 litros</li>
+                        <li>Super Cooler y Bajo Ruido</li>
+                        <li>Dispositivo de Eliminación de Agua</li>
+                        <li>Ruedas Giratorias con Freno</li>
+                        <li>Lock y Key </li>
+                        <li>
+                            "¡Conserva más y mejor! El freezer Master G de 308 litros 
+                            ofrece gran capacidad, eficiencia y durabilidad. 
+                            ¡Cómpralo ya y mantén tus alimentos siempre frescos!" ❄️🛒
+                        </li>
+                    </ul>
+                    <div class="d-flex align-items-end justify-content-end">
+                        <img src="/assets/productos/electrodomesticos/freezer 308 litros master g.jpg" class="img-fluid" style="height: 180px;" alt="Redmi 14 C">
+                    </div>
+                    <div class="promo-label">
+                        <span>¡Oferta Credito!</span><br>
+                        <span>Inicial 400bs</span><br>
+                        <span>290bs c/sem. X 24 sem.</span>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="detalleModal18" tabindex="-1" aria-labelledby="detalleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content " style="font-family: oswald;">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="detalleModalLabel" style="font-family: oswald;" >Detalle del Electrodomestico</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                </div>
+                <div class="modal-body">
+                    <h6 class="text-center" style="font-family: oswald; font-size: 25px;">Heladera 285 litros </h6>
+                    <p style="font-family: oswald; font-size: 20px;">Características:</p>
+                    <ul class="px-3">
+                        
+                        <li>Marca: General Lux</li>
+                        <li>Capacidad: 285 litros</li>
+                        <li>Super Cooler y Bajo Ruido</li>
+                        <li>Motor: GMCC</li>
+                        <li>Gas: Ecológico R600a</li>
+                        <li>251 L. / R: 198 / F: 53 </li>
+                        <li>
+                            "¡Espacio y frescura para tu hogar! La heladera General Lux de 285 
+                            litros combina capacidad, eficiencia y diseño moderno. ¡Cómprala ya y 
+                            conserva tus alimentos frescos por más tiempo!" ❄️🛒
+                        </li>
+                    </ul>
+                    <div class="d-flex align-items-end justify-content-end">
+                        <img src="/assets/productos/electrodomesticos/heladera 286 litros general lux.jpg" class="img-fluid" style="height: 180px;" alt="Redmi 14 C">
+                    </div>
+                    <div class="promo-label">
+                        <span>¡Oferta Credito!</span><br>
+                        <span>Inicial 400bs</span><br>
+                        <span>290bs c/sem. X 24 sem.</span>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="detalleModal19" tabindex="-1" aria-labelledby="detalleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content " style="font-family: oswald;">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="detalleModalLabel" style="font-family: oswald;" >Detalle del Electrodomestico</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                </div>
+                <div class="modal-body">
+                    <h6 class="text-center" style="font-family: oswald; font-size: 25px;">Jarra Electrica </h6>
+                    <p style="font-family: oswald; font-size: 20px;">Características:</p>
+                    <ul class="px-3">
+                        
+                        <li>Marca: Morley</li>
+                        <li>Capacidad: entre 1.5 y 2 litros, ideal para preparar té, café o mate.</li>
+                        <li>Potencia: Rápido calentamiento gracias a su motor de 1500W a 2200W.</li>
+                        <li>Seguridad: Apagado automático y protección contra sobrecalentamiento.</li>
+                        <li>Filtro: Antical desmontable para mayor limpieza y durabilidad.</li>
+                       
+                        <li>
+                            "¡Disfruta de tus bebidas calientes en minutos! Con la jarra eléctrica,
+                             combina rapidez, diseño y seguridad.
+                             ¡Cómprala ya y simplifica tu día!" ☕⚡
+                        </li>
+                    </ul>
+                    <div class="d-flex align-items-end justify-content-end">
+                        <img src="/assets/productos/electrodomesticos/jarra Electrica morley.jpg" class="img-fluid" style="height: 180px;" alt="Redmi 14 C">
+                    </div>
+                    <div class="promo-label">
+                        <span>¡Oferta Credito!</span><br>
+                        <span>Inicial 50bs</span><br>
+                        <span>40bs c/sem. X 4 sem.</span>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="detalleModal20" tabindex="-1" aria-labelledby="detalleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content " style="font-family: oswald;">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="detalleModalLabel" style="font-family: oswald;" >Detalle del Electrodomestico</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                </div>
+                <div class="modal-body">
+                    <h6 class="text-center" style="font-family: oswald; font-size: 25px;">Licuadora </h6>
+                    <p style="font-family: oswald; font-size: 20px;">Características:</p>
+                    <ul class="px-3">
+                        
+                        <li>Marca: General Lux</li>
+                        <li>Potencia: Motor de alta potencia, ideal para licuar frutas, verduras, y hielo.</li>
+                        <li>Capacidad del vaso: Entre 1.5 y 2 litros, perfecto para preparar jugos y batidos en mayor cantidad.</li>
+                        <li>Velocidades: Múltiples opciones para controlar la textura de las mezclas.</li>
+                        <li>Cuchillas: De acero inoxidable, diseñadas para un licuado eficiente y uniforme.</li>
+                       
+                        <li>
+                            "¡Prepara batidos, salsas y más con facilidad! La licuadora 
+                            General Lux combina potencia, capacidad y diseño para hacer 
+                            tu vida más práctica. 
+                            ¡Cómprala ya y lleva tus recetas al siguiente nivel!" 🥤✨
+                        </li>
+                    </ul>
+                    <div class="d-flex align-items-end justify-content-end">
+                        <img src="/assets/productos/electrodomesticos/licuadora  general lux.jpg" class="img-fluid" style="height: 180px;" alt="Redmi 14 C">
+                    </div>
+                    <div class="promo-label">
+                        <span>¡Oferta Credito!</span><br>
+                        <span>Inicial 50bs</span><br>
+                        <span>70bs c/sem. X 8 sem.</span>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="detalleModal21" tabindex="-1" aria-labelledby="detalleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content " style="font-family: oswald;">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="detalleModalLabel" style="font-family: oswald;" >Detalle del Electrodomestico</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                </div>
+                <div class="modal-body">
+                    <h6 class="text-center" style="font-family: oswald; font-size: 25px;">Licuadora </h6>
+                    <p style="font-family: oswald; font-size: 20px;">Características:</p>
+                    <ul class="px-3">
+                        
+                        <li>Marca: Arno</li>
+                        <li>Potencia: Motor de alta potencia, ideal para licuar frutas, verduras, y hielo.</li>
+                        <li>Capacidad del vaso: Entre 1.5 y 2 litros, perfecto para preparar jugos y batidos en mayor cantidad.</li>
+                        <li>Velocidades: Múltiples opciones para controlar la textura de las mezclas.</li>
+                        <li>Cuchillas: De acero inoxidable, diseñadas para un licuado eficiente y uniforme.</li>
+                       
+                        <li>
+                            "¡Prepara batidos, salsas y más con facilidad! La licuadora 
+                            Arno combina potencia, capacidad y diseño para hacer 
+                            tu vida más práctica. 
+                            ¡Cómprala ya y lleva tus recetas al siguiente nivel!" 🥤✨
+                        </li>
+                    </ul>
+                    <div class="d-flex align-items-end justify-content-end">
+                        <img src="/assets/productos/electrodomesticos/licuadora  general lux.jpg" class="img-fluid" style="height: 180px;" alt="Redmi 14 C">
+                    </div>
+                    <div class="promo-label">
+                        <span>¡Oferta Credito!</span><br>
+                        <span>Inicial 50bs</span><br>
+                        <span>70bs c/sem. X 8 sem.</span>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="detalleModal22" tabindex="-1" aria-labelledby="detalleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content " style="font-family: oswald;">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="detalleModalLabel" style="font-family: oswald;" >Detalle del Electrodomestico</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                </div>
+                <div class="modal-body">
+                    <h6 class="text-center" style="font-family: oswald; font-size: 25px;">Plancha RAF </h6>
+                    <p style="font-family: oswald; font-size: 20px;">Características:</p>
+                    <ul class="px-3">
+                        
+                        <li>Marca: RAF</li>
+                        <li>Potencia: Alta potencia para un planchado rápido y eficiente.</li>
+                        <li>Placa: Antiadherente o de cerámica, desliza fácilmente sobre cualquier tipo de tela.</li>
+                        <li>Ajuste de temperatura: Regulable según el tipo de tejido.</li>
+                        <li>Diseño ergonómico: Cómoda de manejar, ligera y con cable giratorio.</li>
+                       
+                        <li>
+                            "¡Dale a tu ropa un acabado impecable! Con la plancha RAF, 
+                            combina potencia, precisión y cuidado en cada pasada.
+                             ¡Cómprala ya y mantén tus prendas perfectas siempre!" 👕✨
+                        </li>
+                    </ul>
+                    <div class="d-flex align-items-end justify-content-end">
+                        <img src="/assets/productos/electrodomesticos/plancha RAF.jpg" class="img-fluid" style="height: 180px;" alt="Redmi 14 C">
+                    </div>
+                    <div class="promo-label">
+                        <span>¡Oferta Credito!</span><br>
+                        <span>Inicial 50bs</span><br>
+                        <span>40bs c/sem. X 4 sem.</span>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     
+    
+
+    <!--MOTOSICLETAS -->
+    <div class="modal fade" id="detalleModal23" tabindex="-1" aria-labelledby="detalleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content " style="font-family: oswald;">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="detalleModalLabel" style="font-family: oswald;" >Detalle del Repuesto</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                </div>
+                <div class="modal-body">
+                    <h6 class="text-center" style="font-family: oswald; font-size: 25px;">balatas Trasera </h6>
+                    <p style="font-family: oswald; font-size: 20px;">Características:</p>
+                    <ul class="px-3">
+                        
+                        <li>Material: Fabricadas con compuestos de alta resistencia para garantizar durabilidad.</li>
+                        <li>Desempeño: Excelente rendimiento de frenado en diferentes condiciones de manejo.</li>
+                        <li>Durabilidad: Resistencia al desgaste, incluso en situaciones de uso intensivo.</li>
+                        <li>Seguridad: Mayor control y precisión al frenar, reduciendo el tiempo de respuesta.</li>
+                        <li></li>
+                       
+                        <li>
+                            "¡Garantiza la seguridad de tu Motocicleta! Con las balatas traseras,
+                             obtén máxima resistencia y frenado confiable. 
+                            ¡Cómpralas ya y conduce con total tranquilidad!" 🛠️
+                        </li>
+                    </ul>
+                    <div class="d-flex align-items-end justify-content-end">
+                        <img src="/assets/productos/motos/balatas traseras.jpg" class="img-fluid" style="height: 180px;" alt="Redmi 14 C">
+                    </div>
+                    <div class="promo-label">
+                        <span>¡Oferta Credito!</span><br>
+                        <span>40 bs X 2 sem.</span>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="detalleModal24" tabindex="-1" aria-labelledby="detalleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content " style="font-family: oswald;">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="detalleModalLabel" style="font-family: oswald;" >Detalle del Repuesto</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                </div>
+                <div class="modal-body">
+                    <h6 class="text-center" style="font-family: oswald; font-size: 25px;">Cable de Embriague </h6>
+                    <p style="font-family: oswald; font-size: 20px;">Características:</p>
+                    <ul class="px-3">
+                        
+                        <li>Material: Fabricado con acero trenzado de alta resistencia y cubierta protectora para mayor durabilidad.</li>
+                        <li>Desempeño: Proporciona una transmisión suave y precisa del embrague.</li>
+                        <li>Resistencia: Alta tolerancia a la tensión y al desgaste por uso continuo.</li>
+                        <li>Protección: Recubrimiento externo para evitar corrosión y daño por exposición a elementos.</li>
+                        <li></li>
+                       
+                        <li>
+                            "¡Asegura un control perfecto en cada cambio de marcha! El 
+                            cable de embrague para motocicleta combina durabilidad y rendimiento. 
+                            ¡Cómpralo ya y disfruta de un manejo suave y seguro!" 🏍️⚙️
+                        </li>
+                    </ul>
+                    <div class="d-flex align-items-end justify-content-end">
+                        <img src="/assets/productos/motos/cable de enbriague mj - 150.jpg" class="img-fluid" style="height: 180px;" alt="Redmi 14 C">
+                    </div>
+                    <div class="promo-label">
+                        <span>¡Oferta Credito!</span><br>
+                        <span>30 bs X 2 sem.</span>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="detalleModal25" tabindex="-1" aria-labelledby="detalleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content " style="font-family: oswald;">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="detalleModalLabel" style="font-family: oswald;" >Detalle del Repuesto</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                </div>
+                <div class="modal-body">
+                    <h6 class="text-center" style="font-family: oswald; font-size: 25px;">Foco de Guiñadores </h6>
+                    <p style="font-family: oswald; font-size: 20px;">Características:</p>
+                    <ul class="px-3">
+                        
+                        <li>Tipo de bombilla: LED o halógena, para una mejor visibilidad y mayor duración.</li>
+                        <li>Durabilidad: Larga vida útil, resistiendo vibraciones y condiciones adversas.</li>
+                        <li>Visibilidad: Alta luminosidad para asegurar que tu señal de giro sea claramente visible.</li>
+                        <li></li>
+                        <li></li>
+                       
+                        <li>
+                            "¡Hazte ver en la carretera con claridad y seguridad! 
+                            Los focos de guiñadores garantizan visibilidad y un 
+                            rendimiento duradero. ¡Cómpralos ya y mantén tu Motocicleta 
+                            siempre en óptimas condiciones!" 💡
+                        </li>
+                    </ul>
+                    <div class="d-flex align-items-end justify-content-end">
+                        <img src="/assets/productos/motos/foco Stop.jpg" class="img-fluid" style="height: 180px;" alt="Redmi 14 C">
+                    </div>
+                    <div class="promo-label">
+                        <span>¡Oferta Credito!</span><br>
+                        <span>8 bs X 2 sem.</span>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="detalleModal26" tabindex="-1" aria-labelledby="detalleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content " style="font-family: oswald;">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="detalleModalLabel" style="font-family: oswald;" >Detalle del Repuesto</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                </div>
+                <div class="modal-body">
+                    <h6 class="text-center" style="font-family: oswald; font-size: 25px;">Llanta 275 x 18 </h6>
+                    <p style="font-family: oswald; font-size: 20px;">Características:</p>
+                    <ul class="px-3">
+                        
+                        <li>Marca: ABAD</li>
+                        <li>Material: Goma de alta resistencia, diseñada para ofrecer un excelente agarre en diferentes superficies.</li>
+                        <li>Rendimiento: Compuesta para maximizar la tracción y la absorción de impactos, garantizando una conducción cómoda.</li>
+                        <li></li>
+                        <li></li>
+                       
+                        <li>
+                            "¡Conquista el camino con total seguridad y rendimiento!
+                             Las llantas Abad 275 x 18 ofrecen durabilidad, tracción y control.
+                             ¡Cómpralas ya y mejora tu experiencia de conducción!" 🏍️💨
+                        </li>
+                    </ul>
+                    <div class="d-flex align-items-end justify-content-end">
+                        <img src="/assets/productos/motos/llantas abad 275 x 18.jpg" class="img-fluid" style="height: 180px;" alt="Redmi 14 C">
+                    </div>
+                    <div class="promo-label">
+                        <span>¡Oferta Credito!</span><br>
+                        <span>230 bs X 2 sem.</span>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="detalleModal27" tabindex="-1" aria-labelledby="detalleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content " style="font-family: oswald;">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="detalleModalLabel" style="font-family: oswald;" >Detalle del Repuesto</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                </div>
+                <div class="modal-body">
+                    <h6 class="text-center" style="font-family: oswald; font-size: 25px;">Llanta 300 x 18 </h6>
+                    <p style="font-family: oswald; font-size: 20px;">Características:</p>
+                    <ul class="px-3">
+                        
+                        <li>Marca: ABAD</li>
+                        <li>Material: Goma de alta resistencia, diseñada para ofrecer un excelente agarre en diferentes superficies.</li>
+                        <li>Rendimiento: Compuesta para maximizar la tracción y la absorción de impactos, garantizando una conducción cómoda.</li>
+                        <li></li>
+                        <li></li>
+                       
+                        <li>
+                            "¡Conquista el camino con total seguridad y rendimiento!
+                             Las llantas Abad 300 x 18 ofrecen durabilidad, tracción y control.
+                             ¡Cómpralas ya y mejora tu experiencia de conducción!" 🏍️💨
+                        </li>
+                    </ul>
+                    <div class="d-flex align-items-end justify-content-end">
+                        <img src="/assets/productos/motos/llantas abad 275 x 18.jpg" class="img-fluid" style="height: 180px;" alt="Redmi 14 C">
+                    </div>
+                    <div class="promo-label">
+                        <span>¡Oferta Credito!</span><br>
+                        <span>260 bs X 2 sem.</span>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="detalleModal28" tabindex="-1" aria-labelledby="detalleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content " style="font-family: oswald;">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="detalleModalLabel" style="font-family: oswald;" >Detalle del Repuesto</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                </div>
+                <div class="modal-body">
+                    <h6 class="text-center" style="font-family: oswald; font-size: 25px;">Palanca de Embriague y Freno</h6>
+                    <p style="font-family: oswald; font-size: 20px;">Características:</p>
+                    <ul class="px-3">
+                        
+                        <li>Ergonomía: Diseño cómodo y antideslizante para un agarre seguro, incluso en condiciones mojadas o de alta vibración.</li>
+                        <li>Ajustabilidad: Permite un ajuste personalizado para mayor confort durante el manejo.</li>
+                        <li>Durabilidad: Resistente al desgaste y a las condiciones climáticas extremas, garantizando un funcionamiento suave a largo plazo.</li>
+                        <li></li>
+                        <li></li>
+                       
+                        <li>
+                            "¡Mejora tu control y seguridad en la carretera! 
+                            Con la palanca de embrague y freno, obtén un manejo 
+                            suave, preciso y confiable. ¡Cómpralas ya y 
+                            optimiza tu experiencia de conducción!" 🏍️✋
+                        </li>
+                    </ul>
+                    <div class="d-flex align-items-end justify-content-end">
+                        <img src="/assets/productos/motos/palanca de embriague y freno.jpg" class="img-fluid" style="height: 180px;" alt="Redmi 14 C">
+                    </div>
+                    <div class="promo-label">
+                        <span>¡Oferta Credito!</span><br>
+                        <span>80 bs X 2 sem.</span>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="detalleModal29" tabindex="-1" aria-labelledby="detalleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content " style="font-family: oswald;">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="detalleModalLabel" style="font-family: oswald;" >Detalle del Repuesto</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                </div>
+                <div class="modal-body">
+                    <h6 class="text-center" style="font-family: oswald; font-size: 25px;">Pasadores Trasero</h6>
+                    <p style="font-family: oswald; font-size: 20px;">Características:</p>
+                    <ul class="px-3">
+                        
+                        <li>Material: Acero inoxidable de alta calidad, resistente a la corrosión y al desgaste.</li>
+                        <li>Durabilidad: Alta resistencia a las vibraciones y a las condiciones de conducción exigentes.</li>
+                        <li>Fiabilidad: Garantiza el correcto funcionamiento de las piezas traseras de la moto, mejorando la seguridad en cada viaje.</li>
+                        <li></li>
+                        <li></li>
+                       
+                        <li>
+                            "¡Mantén tu motocicleta en óptimas condiciones! Los 
+                            pasadores traseros ofrecen seguridad y fiabilidad,
+                             asegurando el rendimiento de tu moto.
+                             ¡Cómpralos ya y viaja con confianza!" 🏍️🔧
+                        </li>
+                    </ul>
+                    <div class="d-flex align-items-end justify-content-end">
+                        <img src="/assets/productos/motos/pasadores trasero.jpg" class="img-fluid" style="height: 180px;" alt="Redmi 14 C">
+                    </div>
+                    <div class="promo-label">
+                        <span>¡Oferta Credito!</span><br>
+                        <span>60 bs X 2 sem.</span>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="detalleModal30" tabindex="-1" aria-labelledby="detalleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content " style="font-family: oswald;">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="detalleModalLabel" style="font-family: oswald;" >Detalle del Repuesto</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                </div>
+                <div class="modal-body">
+                    <h6 class="text-center" style="font-family: oswald; font-size: 25px;">Patada de Arranque</h6>
+                    <p style="font-family: oswald; font-size: 20px;">Características:</p>
+                    <ul class="px-3">
+                        
+                        <li>Material: Fabricada en acero o aleación de alta resistencia para garantizar durabilidad y resistencia a la corrosión.</li>
+                        <li>Instalación: Fácil de instalar, adaptándose a las especificaciones de la motocicleta.</li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                       
+                        <li>
+                            "¡Arranca tu moto sin problemas! Con la patada de arranque,
+                             obtén un arranque rápido y eficiente.
+                             ¡Cómprala ya y disfruta de cada ruta sin contratiempos!" 🏍️⚙️
+                        </li>
+                    </ul>
+                    <div class="d-flex align-items-end justify-content-end">
+                        <img src="/assets/productos/motos/patada  de arranque.jpg" class="img-fluid" style="height: 180px;" alt="Redmi 14 C">
+                    </div>
+                    <div class="promo-label">
+                        <span>¡Oferta Credito!</span><br>
+                        <span>45 bs X 2 sem.</span>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="detalleModal31" tabindex="-1" aria-labelledby="detalleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content " style="font-family: oswald;">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="detalleModalLabel" style="font-family: oswald;" >Detalle del Repuesto</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                </div>
+                <div class="modal-body">
+                    <h6 class="text-center" style="font-family: oswald; font-size: 25px;">Pedal Cambio de Caja</h6>
+                    <p style="font-family: oswald; font-size: 20px;">Características:</p>
+                    <ul class="px-3">
+                        
+                        <li>Material: Fabricada en acero o aleación de alta resistencia para garantizar durabilidad y resistencia a la corrosión.</li>
+                        <li>Instalación: Fácil de instalar, adaptándose a las especificaciones de la motocicleta.</li>
+                        <li>Diseño: Compacto y ergonómico para un fácil acceso y control durante el cambio de marchas.</li>
+                        <li></li>
+                        <li></li>
+                       
+                        <li>
+                            "¡Cambia de marcha con precisión y comodidad! El pedal de 
+                            cambio de caja garantiza un control suave y eficiente en cada aceleración. 
+                            ¡Cómpralo ya y mejora tu experiencia de conducción!" 🏍️⚙️
+                        </li>
+                    </ul>
+                    <div class="d-flex align-items-end justify-content-end">
+                        <img src="/assets/productos/motos/pedal cambio caja.jpg" class="img-fluid" style="height: 180px;" alt="Redmi 14 C">
+                    </div>
+                    <div class="promo-label">
+                        <span>¡Oferta Credito!</span><br>
+                        <span>35 bs X 2 sem.</span>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="detalleModal32" tabindex="-1" aria-labelledby="detalleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content " style="font-family: oswald;">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="detalleModalLabel" style="font-family: oswald;" >Detalle del Repuesto</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                </div>
+                <div class="modal-body">
+                    <h6 class="text-center" style="font-family: oswald; font-size: 25px;">Puños Negros</h6>
+                    <p style="font-family: oswald; font-size: 20px;">Características:</p>
+                    <ul class="px-3">
+                        
+                        <li>Material: Fabricada con goma y diseño a Medida</li>
+                        <li></li>
+                        <li>Diseño: Compacto y ergonómico para un fácil acceso y control.</li>
+                        <li></li>
+                        <li></li>
+                       
+                        <li>
+                            "¡Ideal para tu Motocicleta que espéras para adquirirlo!" 🏍️⚙️
+                        </li>
+                    </ul>
+                    <div class="d-flex align-items-end justify-content-end">
+                        <img src="/assets/productos/motos/puños negro.jpg" class="img-fluid" style="height: 180px;" alt="Redmi 14 C">
+                    </div>
+                    <div class="promo-label">
+                        <span>¡Oferta Credito!</span><br>
+                        <span>35 bs X 2 sem.</span>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="detalleModal33" tabindex="-1" aria-labelledby="detalleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content " style="font-family: oswald;">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="detalleModalLabel" style="font-family: oswald;" >Detalle del Repuesto</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                </div>
+                <div class="modal-body">
+                    <h6 class="text-center" style="font-family: oswald; font-size: 25px;">Resortes de Freno</h6>
+                    <p style="font-family: oswald; font-size: 20px;">Características:</p>
+                    <ul class="px-3">
+                        
+                        <li>Material: Fabricados en acero de alta calidad o acero inoxidable para mayor durabilidad y resistencia a la corrosión.</li>
+                        <li>Resistencia: Resistencia al desgaste y a las condiciones de alta temperatura generadas durante el frenado.</li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                       
+                        <li>
+                            "¡Mantén tu sistema de freno funcionando como nuevo! 
+                            Los resortes de freno ofrecen máxima resistencia y 
+                            fiabilidad. ¡Cómpralos ahora y asegura un 
+                            frenado eficiente y seguro!" 🏍️⚙️
+                        </li>
+                    </ul>
+                    <div class="d-flex align-items-end justify-content-end">
+                        <img src="/assets/productos/motos/resorte de freno.jpg" class="img-fluid" style="height: 180px;" alt="Redmi 14 C">
+                    </div>
+                    <div class="promo-label">
+                        <span>¡Oferta Credito!</span><br>
+                        <span>10 bs X 2 sem.</span>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="detalleModal35" tabindex="-1" aria-labelledby="detalleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content " style="font-family: oswald;">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="detalleModalLabel" style="font-family: oswald;" >Detalle del Repuesto</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                </div>
+                <div class="modal-body">
+                    <h6 class="text-center" style="font-family: oswald; font-size: 25px;">Tesador de Cadena</h6>
+                    <p style="font-family: oswald; font-size: 20px;">Características:</p>
+                    <ul class="px-3">
+                        
+                        <li>Material: Fabricados en acero de alta calidad o acero inoxidable para mayor durabilidad y resistencia a la corrosión.</li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                       
+                        <li>
+                            "Pasadores de cadena ¡Cómpralos ahora y asegura un eficiente Hagarre!" 🏍️⚙️
+                        </li>
+                    </ul>
+                    <div class="d-flex align-items-end justify-content-end">
+                        <img src="/assets/productos/motos/tesador de cadena.jpg" class="img-fluid" style="height: 180px;" alt="Redmi 14 C">
+                    </div>
+                    <div class="promo-label">
+                        <span>¡Oferta Credito!</span><br>
+                        <span>31 bs X 2 sem.</span>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="detalleModal34" tabindex="-1" aria-labelledby="detalleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content " style="font-family: oswald;">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="detalleModalLabel" style="font-family: oswald;" >Detalle del Repuesto</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                </div>
+                <div class="modal-body">
+                    <h6 class="text-center" style="font-family: oswald; font-size: 25px;">Swith de Freno</h6>
+                    <p style="font-family: oswald; font-size: 20px;">Características:</p>
+                    <ul class="px-3">
+                        
+                        <li>Material: Fabricados en acero de alta calidad o acero inoxidable para mayor durabilidad y resistencia a la corrosión.</li>
+                        <li>Resistencia: Resistencia al desgaste y a las condiciones de alta temperatura generadas durante el frenado.</li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                       
+                        <li>
+                            "¡Mantén tu sistema de freno funcionando como nuevo! 
+                            Los Swith de freno ofrecen máxima resistencia y 
+                            fiabilidad. ¡Cómpralos ahora y asegura un eficiente!" 🏍️⚙️
+                        </li>
+                    </ul>
+                    <div class="d-flex align-items-end justify-content-end">
+                        <img src="/assets/productos/motos/swith freno .jpg" class="img-fluid" style="height: 180px;" alt="Redmi 14 C">
+                    </div>
+                    <div class="promo-label">
+                        <span>¡Oferta Credito!</span><br>
+                        <span>20 bs X 2 sem.</span>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="detalleModal36" tabindex="-1" aria-labelledby="detalleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content " style="font-family: oswald;">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="detalleModalLabel" style="font-family: oswald;" >Detalle del Repuesto</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                </div>
+                <div class="modal-body">
+                    <h6 class="text-center" style="font-family: oswald; font-size: 25px;">Trasmisión Trasera</h6>
+                    <p style="font-family: oswald; font-size: 20px;">Características:</p>
+                    <ul class="px-3">
+                        
+                        <li>Material: Hecha de acero de alta resistencia o aleación de acero para garantizar durabilidad y resistencia al desgaste.</li>
+                        <li>Diseño: Sistema de transmisión trasera eficiente y compacto, adecuado para motocicletas deportivas y de alto rendimiento.</li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                       
+                        <li>
+                            "¡Maximiza el rendimiento de tu motocicleta! Con la 
+                            transmisión trasera de alta calidad, obtendrás potencia y 
+                            control en cada aceleración.
+                             ¡Cómprala ahora y lleva tu moto al siguiente nivel!" 🏍️🔧
+                        </li>
+                    </ul>
+                    <div class="d-flex align-items-end justify-content-end">
+                        <img src="/assets/productos/motos/trasmision.jpg" class="img-fluid" style="height: 180px;" alt="Redmi 14 C">
+                    </div>
+                    <div class="promo-label">
+                        <span>¡Oferta Credito!</span><br>
+                        <span>130 bs X 2 sem.</span>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="detalleModal37" tabindex="-1" aria-labelledby="detalleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content " style="font-family: oswald;">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="detalleModalLabel" style="font-family: oswald;" >Detalle de la Motocicleta</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                </div>
+                <div class="modal-body">
+                    <h6 class="text-center" style="font-family: oswald; font-size: 25px;">Motocicleta Haojin de Trabajo</h6>
+                    <p style="font-family: oswald; font-size: 20px;">Características:</p>
+                    <ul class="px-3">
+                        
+                        <li>Motor: 4 tiempos, monocilíndrico, enfriado por aire.</li>
+                        <li>Cilindrada: 150 cc.</li>
+                        <li>Potencia máxima: 13.5 HP a 8,000 rpm.</li>
+                        <li>Transmisión: Mecánica, 5 velocidades.</li>
+                        <li>Sistema de encendido: Eléctrico y de pedal.</li>
+                       
+                        <li>
+                            "La Haojin Bera SBR 150 combina potencia, estilo y rendimiento para conquistar 
+                            las calles y los caminos. ¡Conduce con confianza y
+                             disfruta de cada kilómetro con calidad garantizada!"🛠️
+                        </li>
+                    </ul>
+                    <div class="d-flex align-items-end justify-content-end">
+                        <img src="/assets/productos/motos/motohombre - copia.jpg" class="img-fluid" style="height: 180px;" alt="Redmi 14 C">
+                    </div>
+                    <div class="promo-label">
+                        <span>¡Oferta Credito!</span><br>
+                        <span>Inicial 1200bs</span><br>
+                        <span>50bs c/día X 15 Meses.</span>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="detalleModal38" tabindex="-1" aria-labelledby="detalleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content " style="font-family: oswald;">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="detalleModalLabel" style="font-family: oswald;" >Detalle de la Motocicleta</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                </div>
+                <div class="modal-body">
+                    <h6 class="text-center" style="font-family: oswald; font-size: 25px;">Motocicleta Haojin de Paseo</h6>
+                    <p style="font-family: oswald; font-size: 20px;">Características:</p>
+                    <ul class="px-3">
+                        
+                        <li>Motor: Monocilíndrico, 4 tiempos, enfriado por aire.</li>
+                        <li>Cilindrada: 125 cc.</li>
+                        <li>Potencia máxima: 11 HP a 8,500 rpm.</li>
+                        <li>Transmisión: Mecánica de 5 velocidades.</li>
+                        <li>Sistema de encendido: Eléctrico y de pedal.</li>
+                       
+                        <li>
+                            "La Haojin HJ 125-11 te lleva donde quieras con estilo y confianza. Ligera, 
+                            potente y eficiente, ¡es tu compañera ideal para 
+                            cada aventura diaria o viajes largos!"🛠️
+                        </li>
+                    </ul>
+                    <div class="d-flex align-items-end justify-content-end">
+                        <img src="/assets/productos/motos/MotoMujer.jpg" class="img-fluid" style="height: 180px;" alt="Redmi 14 C">
+                    </div>
+                    <div class="promo-label">
+                        <span>¡Oferta Credito!</span><br>
+                        <span>Inicial 1200bs</span><br>
+                        <span>50bs c/día X 15 Meses.</span>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
 
     <!-- JavaScript -->
@@ -1509,40 +2755,65 @@
         const cart = [];
         const cartItems = document.getElementById('cartItems');
         const cartCount = document.getElementById('cartCount');
-
+        const whatsappButton = document.getElementById('whatsappButton');
+    
+        // Número de WhatsApp al que se enviará el mensaje (formato internacional)
+        const whatsappNumber = '59169491813';  // Tu número de WhatsApp sin el símbolo '+'
+    
         document.querySelectorAll('.add-to-cart').forEach(button => {
             button.addEventListener('click', () => {
                 const name = button.getAttribute('data-name');
                 const price = button.getAttribute('data-price');
-
+    
                 cart.push({ name, price });
                 updateCart();
             });
         });
-
+    
         function updateCart() {
             cartItems.innerHTML = '';
             cart.forEach((item, index) => {
                 const li = document.createElement('li');
                 li.className = 'list-group-item d-flex justify-content-between align-items-center';
                 li.innerHTML = `${item.name} - ${item.price}Bs.
-                    <button class="btn btn-danger btn-sm" onclick="removeFromCart(${index})">🗑️</button>`;
+                    <button class="btn btn-outline-danger btn-sm" onclick="removeFromCart(${index})">🗑️</button>`;
                 cartItems.appendChild(li);
             });
             cartCount.textContent = cart.length;
+    
+            // Habilitar el botón de WhatsApp solo si hay elementos en el carrito
+            whatsappButton.disabled = cart.length === 0;
         }
-
+    
         function removeFromCart(index) {
             cart.splice(index, 1);
             updateCart();
         }
-
+    
         function clearCart() {
             cart.length = 0;
             updateCart();
         }
+    
+        // Función para generar el mensaje de WhatsApp y redirigir al enlace
+        whatsappButton.addEventListener('click', () => {
+            if (cart.length > 0) {
+                let message = "Muy buenas, me interesan estos productos. ¿Podríamos coordinar una forma de pago?\n\n";
+                cart.forEach(item => {
+                    message += `${item.name} - ${item.price}Bs.\n`;
+                });
+    
+                // Codificar el mensaje para URL
+                message = encodeURIComponent(message);
+    
+                // Crear el enlace de WhatsApp
+                const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${message}`;
+    
+                // Redirigir al enlace de WhatsApp
+                window.open(whatsappUrl, '_blank');
+            }
+        });
     </script>
-
     <!-- Bootstrap JS Bundle -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
