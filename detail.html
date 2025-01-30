@@ -1270,6 +1270,19 @@
             </div>
         </div>
     </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+          const urlParams = new URLSearchParams(window.location.search);
+          const tabParam = urlParams.get("tab");
+      
+          if (tabParam) {
+            const targetTab = document.querySelector(`[data-bs-target="#${tabParam}"]`);
+            if (targetTab) {
+              new bootstrap.Tab(targetTab).show();
+            }
+          }
+        });
+      </script>
 
     <div class="modal fade" id="detalleModal" tabindex="-1" aria-labelledby="detalleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
